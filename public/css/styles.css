@@ -5,55 +5,92 @@
 	text-decoration: none;
 }
 
-header {
-	position: fixed;
-	width: 100%;
-	display: flex;
-	align-items: center;
-}
-
 body {
 	display: flex;
 	flex-direction: column;
+	background-color: papayawhip;
 }
+
+/* HEADER STYLES */
 
 header {
+	position: fixed;
 	display: flex;
-	background-color: teal;
+	/* background-color: teal; */
+	justify-content: space-around;
+	width: 100%;
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+	color: #333;
+	background-color: #ffffff;
+}
+
+header div a {
+	color: #333;
+}
+
+header div a:hover {
+	color: #6c7ae0;
+}
+
+.left_header {
+	display: flex;
+	/* background-color: black; */
 	align-items: center;
+	flex: 3;
+	/* justify-content: space-around; */
+}
+
+.right_header {
+	display: flex;
+	align-items: center;
+	/* background-color: white; */
 	justify-content: space-around;
+	flex: 1;
 }
 
-header nav ul {
-	list-style: none;
-	display: flex;
-	justify-content: flex-start;
-}
-
-header nav ul li {
-	margin: 15px;
-}
-
-header ul a {
-	color: black;
-	text-decoration: none;
-	font-size: 15px;
-}
-
-.ingresa-registrate {
-	display: flex;
-}
-
-.ingresa-registrate ul {
-	display: flex;
-	justify-content: space-around;
-}
-
-.ingresa-registrate ul li {
-	margin-left: 50px;
-}
 .logo {
-	width: 75px;
+	/* background: blue; */
+	width: 80px;
+	/* flex-basis: 40%; */
+}
+
+.regalos_opciones {
+	/* background: red; */
+	flex-basis: 18%;
+}
+
+.como_regalar {
+	/* background: blueviolet; */
+	flex-basis: 18%;
+}
+
+.search_bar {
+	/* background-color: orange; */
+	flex-basis: 18%;
+	position: relative;
+}
+
+.search_icon {
+	position: absolute;
+	top: 4px;
+	right: 15px;
+}
+
+.ingresa {
+	/* 	background: chocolate; */
+}
+
+.registrate {
+	/* background: cornflowerblue; */
+}
+
+.carrito {
+	/* background-color: white; */
+}
+
+.logo img {
+	width: 60px;
 }
 
 p {
