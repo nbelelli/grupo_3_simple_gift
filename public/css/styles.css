@@ -5,55 +5,107 @@
 	text-decoration: none;
 }
 
-header {
-	position: fixed;
-	width: 100%;
-	display: flex;
-	align-items: center;
-}
-
 body {
 	display: flex;
 	flex-direction: column;
+	background-color: papayawhip;
 }
+
+/* HEADER STYLES */
 
 header {
+	position: fixed;
 	display: flex;
 	background-color: teal;
+	justify-content: space-around;
+	width: 100%;
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+	color: #333;
+	background-color: #ffffff;
+	/* border-bottom: grey solid 1px; */
+	box-shadow: 0px 2px #cccccc;
+}
+
+.left_header {
+	display: flex;
+	/* background-color: blue; */
 	align-items: center;
+	flex: 3;
 	justify-content: space-around;
+	padding-left: 5%;
+	padding-right: 30%;
 }
 
-header nav ul {
-	list-style: none;
+.right_header {
 	display: flex;
-	justify-content: flex-start;
-}
-
-header nav ul li {
-	margin: 15px;
-}
-
-header ul a {
-	color: black;
-	text-decoration: none;
-	font-size: 15px;
-}
-
-.ingresa-registrate {
-	display: flex;
-}
-
-.ingresa-registrate ul {
-	display: flex;
+	/* background-color: red; */
+	align-items: center;
+	flex: 1;
+	justify-content: flex-end;
 	justify-content: space-around;
+	padding-right: 5%;
 }
 
-.ingresa-registrate ul li {
-	margin-left: 50px;
+header div a {
+	color: #333;
+	transition: ease-out 0.3s;
 }
+
+header div a:hover {
+	color: #6c7ae0;
+}
+
 .logo {
-	width: 75px;
+}
+
+.search_bar {
+	flex-basis: 18%;
+	position: relative;
+}
+
+.search_bar form {
+	display: flex;
+}
+
+.login_register {
+	align-items: center;
+}
+
+.login_register ul {
+	display: flex;
+}
+
+.regalos_opciones {
+	/* background: red; */
+	flex-basis: 18%;
+}
+
+.search_bar form input {
+	height: 25px;
+}
+
+.search_bar form input::placeholder {
+	color: rgb(129, 129, 129);
+	font-family: 'Poppins', sans-serif;
+	font-size: 12px;
+	margin-left: 5px;
+}
+
+.ingresa {
+	/* 	background: chocolate; */
+}
+
+.registrate {
+	/* background: cornflowerblue; */
+}
+
+.carrito {
+	/* background-color: pink; */
+}
+
+.logo img {
+	width: 60px;
 }
 
 p {

@@ -8,25 +8,43 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
 		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+			rel="stylesheet"
+		/>
 		<title>Document</title>
 	</head>
 	<body>
 		<header>
-			<img class="logo" src="images/logo.png" alt="" />
-			<nav>
-				<ul>
-					<li><a href="#">Regalos con opciones</a></li>
-					<li><a href="#">Como regalar</a></li>
-				</ul>
-			</nav>
-			<input type="text" placeholder="Buscar..." />
-			<div class="ingresa-registrate">
-				<ul>
-					<li><a href="#">Ingresá</a></li>
-					<li><a href="#">Registrate</a></li>
-				</ul>
+			<div class="left_header">
+				<!-- LOGO -->
+				<div class="logo"><a href="#"><img src="images/logo.png" alt="" /></div></a>
+
+				<!-- REGALOS CON OPCIONES, COMO REGALAR, NAV -->
+
+				<div><a href="#">Regalos con opciones</a></div>
+				<div><a href="#">Como regalar</a></div>
+
+				<!-- SEARCH -->
+				<div class="search_bar">
+					<form action="">
+						<input type="text" placeholder="Buscar..." required />
+						<button><i class="fas fa-search search_icon"></i></button>
+					</form>
+				</div>
 			</div>
-			<i class="fas fa-shopping-cart"></i>
+
+			<div class="right_header">
+				<div><a href="#">Ingresá</a></div>
+				<div><a href="#">Registrate</a></div>
+				<div class="carrito">
+					<a href="#"><i class="fas fa-shopping-cart"></i></a>
+				</div>
+			</div>
+
+			<!-- 	CARRITO -->
+
+			<!-- LOGIN/REGISTER -->
 		</header>
 
 		<main>
