@@ -234,6 +234,95 @@ main {
 }
 
 .homeElegidos {
-	margin-top: 50px;
+	height: 200px;
+	/* border: black 2px solid; */
 	display: flex;
+	flex-direction: column;
+	margin-bottom: 100px;
+}
+
+.elegidosSlider {
+	display: flex;
+	justify-content: space-between;
+
+	/* 	background-color: #6c7ae0; */
+	height: 100%;
+	align-items: stretch;
+}
+
+.elegidoTile {
+	/* 	border: #333 2px solid; */
+	flex-basis: 14%;
+
+	background-size: cover;
+	background-position-x: center;
+	position: relative;
+}
+
+.elegidoTileImage {
+	background-size: cover;
+	/* background-position-x: center; */
+	height: 130px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.elegidoTileTitle {
+	color: #ffffff;
+	font-size: 22px;
+}
+
+.elegidoInfoCard {
+	box-shadow: 2px 2px #cccccc;
+	/* 	border: #333 1px solid; */
+}
+
+.elegidoTileDescription {
+	font-size: 12px;
+	line-height: 1.35;
+	color: #464646;
+}
+
+.elegidoTilePrice {
+	font-size: 14px;
+}
+
+.elegidoTileXbox {
+	background-image: url('/images/categoriesTiles/xbox.jpeg');
+}
+
+.elegidoTileVino {
+	background-image: url('/images/categoriesTiles/cajavino2.jpg');
+}
+
+.elegidoTileBeer {
+	background-image: url('/images/categoriesTiles/beer1.webp');
+}
+
+.bottomTilesSection {
+	/* border: #333 solid 1px; */
+	margin-bottom: 50px;
+	display: flex;
+	width: 100%;
+	/* justify-content: space-between; */
+	align-items: center;
+	height: 100px;
+	margin-left: 15%;
+}
+
+.bottomTile {
+	border: #333 solid 1px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 50%;
+	padding-left: 10px;
+	padding-right: 10px;
+	flex-basis: 300px;
+	height: 65px;
+}
+
+#ayuda {
+	margin-left: 20px;
 }
