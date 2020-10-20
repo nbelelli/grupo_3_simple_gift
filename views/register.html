@@ -13,6 +13,7 @@
                 href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
                 rel="stylesheet"
             />
+            <link href="fontawesome/css/all.css" rel="stylesheet">
             <title>Registro</title>
         </head>
         
@@ -48,8 +49,8 @@
     
             <!-- LOGIN/REGISTER -->
         </header>
-        <main> 
-        <div class="register_cuerpo">  
+    <main class="register"> 
+    <seccion class="register_cuerpo">  
         <h1 class="register_titulo">¡Registrate!</h1>
         <article class="register_form"> 
         <form action=“validar.php” method=“POST”></form>
@@ -59,11 +60,11 @@
      </p>
      <p>
         <label for=“apellido”>Apellido:</label>
-    <input type=“text” name=“apellido” id=“apellido” placeholder="Perez"required>>
+        <input type=“text” name=“apellido” id=“apellido” placeholder="Perez"required>>
     </p>
     <p>
-            <label for=“email”>Email:</label>
-    <input type=“email” name=“email” id=“email” placeholder="ejemplo@correo.com" required>>   
+        <label for=“email”>Email:</label>
+        <input type=“email” name=“email” id=“email” placeholder="ejemplo@correo.com" required>>   
     </p>
     <p>
         <label for=“telefono”>Telefono:</label>
@@ -71,26 +72,57 @@
     </p>
     <p>
         <label for="password">Password:</label>
-        <input type="password" name="password" id="password" pattern=".{6,}" required>>
+        <input type="password" name="password" id="password" placeholder="contraseña" pattern=".{6,}" required>>
     </p>
-    <button type=“submit”>Enviar</button>
+    <button id="registro_button" type=“submit”>Enviar</button>
     
-    </article> 
+
     
     <h3 class="register_ya_tenes_cuenta">¿Ya tenés una cuenta de Simple Gift?  <a href="/views/login.html" id="register_inicia_seccion">  Iniciá Sección</a></h3>
     
     </form>
-    </div>
+    </article>
+    </seccion>
     
     <!-- no me esta tomando esta imagen -->
-    <div><img src="../public/images/Foto Pagina registro.jpg" alt="Foto_Pagina_Registro"></div> 
-    </main>
+    <div><img src="images/Foto Pagina registro.jpg" alt="Foto_Pagina_Registro"></div> 
+    <div><img src="../public/images/Box Relax 3.jpg"> 
     
+</main>
+<footer>  
+    <div class="footer-container">
+        <div class="footer-main">
+            <div class="footer-columna">
+                <h3>Dirección</h3>
+                <span class="fa fa-map-marker"><p>Av de los Incas 3531</p></span>
+                <span class="fa fa-phone"><p>info@simplegift.com</p></span>
+                <span class="fa fa-envelope"><p>011-15-4444-3333</p></span>
+
+            </div>
+            <div class="footer-columna">
+                <h3>Sobre Nosotros</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At qui aliquid eligendi corporis quos? Explicabo, incidunt. Possimus inventore iusto maiores expedita neque similique magnam optio. Unde, dignissimos soluta eligendi molestiae neque ratione dolore debitis incidunt distinctio obcaecati fugit perferendis vero.</p>
+            </div>
+        </div>
+        <div class="footer-copy-redes">
+            <div class="main-copy-redes">
+                <div class="footer-copy">
+                    &copy; Todos los derechos reservados - Simple Gift S.A.
+                </div>
+                <div class="footer-redes">
+                    <a href="#" class="fab fa-facebook"></a>
+                    <a href="#" class="fab fa-twitter-square"> </a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div>
+            </div>
+            <h3></h3>
+        </div>
     
-    <footer>  
-    </footer>
+    </div>
+</footer>
+
+</body>
+</html>
+
     
-        
-    
-    </body>
-    </html>
+  

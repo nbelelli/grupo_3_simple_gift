@@ -1,1 +1,82 @@
-this is the login
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <link rel="stylesheet" href="./css/styles.css" />
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+            />
+            <link
+                href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+                rel="stylesheet"
+            />
+            <title>Log In</title>
+        </head>
+        
+    <body>
+        <header>
+            <div class="left_header">
+                <!-- LOGO -->
+                <div class="logo"><a href="#"><img src="images/logo.png" alt="" /></div></a>
+    
+                <!-- REGALOS CON OPCIONES, COMO REGALAR, NAV -->
+    
+                <div><a href="#">Regalos con opciones</a></div>
+                <div><a href="#">Como regalar</a></div>
+    
+                <!-- SEARCH -->
+                <div class="search_bar">
+                    <form action="">
+                        <input type="text" placeholder="Buscar..." required />
+                        <button><i class="fas fa-search search_icon"></i></button>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="right_header">
+                <div><a href="#">Ingresá</a></div>
+                <div><a href="#">Registrate</a></div>
+                <div class="carrito">
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+    
+            <!-- 	CARRITO -->
+    
+            <!-- LOGIN/REGISTER -->
+        </header>
+
+    <main class="login"> 
+        <seccion class="login_cuerpo">  
+        <h1 class="login_titulo">¡Iniciá sesión acá!</h1>
+        <article class="login_form"> 
+        <form action=“validar.php” method=“POST”></form>
+    <p>
+            <label for=“email”>Email:      </label>
+    <input type=“email” name=“email” id=“email” placeholder="ejemplo@correo.com" required>>   
+    </p>
+    <p>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" placeholder="contraseña" pattern=".{6,}" required>>
+    </p>
+    <button id="login_button" type=“submit”>Enviar</button>
+    </form>
+    </article> 
+    
+    <a class="olvidar_password" href="#" id="blanquear_password">¿Olvidaste tu contraseña?   </a>
+    
+    
+    </seccion>
+    
+    </main>
+    
+       
+    
+   
+    <footer>  
+        Triste footer
+    </footer>
+    </body>
+ 
