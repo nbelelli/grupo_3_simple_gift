@@ -512,23 +512,41 @@ footer{
 	background: white;
 }
 
-/* ------- ESTILO PRODUCTDETAIL  -------*/
 
-.imagen_del_producto {
-    margin-left: 300px;
-    width: 600px;
-  }
+
+/* ESTILO PRODUCTDETAIL*/
+
+.padre {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 600px;
+	}
+	
+	.texto {
+		line-height: 50px;
+		height: 200px;
+		order: 2;
+	}
+	
+	.imagen {
+	padding-left: 20px;
+		width: 600px;
+		order: 0;
+	}
+	
+	.boton {
+		align-self: flex-end;
+		order: 1;
+	}
+	
+	.boton_volver {
+		padding-top: 60px;
+		align-self: flex-start;
+		
+		
+	}
+	
+
+
  
-  .texto_descripcion {
-    font-family: 'Poppins', sans-serif;
-    box-sizing: content-box;
-    padding: 40px;
-    width: 500px;
-    height: 100px;
-    border: 1px solid black;
-    margin-left: 740px;
-  }
-  
- .botones_productDetail {
-	 margin-bottom: 100px;
- }
