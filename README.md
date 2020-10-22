@@ -1,3 +1,10 @@
+SPRINT 2
+
+Enlace al tablero de trabajo en el archivo ​README.md:
+
+https://trello.com/b/1D4ts2WV/sprint-2-23-10
+
+SPRINT 1
 # grupo_3_boxclub
 DEFINICIÓN DEL NEGOCIO:
 En Simple GIft ofrecemos boxes temáticos y personalizados con items de primera calidad para agasajar a alguien especial. Los boxes son diversos, pueden ser desayunos, selecciones de vinos, chocolates finos y botellas espirituosas o ingredientes para un barista en potencia. También nos encargamos de la logística puerta a puerta y de la personalización para dar un regalo singular a esa persona única. Te lo hacemos, Simple.
