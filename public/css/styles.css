@@ -593,7 +593,7 @@ footer {
 	border: #000 1px solid;
 	display: flex;
 	flex-direction: column;
-	width: 30%;
+/* 	width: 30%; */
 
 	-webkit-box-shadow: 3px 3px 6px -1px rgba(0,0,0,0.59);
 	-moz-box-shadow: 3px 3px 6px -1px rgba(0,0,0,0.59);
@@ -658,6 +658,62 @@ footer {
 	margin: 3px;
 }
 
+#resumenCompra{
+	float: left;
+	width: 50%;
+}
 
+#productTiles{
+position: relative;
+float: left;
+width: 50%;
+	
+}
+
+.resumenCompraBox{
+	height: 200px;
+	border: #000 1px solid;
+	margin-left: 40px;
+	-webkit-box-shadow: 3px 3px 6px -1px rgba(0,0,0,0.59);
+	-moz-box-shadow: 3px 3px 6px -1px rgba(0,0,0,0.59);
+	box-shadow: 3px 3px 6px -1px rgba(0,0,0,0.59);
+	padding: 3%;
+
+}
+
+
+.resumenCompraBoxTitle{
+	font-weight: bold;
+}
+
+.resumenCompraListaProductos{
+	font-size: 14px;
+}
+
+.resumenCompraProduct{
+	display: flex;
+	justify-content: space-between;
+}
+
+.resumenCompraProductPrice{
+	
+}
+
+.resumenCompraTotal{
+	display: flex;
+	justify-content: space-between;
+}
+
+ .resumenCompraContinuarContainer{
+	
+	text-align: center;
+	
+}
+
+.resumenCompraSeguirContainer{
+	display: block;
+	text-align: center;
+	
+} 
 	
 }
