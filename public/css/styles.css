@@ -372,23 +372,23 @@ main {
 
 /* ESTILO REGISTER*/
 
-.register_cuerpo{
+.register_cuerpo {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between
-	}
-	
-.register_titulo{
+	justify-content: space-between;
+}
+
+.register_titulo {
 	font-family: 'Poppins', sans-serif;
 	width: 60%;
 	height: 45px;
 	padding-top: 100px;
 	padding-left: 100px;
 	font-size: 35px;
-    font-weight: 700;
+	font-weight: 700;
 	line-height: 48px;
-	color:#E8623F;
-	}
+	color: #e8623f;
+}
 
 .register_form {
 	width: 50%;
@@ -399,47 +399,45 @@ main {
 	margin-bottom: 5px;
 	font-family: 'Poppins', sans-serif;
 	padding-left: 100px;
-  }
+}
 
-  label{
+label {
 	display: inline-block;
 	width: 80px;
-  }
+}
 
-  .register_ya_tenes_cuenta{
+.register_ya_tenes_cuenta {
 	font-family: 'Poppins', sans-serif;
 	font-size: medium;
 	box-sizing: border-box;
 	padding-left: 10px;
-  }
+}
 
-  #register_inicia_seccion{
-	  color: #f04636;
-  }
+#register_inicia_seccion {
+	color: #f04636;
+}
 
-
-#registro_button{
-		padding: 0 16px;
-		border-radius: 2px;
-		background-color: cornflowerblue;
-		color: #fff;
-		height: 36px;
-		line-height: 2.25rem;
-		font-size: 0.875rem;
-		font-weight: 500;
-		letter-spacing: 0.06em;
-		}
+#registro_button {
+	padding: 0 16px;
+	border-radius: 2px;
+	background-color: cornflowerblue;
+	color: #fff;
+	height: 36px;
+	line-height: 2.25rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+}
 
 /* ESTILO LOGIN*/
 
-  .login_cuerpo{
+.login_cuerpo {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between
-	}
+	justify-content: space-between;
+}
 
-
-  .login_titulo{
+.login_titulo {
 	font-family: 'Poppins', sans-serif;
 	width: 60%;
 	height: 45px;
@@ -447,64 +445,63 @@ main {
 	padding-top: 100px;
 	padding-left: 100px;
 	font-size: 35px;
-    font-weight: 700;
+	font-weight: 700;
 	line-height: 48px;
-	color:#E8623F;
-	}
-
- 	.login_form {
-		width: 50%;
-		padding: 25px;
-		border-radius: 4px;
-		box-sizing: border-box;
-		margin-top: 6px;
-		margin-bottom: 5px;
-		font-family: 'Poppins', sans-serif;
-		padding-left: 100px;
-	  }
-
-	  .olvidar_password{
-		font-family: 'Poppins', sans-serif;
-		color:#E8623F;
-		display: inline-block;
-		padding-left: 85px;
-		 }
-
-	#login_button{
-		padding: 0 16px;
-		border-radius: 2px;
-		background-color: cornflowerblue;
-	
-		color: #fff;
-		height: 36px;
-		line-height: 2.25rem;
-		font-size: 0.875rem;
-		font-weight: 500;
-		letter-spacing: 0.06em;
-		}
-	  
-	  
-/* ESTILO FOOTER*/
-
-.info-container{
-	width: 100%;
-	background: #f2f2f2;;
+	color: #e8623f;
 }
 
-footer{
+.login_form {
+	width: 50%;
+	padding: 25px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 5px;
+	font-family: 'Poppins', sans-serif;
+	padding-left: 100px;
+}
+
+.olvidar_password {
+	font-family: 'Poppins', sans-serif;
+	color: #e8623f;
+	display: inline-block;
+	padding-left: 85px;
+}
+
+#login_button {
+	padding: 0 16px;
+	border-radius: 2px;
+	background-color: cornflowerblue;
+
+	color: #fff;
+	height: 36px;
+	line-height: 2.25rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+}
+
+/* ESTILO FOOTER*/
+
+.info-container {
+	width: 100%;
+	background: #f2f2f2;
+}
+
+footer {
 	width: 100%;
 	font-family: 'Poppins', sans-serif;
 }
-.footer-container{
+.footer-container {
 	width: 100%;
 	background: #272727;
 	color: #fff;
 }
 
-.footer-main{
+.footer-main {
 	width: 98%;
 	max-width: 1000px;
-	margin:auto; 
+	margin: auto;
 	padding: 50px 0;
 	display: flex;
 	flex-wrap: wrap;
@@ -514,15 +511,15 @@ footer{
 	display: inline-block;
 	margin-left: 5px;
 	margin-bottom: 15px;
-	}
+}
 
-.footer-redes{
+.footer-redes {
 	width: 100%;
 	background: #000;
 	border-top: 3px solid #fff;
 }
 
-.main-copy-redes{
+.main-copy-redes {
 	width: 98%;
 	max-width: 1000px;
 	padding: 15px;
@@ -533,17 +530,17 @@ footer{
 	align-items: center;
 }
 
-.footer-copy{
+.footer-copy {
 	width: 70%;
 }
-.footer-redes{
+.footer-redes {
 	width: 30%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
-.footer-redes a{
+.footer-redes a {
 	display: inline-block;
 	text-decoration: none;
 	width: 40px;
@@ -558,20 +555,109 @@ footer{
 /* ------- ESTILO PRODUCTDETAIL  -------*/
 
 .imagen_del_producto {
-    margin-left: 300px;
-    width: 600px;
-  }
- 
-  .texto_descripcion {
-    font-family: 'Poppins', sans-serif;
-    box-sizing: content-box;
-    padding: 40px;
-    width: 500px;
-    height: 100px;
-    border: 1px solid black;
-    margin-left: 740px;
-  }
-  
- .botones_productDetail {
-	 margin-bottom: 100px;
- }
+	margin-left: 300px;
+	width: 600px;
+}
+
+.texto_descripcion {
+	font-family: 'Poppins', sans-serif;
+	box-sizing: content-box;
+	padding: 40px;
+	width: 500px;
+	height: 100px;
+	border: 1px solid black;
+	margin-left: 740px;
+}
+
+.botones_productDetail {
+	margin-bottom: 100px;
+}
+
+/***** ESTILOS CARRITO****** */
+
+.tuCarritoBanner {
+	width: 100%;
+	background-color: #a2aae4;
+	height: 80px;
+	margin-top: 66px;
+	display: flex;
+	align-items: center;
+}
+
+.tuCarritoBanner div {
+	width: 2%;
+	padding-left: 35px;
+}
+
+.prodCard {
+	border: #000 1px solid;
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+
+	-webkit-box-shadow: 3px 3px 6px -1px rgba(0,0,0,0.59);
+	-moz-box-shadow: 3px 3px 6px -1px rgba(0,0,0,0.59);
+	box-shadow: 3px 3px 6px -1px rgba(0,0,0,0.59);
+
+}
+
+.prodCardHeader {
+	border: #000 1px solid;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 2%;
+	padding-right: 2%;
+	height: 50px;
+	font-size: 20px;
+
+	background-color: #a2aae4;
+}
+
+.prodCardInfo {
+	border: #000 1px solid;
+	display: flex;
+	height: 160px;
+	/* align-items: center; */
+	padding: 15px;
+	box-sizing: border-box;
+}
+
+.prodCardImageContainer {
+	width: 40%;
+}
+
+.prodCardImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* overflow: hidden; */
+}
+
+.prodCardPrice {
+	align-self: center;
+	margin-left: 5px;
+	font-size: 19px;
+}
+
+.prodCardQty {
+	display: flex;
+	justify-content: space-between;
+	margin-left: auto;
+	align-self: center;
+	align-items: center;
+	font-size: 24px;
+}
+
+.prodCardQtyValue {
+	/* border: #000 1px solid; */
+}
+
+.plusMinusButtons {
+	color: #000;
+	margin: 3px;
+}
+
+
+	
+}
