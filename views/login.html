@@ -49,34 +49,79 @@
         </header>
 
     <main class="login"> 
+    <div class="login_container"> 
+        <div>
+            <span>
+                <a class="icono_go_back" href="#"><i class="fas fa-long-arrow-alt-left fa-lg"></i></a>
+            </span>
+        </div>
+
         <seccion class="login_cuerpo">  
         <h1 class="login_titulo">¡Iniciá sesión acá!</h1>
         <article class="login_form"> 
+
         <form action=“validar.php” method=“POST”></form>
-    <p>
-            <label for=“email”>Email:      </label>
-    <input type=“email” name=“email” id=“email” placeholder="ejemplo@correo.com" required>>   
-    </p>
-    <p>
+        <p class="login_form_mail">
+          <label for=“email”>Email:      </label>
+         <input type=“email” name=“email” id=“email” placeholder="ejemplo@correo.com" required>>   
+        </p>
+
+        <p class="login_form_password">
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" placeholder="contraseña" pattern=".{6,}" required>>
-    </p>
-    <button id="login_button" type=“submit”>Enviar</button>
-    </form>
-    </article> 
+        </p>
+         <button id="login_button" type=“submit”>Enviar</button>
+        
+        </article> 
+        </form>
     
     <a class="olvidar_password" href="#" id="blanquear_password">¿Olvidaste tu contraseña?   </a>
     
     
     </seccion>
-    
+    </div>
+    <div> 
+    <img width="70%" class="foto_register_amigos" src="images/register_amigos.jpg" alt="Foto_Pagina_Registro">     
+</div>
     </main>
+
     
-       
-    
-   
-    <footer>  
-        Triste footer
+<footer>  
+        <div class="main-content"> 
+            <div class="footer_nosotros"> 
+                <h2 class="footer_nosotros_titulo"> Sobre Nosotros</h2>
+                <div class="footer_nosotros_content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, facilis.</p>
+                </div>           
+            </div>
+            <div class="footer_social">
+                <h2>¡Seguinos!</h2>
+                <a href="#"><span class="fab fa-facebook-f"> Facebook</span></a>
+                <a href="#"><span class="fab fa-twitter">  Twitter</span></a>
+                <a href="#"><span class="fab fa-instagram">  Instagram</span></a>
+            </div>
+            
+            <div class="footer_direccion">
+                <h2>Dirección</h2>
+            <div class="content">
+                  <div class="place">
+                    <span class="fas fa-map-marker-alt"></span>
+                    <span class="text">Av. Los Incas 3518</span>
+                  </div>
+            
+                 <div class="phone">
+                    <span class="fas fa-phone-alt"></span>
+                    <span class="text">+011-11404040</span>
+                  </div>
+                 <div class="email">
+                    <span class="fas fa-envelope"></span>
+                    <span class="text">info@simplegift.com</span>
+                </div>
+            </div>
+            </div>
+        </div>
+            
+     </div>
     </footer>
     </body>
  

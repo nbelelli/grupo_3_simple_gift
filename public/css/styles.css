@@ -372,18 +372,35 @@ main {
 
 /* ESTILO REGISTER*/
 
+.register{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: relative;	
+}
+
+.icono_go_back {
+color: #E8623F;
+margin: 60px;
+}
+
 .register_cuerpo{
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between
+	justify-content: space-between;
+	display: inline-block; 
+	width: 350px;
+	height: 400px;
+	margin-left: 60px;
 	}
-	
+
+.foto_register_container{
+	padding-left: 20px;
+}
+
 .register_titulo{
 	font-family: 'Poppins', sans-serif;
-	width: 60%;
 	height: 45px;
-	padding-top: 100px;
-	padding-left: 100px;
 	font-size: 35px;
     font-weight: 700;
 	line-height: 48px;
@@ -391,15 +408,20 @@ main {
 	}
 
 .register_form {
-	width: 50%;
-	padding: 25px;
+	padding-top: 15px;
 	border-radius: 4px;
 	box-sizing: border-box;
 	margin-top: 6px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	font-family: 'Poppins', sans-serif;
-	padding-left: 100px;
-  }
+	justify-content: space-between;
+	}
+
+.form_register {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
 
   label{
 	display: inline-block;
@@ -419,33 +441,52 @@ main {
 
 
 #registro_button{
-		padding: 0 16px;
-		border-radius: 2px;
-		background-color: cornflowerblue;
-		color: #fff;
-		height: 36px;
-		line-height: 2.25rem;
-		font-size: 0.875rem;
-		font-weight: 500;
-		letter-spacing: 0.06em;
-		}
+	display:flex;
+	align-items: center;
+	text-align: center;
+	justify-content: space-between;
+	margin-left: 10px;
+	width: 50%;
+	height: 65px;
+	flex-basis: 300px;
+	border-radius: 2px;
+	background-color: cornflowerblue;
+	color: #fff;
+	height: 36px;
+	line-height: 2.25rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	border: #333 solid 1px;
+	padding-right: 10px;
+	margin-top: 5px;
+}	
+	
 
 /* ESTILO LOGIN*/
+
+.login{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: relative;	
+}
 
   .login_cuerpo{
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between
+	display: inline-block; 
+	width: 400px;
+	height: 400px;
+	margin-left: 60px;
+	}
+	
+.foto_login_amigos{
+	padding-left: 20px;
 	}
 
-
-  .login_titulo{
+ .login_titulo{
 	font-family: 'Poppins', sans-serif;
-	width: 60%;
-	height: 45px;
-	margin-top: 45px;
-	padding-top: 100px;
-	padding-left: 100px;
 	font-size: 35px;
     font-weight: 700;
 	line-height: 48px;
@@ -453,28 +494,31 @@ main {
 	}
 
  	.login_form {
-		width: 50%;
-		padding: 25px;
 		border-radius: 4px;
 		box-sizing: border-box;
-		margin-top: 6px;
-		margin-bottom: 5px;
+		margin-top: 10px;
+		margin-bottom: 10px;
 		font-family: 'Poppins', sans-serif;
-		padding-left: 100px;
-	  }
+		justify-content: space-between;
+	}
+
+	.login_form_password{
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	
 
 	  .olvidar_password{
 		font-family: 'Poppins', sans-serif;
 		color:#E8623F;
 		display: inline-block;
-		padding-left: 85px;
 		 }
 
 	#login_button{
 		padding: 0 16px;
 		border-radius: 2px;
 		background-color: cornflowerblue;
-	
 		color: #fff;
 		height: 36px;
 		line-height: 2.25rem;
@@ -486,62 +530,71 @@ main {
 	  
 /* ESTILO FOOTER*/
 
-.info-container{
-	width: 100%;
-	background: #f2f2f2;;
-}
-
 footer{
 	width: 100%;
+	height: 150px;
 	font-family: 'Poppins', sans-serif;
-}
-.footer-container{
-	width: 100%;
-	background: #272727;
-	color: #fff;
-}
-
-.footer-main{
-	width: 98%;
-	max-width: 1000px;
-	margin:auto; 
-	padding: 50px 0;
+	background: #b3afaf;
 	display: flex;
-	flex-wrap: wrap;
+	font-size: small;
+	color: black;
 }
 
-.footer-columna span p {
-	display: inline-block;
-	margin-left: 5px;
-	margin-bottom: 15px;
+.main-content{
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	margin-left: 80px;
+	width: 85%;
+}
+
+.footer_nosotros{
+	width: 33%;
+	padding-bottom: 20px;
 	}
 
-.footer-redes{
-	width: 100%;
-	background: #000;
-	border-top: 3px solid #fff;
+.footer_nosotros h2{
+	padding-bottom: 10px;
+	padding-top: 10px;
+}	
+
+.footer_nosotros p{
+	font-size: medium;
+}	
+.footer_direccion{
+	width: 33%;
 }
 
-.main-copy-redes{
-	width: 98%;
-	max-width: 1000px;
-	padding: 15px;
-	margin: auto;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
+.footer_social{
+	width: 33%;
+	display:flex;
+	flex-direction: column;
+	color: black;
 }
 
-.footer-copy{
-	width: 70%;
+.footer_social a{
+	font-size: medium;
 }
-.footer-redes{
-	width: 30%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+
+.footer_social h2{
+	padding-bottom: 10px;
+	padding-top: 10px;
 }
+
+
+.footer_direccion h2{
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.footer_direccion span{
+	font-size: medium;
+}
+
+.footer_social{
+
+}
+
 
 .footer-redes a{
 	display: inline-block;
@@ -575,3 +628,4 @@ footer{
  .botones_productDetail {
 	 margin-bottom: 100px;
  }
+
