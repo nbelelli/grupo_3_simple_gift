@@ -67,6 +67,26 @@ header div a:hover {
 
 .search_bar form {
 	display: flex;
+	/* 	height: 30px;
+ */
+}
+
+.search_bar form input {
+	border: 2px solid #333;
+	border-radius: 50px;
+	padding: 0 10px;
+	position: relative;
+	outline: none;
+}
+
+.search_bar form input:focus {
+	border: 2px solid #6c7ae0;
+}
+
+.search_btn {
+	position: absolute;
+	right: 10px;
+	top: 3px;
 }
 
 .login_register {
@@ -168,6 +188,16 @@ main {
 	/* 	background-color: #6c7ae0; */
 	height: 100%;
 	align-items: stretch;
+}
+
+.tilesSlider a:hover {
+	opacity: 70%;
+	zoom: 1.2;
+	-webkit-transition: opacity 0.15s ease-in-out;
+	-moz-transition: opacity 0.15s ease-in-out;
+	-ms-transition: opacity 0.15s ease-in-out;
+	-o-transition: opacity 0.15s ease-in-out;
+	transition: opacity 0.15s ease-in-out;
 }
 
 .tilesSliderArrow {
@@ -311,6 +341,16 @@ main {
 	margin-left: 15%;
 }
 
+.bottomTilesSection a:hover {
+	opacity: 70%;
+	zoom: 1.01;
+	-webkit-transition: opacity 0.15s ease-in-out;
+	-moz-transition: opacity 0.15s ease-in-out;
+	-ms-transition: opacity 0.15s ease-in-out;
+	-o-transition: opacity 0.15s ease-in-out;
+	transition: opacity 0.15s ease-in-out;
+}
+
 .bottomTile {
 	border: #333 solid 1px;
 	display: flex;
@@ -321,6 +361,9 @@ main {
 	padding-right: 10px;
 	flex-basis: 300px;
 	height: 65px;
+	color: #333;
+	background-color: #6c7ae0;
+	border-radius: 10px;
 }
 
 #ayuda {
@@ -538,6 +581,7 @@ footer{
 	padding-top: 10px;
 }
 
+
 .footer_direccion h2{
 	padding-bottom: 10px;
 	padding-top: 10px;
@@ -552,14 +596,36 @@ footer{
 }
 
 
+.footer-redes a{
+	display: inline-block;
+	text-decoration: none;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 50%;
+	text-align: center;
+	color: #000;
+	background: white;
+}
 
+/* ------- ESTILO PRODUCTDETAIL  -------*/
 
+.imagen_del_producto {
+    margin-left: 300px;
+    width: 600px;
+  }
+ 
+  .texto_descripcion {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: content-box;
+    padding: 40px;
+    width: 500px;
+    height: 100px;
+    border: 1px solid black;
+    margin-left: 740px;
+  }
+  
+ .botones_productDetail {
+	 margin-bottom: 100px;
+ }
 
-
-
-
-
-
-
-
-.
