@@ -373,7 +373,9 @@ main {
 
 /* ESTILO REGISTER*/
 
-.register {
+
+
+
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -399,7 +401,10 @@ main {
 	padding-left: 20px;
 }
 
-.register_titulo {
+
+.register_titulo{
+
+
 	font-family: 'Poppins', sans-serif;
 	height: 45px;
 	font-size: 35px;
@@ -415,6 +420,7 @@ main {
 	margin-top: 6px;
 	margin-bottom: 10px;
 	font-family: 'Poppins', sans-serif;
+
 	justify-content: space-between;
 }
 
@@ -422,6 +428,7 @@ main {
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
+
 
 label {
 	display: inline-block;
@@ -434,6 +441,12 @@ label {
 	box-sizing: border-box;
 	padding-left: 10px;
 }
+
+
+#register_inicia_seccion {
+	color: #f04636;
+}
+
 
 #register_inicia_seccion {
 	color: #f04636;
@@ -448,6 +461,7 @@ label {
 	width: 50%;
 	height: 65px;
 	flex-basis: 300px;
+
 	border-radius: 2px;
 	background-color: cornflowerblue;
 	color: #fff;
@@ -456,6 +470,7 @@ label {
 	font-size: 0.875rem;
 	font-weight: 500;
 	letter-spacing: 0.06em;
+
 	border: #333 solid 1px;
 	padding-right: 10px;
 	margin-top: 5px;
@@ -483,13 +498,19 @@ label {
 	padding-left: 20px;
 }
 
-.login_titulo {
+
+ .login_titulo{
+
+
 	font-family: 'Poppins', sans-serif;
 	font-size: 35px;
 	font-weight: 700;
 	line-height: 48px;
-	color: #e8623f;
-}
+
+
+	color:#E8623F;
+	}
+
 
 .login_form {
 	border-radius: 4px;
@@ -525,17 +546,24 @@ label {
 
 /* ESTILO FOOTER*/
 
-footer {
+
+footer{
+
+
 	width: 100%;
 	height: 150px;
 	font-family: 'Poppins', sans-serif;
+
 	background: #b3afaf;
 	display: flex;
 	font-size: small;
 	color: black;
 }
 
-.main-content {
+
+.main-content{
+
+
 	display: flex;
 	flex-direction: row-reverse;
 	justify-content: center;
@@ -543,7 +571,10 @@ footer {
 	width: 85%;
 }
 
-.footer_nosotros {
+
+
+.footer_nosotros{
+
 	width: 33%;
 	padding-bottom: 20px;
 }
@@ -588,7 +619,11 @@ footer {
 .footer_social {
 }
 
-.footer-redes a {
+
+
+.footer-redes a{
+
+
 	display: inline-block;
 	text-decoration: none;
 	width: 40px;
@@ -603,24 +638,8 @@ footer {
 /* ------- ESTILO PRODUCTDETAIL  -------*/
 
 .imagen_del_producto {
-	margin-left: 300px;
-	width: 600px;
-}
 
-.texto_descripcion {
-	font-family: 'Poppins', sans-serif;
-	box-sizing: content-box;
-	padding: 40px;
-	width: 500px;
-	height: 100px;
-	border: 1px solid black;
-	margin-left: 740px;
-}
-
-.botones_productDetail {
-	margin-bottom: 100px;
-}
-
+	
 /* HEADER MOBILE */
 
 .hamburguerButton {
@@ -649,3 +668,25 @@ footer {
 		padding: 0;
 	}
 }
+
+
+    margin-left: 300px;
+    width: 600px;
+  }
+ 
+  .texto_descripcion {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: content-box;
+    padding: 40px;
+    width: 500px;
+    height: 100px;
+    border: 1px solid black;
+    margin-left: 740px;
+  }
+  
+ .botones_productDetail {
+	 margin-bottom: 100px;
+ }
+
+
+
