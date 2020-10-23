@@ -1,0 +1,79 @@
+/* ESTILO LOGIN*/
+
+.icono_go_back {
+	color: #e8623f;
+	margin: 60px;
+}
+
+.login {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: relative;
+}
+
+.login_cuerpo {
+	display: flex;
+	flex-direction: column;
+	display: inline-block;
+	width: 400px;
+	height: 400px;
+	margin-left: 60px;
+}
+
+.foto_login_amigos {
+	padding-left: 20px;
+}
+
+.login_titulo {
+	font-family: 'Poppins', sans-serif;
+	font-size: 35px;
+	font-weight: 700;
+	line-height: 48px;
+	display: inline-block;
+	color: #e8623f;
+}
+
+.login_form {
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: 'Poppins', sans-serif;
+	justify-content: space-between;
+	display: inline-block;
+}
+
+.login_form_password {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+label {
+	display: inline-block;
+	width: 80px;
+}
+
+.olvidar_password {
+	font-family: 'Poppins', sans-serif;
+	color: #e8623f;
+	display: inline-block;
+}
+
+#login_button{
+	padding: 0 16px;
+	border-radius: 2px;
+	background-color: #6c7ae0 ;
+	color: #fff;
+	height: 36px;
+	line-height: 2.25rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	width: 110px; 
+	margin-left: 50%;
+	margin-top: 10px;
+  	transform: translateX(-50%);
+}
+
+
