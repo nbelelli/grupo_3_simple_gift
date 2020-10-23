@@ -229,3 +229,34 @@
 #ayuda {
 	margin-left: 20px;
 }
+
+/* **********  M O B I L E  *********** */
+
+@media (min-width: 426px) {
+}
+
+@media (max-width: 425px) {
+	.tilesSlider {
+		flex-direction: column;
+	}
+
+	.tilesSliderArrow {
+		display: none;
+	}
+
+	/* 	.categoryTile {
+		height: 50vh;
+	} */
+
+	.elegidosSlider {
+		flex-direction: column;
+	}
+
+	.bottomTilesSection {
+		display: none;
+	}
+
+	footer {
+		display: none;
+	}
+}
