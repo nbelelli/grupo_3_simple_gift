@@ -14,6 +14,7 @@ header {
 	box-shadow: 0px 2px #cccccc;
 	top: 0%;
 	z-index: 1;
+	align-items: center;
 }
 
 .left_header {
@@ -115,4 +116,33 @@ header div a:hover {
 
 .logo img {
 	width: 60px;
+}
+
+/* ESTILOS MOBILE */
+
+.hamburguerButton {
+	font-size: 20px;
+}
+
+@media (min-width: 426px) {
+	#mobileHeader {
+		display: none;
+	}
+}
+
+@media (max-width: 425px) {
+	#desktopHeader {
+		display: none;
+	}
+
+	.left_header {
+		flex: 1;
+		padding: 0;
+		margin: 0;
+	}
+
+	.right_header {
+		flex: 1;
+		padding: 0;
+	}
 }
