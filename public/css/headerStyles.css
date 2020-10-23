@@ -111,7 +111,7 @@ header div a:hover {
 }
 
 .carrito {
-	/* background-color: pink; */
+	font-size: 20px;
 }
 
 .logo img {
@@ -121,7 +121,8 @@ header div a:hover {
 /* ESTILOS MOBILE */
 
 .hamburguerButton {
-	font-size: 20px;
+	font-size: 25px;
+	margin: 0;
 }
 
 @media (min-width: 426px) {
@@ -133,16 +134,5 @@ header div a:hover {
 @media (max-width: 425px) {
 	#desktopHeader {
 		display: none;
-	}
-
-	.left_header {
-		flex: 1;
-		padding: 0;
-		margin: 0;
-	}
-
-	.right_header {
-		flex: 1;
-		padding: 0;
 	}
 }
