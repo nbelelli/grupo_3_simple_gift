@@ -1,0 +1,18 @@
+.imagen_del_producto {
+	margin-left: 300px;
+	width: 600px;
+}
+
+.texto_descripcion {
+	font-family: 'Poppins', sans-serif;
+	box-sizing: content-box;
+	padding: 40px;
+	width: 500px;
+	height: 100px;
+	border: 1px solid black;
+	margin-left: 740px;
+}
+
+.botones_productDetail {
+	margin-bottom: 100px;
+}
