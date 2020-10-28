@@ -82,33 +82,33 @@
 }
 
 .catGaming {
-	background-image: url('/images/categoriesTiles/switch.jpg');
+	background-image: url('/images/categoriesTiles/cat_games1.jpg');
 	color: white;
 }
 
 .catMate {
-	background-image: url('/images/categoriesTiles/mate.jpg');
+	background-image: url('/images/categoriesTiles/cat_mate1.jpg');
 	color: white;
 }
 
 .catBeer {
-	background-image: url('/images/categoriesTiles/beer1.jpg');
+	background-image: url('/images/categoriesTiles/cat_beer1.jpg');
 
 	color: white;
 }
 
 .catMusic {
-	background-image: url('/images/categoriesTiles/Music1.jpg');
+	background-image: url('/images/categoriesTiles/cat_music1.jpg');
 	color: white;
 }
 
 .catBajon {
-	background-image: url('/images/categoriesTiles/bajon1.jpg');
+	background-image: url('/images/categoriesTiles/cat_gourmet1.jpg');
 	color: white;
 }
 
 .catSports {
-	background-image: url('/images/categoriesTiles/sports1.jpg');
+	background-image: url('/images/categoriesTiles/cat_sports1.jpg');
 	color: white;
 }
 
