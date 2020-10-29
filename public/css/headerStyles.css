@@ -112,10 +112,27 @@ header div a:hover {
 
 .carrito {
 	font-size: 20px;
+	position: relative;
 }
 
 .logo img {
 	width: 60px;
+}
+
+.carritoCantidad {
+	color: white;
+	background-color: #6c7ae0;
+	position: absolute;
+	top: -5px;
+	left: 90%;
+	font-size: 15px;
+	width: 18px;
+	height: 18px;
+	border-radius: 50px;
+	/* text-align: center; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* ESTILOS MOBILE */
