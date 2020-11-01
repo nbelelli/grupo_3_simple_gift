@@ -81,23 +81,53 @@
         <form action=“validar.php” method=“POST”></form>
      <p class="form_register"> 
         <label for=“nombre”>Nombre:</label>
-        <input type=“text” name=“nombre” id=“nombre” placeholder="Leandro" required>>
+        <input 
+            type=“text” 
+            name=“nombre” 
+            id=“nombre” 
+            placeholder="Leandro" 
+            required
+            class='regAndLogInputs'>
      </p>
      <p class="form_register">
         <label for=“apellido”>Apellido:</label>
-        <input type=“text” name=“apellido” id=“apellido” placeholder="Perez"required>>
+        <input 
+            type=“text” 
+            name=“apellido” 
+            id=“apellido” 
+            placeholder="Perez"
+            required
+            class='regAndLogInputs'>
     </p>
     <p class="form_register">
         <label for=“email”>Email:</label>
-        <input type=“email” name=“email” id=“email” placeholder="ejemplo@correo.com" required>>   
+        <input 
+            type=“email” 
+            name=“email” 
+            id=“email” 
+            placeholder="ejemplo@correo.com" 
+            required
+            class='regAndLogInputs'>   
     </p>
     <p class="form_register">
         <label for=“telefono”>Telefono:</label>
-        <input type=“tel” name=“telefono” placeholder="11-4444-4444" required>>
+        <input 
+            type=“tel” 
+            name=“telefono” 
+            placeholder="11-4444-4444" 
+            required
+            class='regAndLogInputs'>
     </p>
     <p class="form_register">
         <label for="password">Password:</label>
-        <input type="password" name="password" id="password" placeholder="contraseña" pattern=".{6,}" required>>
+        <input 
+            type="password" 
+            name="password" 
+            id="password" 
+            placeholder="contraseña" 
+            pattern=".{6,}" 
+            required
+            class='regAndLogInputs'>
     </p>
     <button id="registro_button" type=“submit”>Enviar</button>
     

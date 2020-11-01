@@ -195,10 +195,10 @@
 	margin-bottom: 50px;
 	display: flex;
 	width: 100%;
-	/* justify-content: space-between; */
+	/* justify-content: space-around; */
 	align-items: center;
 	height: 100px;
-	margin-left: 15%;
+	/* padding-left: 15%; */
 }
 
 .bottomTilesSection a:hover {
@@ -216,14 +216,18 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 50%;
 	padding-left: 10px;
 	padding-right: 10px;
 	flex-basis: 300px;
-	height: 65px;
-	color: #333;
+	height: 55px;
+	color: white;
 	background-color: #6c7ae0;
 	border-radius: 10px;
+	font-size: 15px;
+}
+
+#mediosPago {
+	margin-left: 2%;
 }
 
 #ayuda {
