@@ -216,14 +216,14 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 50%;
 	padding-left: 10px;
 	padding-right: 10px;
 	flex-basis: 300px;
-	height: 65px;
-	color: #333;
+	height: 55px;
+	color: white;
 	background-color: #6c7ae0;
 	border-radius: 10px;
+	font-size: 15px;
 }
 
 #mediosPago {
