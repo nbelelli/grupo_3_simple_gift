@@ -1,14 +1,12 @@
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
         <head>
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <link rel="stylesheet" href="./css/styles.css" />
-            <link rel="stylesheet" href="css/headerStyles.css" />
-            <link rel="stylesheet" href="css/footerStyles.css"/>
-            <link rel="stylesheet" href="css/registerStyles.css"/>
-
+            <link rel="stylesheet" href="/css/styles.css" />
+            <link rel="stylesheet" href="/css/headerStyles.css" />
+            <link rel="stylesheet" href="/css/footerStyles.css"/>
+            <link rel="stylesheet" href="/css/registerStyles.css"/>
             <link
                 rel="stylesheet"
                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
@@ -78,8 +76,8 @@
     <seccion class="register_cuerpo">  
         <h1 class="register_titulo">¡Registrate!</h1>
         <article class="register_form"> 
-        <form action=“validar.php” method=“POST”></form>
-     <p class="form_register"> 
+        <form action=“validar.php” method=“POST”>
+     <div class="form_register"> 
         <label for=“nombre”>Nombre:</label>
         <input 
             type=“text” 
@@ -88,8 +86,8 @@
             placeholder="Leandro" 
             required
             class='regAndLogInputs'>
-     </p>
-     <p class="form_register">
+     </div>
+     <div class="form_register">
         <label for=“apellido”>Apellido:</label>
         <input 
             type=“text” 
@@ -98,8 +96,8 @@
             placeholder="Perez"
             required
             class='regAndLogInputs'>
-    </p>
-    <p class="form_register">
+     </div>
+    <div class="form_register">
         <label for=“email”>Email:</label>
         <input 
             type=“email” 
@@ -108,8 +106,8 @@
             placeholder="ejemplo@correo.com" 
             required
             class='regAndLogInputs'>   
-    </p>
-    <p class="form_register">
+    </div>
+    <div class="form_register">
         <label for=“telefono”>Telefono:</label>
         <input 
             type=“tel” 
@@ -117,8 +115,8 @@
             placeholder="11-4444-4444" 
             required
             class='regAndLogInputs'>
-    </p>
-    <p class="form_register">
+    </div>
+    <div class="form_register">
         <label for="password">Password:</label>
         <input 
             type="password" 
@@ -128,9 +126,9 @@
             pattern=".{6,}" 
             required
             class='regAndLogInputs'>
-    </p>
+    </div>
     <button id="registro_button" type=“submit”>Enviar</button>
-    
+    </form>
 
     
     <h3 class="register_ya_tenes_cuenta">¿Ya tenés una cuenta de Simple Gift?  <a href="/views/login.html" id="register_inicia_seccion">  Iniciá Sección</a></h3>
