@@ -1,10 +1,10 @@
 .productsFilterSection {
-	margin-top: 100px;
-	border: blueviolet 2px solid;
+	margin-top: 70px;
+	/* border: blueviolet 2px solid; */
 }
 
 .productsFilter {
-	border: olive 2px solid;
+	/* border: olive 2px solid; */
 	width: 50%;
 	display: flex;
 	/* justify-content: space-around; */
@@ -18,7 +18,8 @@
 }
 
 .filterTitle {
-	/* border: chartreuse 2px solid; */
+	font-size: 20px;
+	margin-left: 20px;
 }
 
 .filterNav {
@@ -47,7 +48,24 @@
 }
 
 .productsList {
-	border: black 2px solid;
+	/* border: black 2px solid; */
 	width: 100%;
 	display: flex;
+	box-sizing: border-box;
+	margin-top: 20px;
+}
+
+.prodListResultsContainer {
+	display: flex;
+	/* justify-content: space-around; */
+	width: 100%;
+	box-sizing: border-box;
+	flex-wrap: wrap;
+
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.prodListResultsContainer div {
+	margin: 1%;
 }
