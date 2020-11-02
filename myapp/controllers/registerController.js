@@ -1,13 +1,13 @@
-registerController = {
+/* registerController = {
 	home: (req, res) => {
 		res.render('login');
 	},
-};
+}; */
 
-const registerController= {
-    register: (req, res) => {
-        res.send(__dirname + '/views/register.html');
-        },
-}
+const registerController = {
+	register: (req, res) => {
+		res.render('register');
+	},
+};
 
 module.exports = registerController;
