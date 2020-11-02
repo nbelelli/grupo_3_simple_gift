@@ -4,6 +4,6 @@ const registerController = require('../controllers/registerController');
 
 /* GET register page. */
 
-router.get('/register', registerController.register);
-  
+router.get('/', registerController.register);
+
 module.exports = router;
