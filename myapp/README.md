@@ -1,18 +1,28 @@
+SPRINT 3
+
+Enlace al tablero de trabajo en el archivo ​README.md:
+
+https://trello.com/b/HPHlJ6iq/sprint-3-13-11
+
+---
+
 SPRINT 2
 
 Enlace al tablero de trabajo en el archivo ​README.md:
 
 https://trello.com/b/1D4ts2WV/sprint-2-23-10
 
+---
+
 SPRINT 1
+
 # grupo_3_boxclub
+
 DEFINICIÓN DEL NEGOCIO:
 En Simple GIft ofrecemos boxes temáticos y personalizados con items de primera calidad para agasajar a alguien especial. Los boxes son diversos, pueden ser desayunos, selecciones de vinos, chocolates finos y botellas espirituosas o ingredientes para un barista en potencia. También nos encargamos de la logística puerta a puerta y de la personalización para dar un regalo singular a esa persona única. Te lo hacemos, Simple.
 
 PUBLICO OBJETIVO DE SIMPLE GIFT:
 Ambos sexos - 21 a 65 años - región: CABA y primer cordón GBA - Nivel socio económico: Medio - Medio Alto.
-
-
 
 INSPIRACION/REFERENTES:
 ● Por los productos o servicios que ofrecen
@@ -44,9 +54,8 @@ ZARA: Elegimos esta por el estilo de presentar con imágenes que ocupan todo el 
 
 AKIABARA: Elegimos este sitio por el estilo del menú incluido en las imágenes que no dejan espacios en banco entre las diferentes secciones del sitio, los productos que comercializa la pagina no tienen similitud con los que nuestro proyecto tendrá pero los estilos que utilizan aquí nos servirán de inspiración.
 
-WIREFRAMES: 
+WIREFRAMES:
 https://drive.google.com/drive/folders/1ib8qstkLkIRznMKq0zGQ3CgeT0bl7ThR?usp=sharing
-
 
 //INTEGRANTES DEL EQUIPO//
 Nicolás Brunfman: Soy Nicolás Brunfman, 36 años, docente universitario y Licenciado en Ciencias Políticas por la UBA. Soltero, vivo por Villa Crespo, amo viajar y tengo familia en Barcelona. Actualmente, también trabajo en la Jefatura de Gabinete de la Nación en una Dirección Nacional donde me encuentro como analista de diseño organizacional. Me enojo y me alegro de un segundo al otro, de emociones fáciles.
@@ -54,5 +63,3 @@ Nicolás Brunfman: Soy Nicolás Brunfman, 36 años, docente universitario y Lice
 Jorge Adrian Pucheta: Soy Jorge Adrian Pucheta 42 años, tengo una hermosa familia compuesta por mi esposa y nuestros 3 hijos, recibido en 2013 de Técnico en Seguridad e Higiene, me encanta jugar Golf cuando tengo tiempo, aprendo con lentitud pero con la virtud de que no olvido lo que aprendo. actualmente me propuse convertirme en programador aunque es un mundo que nunca antes había explorado.
 
 Nicolás Belelli: Soy Nico Belelli, tengo 35 años y trabajo como Analista QA hace varios años. Estoy ansioso por dar mis primeros pasos en el mundo del desarrollo.
-
-
