@@ -1,6 +1,15 @@
+
+.contenedor-general {
+	
+display: flex;
+flex-direction: row;
+}
+
 .imagen_del_producto {
+	margin-top: 50px;
 	margin-left: 300px;
-	width: 600px;
+	width: 400px;
+	margin-bottom: 50px;
 }
 
 .texto_descripcion {
@@ -9,8 +18,7 @@
 	padding: 40px;
 	width: 500px;
 	height: 100px;
-	border: 1px solid black;
-	margin-left: 740px;
+	line-height: 80px;
 }
 
 .botones_productDetail {
