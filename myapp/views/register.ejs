@@ -6,8 +6,8 @@
             <link rel="stylesheet" href="/css/styles.css" />
             <link rel="stylesheet" href="/css/headerStyles.css" />
             <link rel="stylesheet" href="/css/footerStyles.css"/>
-            <link rel="stylesheet" href="/css/registerStyles.css"/>
-            <link
+            <link rel="stylesheet" href="/css/loginRegisterStyles.css"/>
+            <linkS
                 rel="stylesheet"
                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
             />
@@ -20,20 +20,22 @@
         </head>
 
     <%- include('./partials/header') %>
-    
+
+    <!-- *******REGISTER MAIN***-->
+
     <body>
-    <main class="register"> 
-    <div class="register_container"> 
+    <main class="mainform"> 
+    <div class="registerContainer"> 
         <div>
             <span>
                 <a class="icono_go_back" href="#"><i class="fas fa-long-arrow-alt-left fa-lg"></i></a>
             </span>
         </div> 
-    <seccion class="register_cuerpo">  
-        <h1 class="register_titulo">¡Registrate!</h1>
-        <article class="register_form"> 
+    <seccion class="formSeccion">  
+        <h1 class="formTitle">¡Registrate!</h1>
+        <article class="formsArticle"> 
         <form action=“validar.php” method=“POST”>
-     <div class="form_register"> 
+     <div class="formRegisterPadding"> 
         <label for=“nombre”>Nombre:</label>
         <input 
             type=“text” 
@@ -43,7 +45,7 @@
             required
             class='regAndLogInputs'>
      </div>
-     <div class="form_register">
+     <div class="formRegisterPadding">
         <label for=“apellido”>Apellido:</label>
         <input 
             type=“text” 
@@ -53,7 +55,7 @@
             required
             class='regAndLogInputs'>
      </div>
-    <div class="form_register">
+    <div class="formRegisterPadding">
         <label for=“email”>Email:</label>
         <input 
             type=“email” 
@@ -63,7 +65,7 @@
             required
             class='regAndLogInputs'>   
     </div>
-    <div class="form_register">
+    <div class="formRegisterPadding">
         <label for=“telefono”>Telefono:</label>
         <input 
             type=“tel” 
@@ -72,7 +74,7 @@
             required
             class='regAndLogInputs'>
     </div>
-    <div class="form_register">
+    <div class="formRegisterPadding">
         <label for="password">Password:</label>
         <input 
             type="password" 
@@ -83,24 +85,23 @@
             required
             class='regAndLogInputs'>
     </div>
-    <button id="registro_button" type=“submit”>Enviar</button>
+    <button id="formButton" type=“submit”>Enviar</button>
     </form>
 
     
-    <h3 class="register_ya_tenes_cuenta">¿Ya tenés una cuenta de Simple Gift?  <a href="/views/login.html" id="register_inicia_seccion">  Iniciá Sección</a></h3>
+    <h3 class="registerYaTenesCuenta">¿Ya tenés una cuenta de Simple Gift?  <a href="/views/login.html" id="registerStartSection">  Iniciá Sección</a></h3>
     
     </form>
     </article>
     </seccion>
     </div>
-    <div class="foto_register_container"> 
+    <div class="fotoRegisterContainer"> 
         <img width="50%" class="foto_login_amigos" src="/images/login_amigos.jpg" alt="amigos_regalo">    
     </div>  
 </main>
-
-    <footer>  
+<footer>  
         <%- include('./partials/footer') %>
-    </footer>
+</footer>
 </body>
 </html>
 

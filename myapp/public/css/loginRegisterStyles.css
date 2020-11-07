@@ -5,27 +5,35 @@
 	margin: 60px;
 }
 
-.login {
+.loginOUT {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	position: relative;
 }
 
-.login_cuerpo {
+.mainform {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: relative;
+}
+
+.formSeccion {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	display: inline-block;
-	width: 400px;
+	width: 350px;
 	height: 400px;
 	margin-left: 60px;
 }
 
-.foto_login_amigos {
+.fotoLoginRegister {
 	padding-left: 20px;
 }
 
-.login_titulo {
+.formTitle {
 	font-family: 'Poppins', sans-serif;
 	font-size: 35px;
 	font-weight: 700;
@@ -34,19 +42,25 @@
 	color: #e8623f;
 }
 
-.login_form {
+.formsArticle {
+	padding-top: 15px;
 	border-radius: 4px;
 	box-sizing: border-box;
-	margin-top: 10px;
+	margin-top: 6px;
 	margin-bottom: 10px;
 	font-family: 'Poppins', sans-serif;
-	justify-content: space-between;
 	display: inline-block;
+	justify-content: space-between;
 }
 
-.login_form_password {
-	padding-top: 10px;
-	padding-bottom: 10px;
+.formLoginPadding {
+	padding-top: 7px;
+	padding-bottom: 7pxpx;
+}
+
+.formRegisterPadding {
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 label {
@@ -54,13 +68,7 @@ label {
 	width: 80px;
 }
 
-.olvidar_password {
-	font-family: 'Poppins', sans-serif;
-	color: #e8623f;
-	display: inline-block;
-}
-
-#login_button {
+#formButton {
 	padding: 0 16px;
 	border-radius: 2px;
 	background-color: #6c7ae0;
@@ -75,3 +83,29 @@ label {
 	margin-top: 10px;
 	transform: translateX(-50%);
 }
+
+.forgotPassword {
+	font-family: 'Poppins', sans-serif;
+	color: #e8623f;
+	display: inline-block;
+}
+
+/* ESTILO REGISTER*/
+
+.fotoRegisterContainer {
+	padding-left: 20px;
+}
+
+.registerYaTenesCuenta {
+	font-family: 'Poppins', sans-serif;
+	font-size: medium;
+	box-sizing: border-box;
+	padding-left: 10px;
+}
+
+#registerStartSection {
+	color: #f04636;
+}
+
+
+

@@ -1,6 +1,24 @@
-
-    <%- include('./partials/head') %>
-
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <link rel="stylesheet" href="/css/styles.css" />
+            <link rel="stylesheet" href="/css/headerStyles.css" />
+            <link rel="stylesheet" href="/css/footerStyles.css"/>
+            <link rel="stylesheet" href="/css/loginRegisterStyles.css"/>
+            <linkS
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+            />
+            <link
+                href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+                rel="stylesheet"
+            />
+            <link href="fontawesome/css/all.css" rel="stylesheet">
+            <title>Registro</title>
+        </head>
+        
     <%- include('./partials/header') %>
  
     <body>
@@ -51,7 +69,10 @@
 			</div>
 		</header>
 
-    <main class="login"> 
+
+        <!-- *******LOGIN MAIN***-->
+
+    <main class="mainform"> 
     <div class="login_container"> 
         <div>
             <span>
@@ -59,12 +80,12 @@
             </span>
         </div>
 
-        <seccion class="login_cuerpo">  
-        <h1 class="login_titulo">¡Iniciá sesión acá!</h1>
-        <article class="login_form"> 
+        <seccion class="formSeccion">  
+        <h1 class="formTitle">¡Iniciá sesión acá!</h1>
+        <article class="formsArticle"> 
 
         <form action=“validar.php” method=“POST”>
-        <div class="login_form_mail">
+        <div class="loginFormMail">
           <label for=“email”>Email:      </label>
             <input 
              type=“email” 
@@ -74,7 +95,7 @@
              class='regAndLogInputs'>   
         </div>
 
-        <div class="login_form_password">
+        <div class="formLoginPadding">
         <label for="password">Password:</label>
         <input 
             type="password" 
@@ -85,18 +106,18 @@
             required
             class='regAndLogInputs'>
         </div>
-         <button id="login_button" type=“submit”>  Enviar  </button>
+         <button id="formButton" type=“submit”>  Enviar  </button>
         </form>
         </article> 
         
     
-    <a class="olvidar_password" href="#" id="blanquear_password">¿Olvidaste tu contraseña?   </a>
+    <a class="forgotPassword" href="#" id="resetPassword">¿Olvidaste tu contraseña?   </a>
     
     
     </seccion>
     </div>
     <div> 
-    <img width="70%" class="foto_register_amigos" src="images/register_amigos.jpg" alt="Foto_Pagina_Registro">     
+    <img width="70%" class="fotoLoginRegister" src="images/register_amigos.jpg" alt="Foto_Pagina_Registro">     
 </div>
     </main>
 
