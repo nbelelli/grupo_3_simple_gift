@@ -107,5 +107,48 @@ label {
 	color: #f04636;
 }
 
+/* STYLES LOGIN REGISTER INPUTS */
+.regAndLogInputs {
+	border: 1px solid #333;
+	padding-left: 5px;
+	position: relative;
+	outline: none;
+}
 
+.regAndLogInputs:focus {
+	border: 1px solid #6c7ae0;
+	outline: none;
+}
 
+textarea.regAndLogInputs {
+	align: left;
+}
+
+/* C R E A T E    AND   E D I T   F O R M S */
+
+.createEditFormSection {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-bottom: 60px;
+	margin-left: 5%;
+}
+
+.createEditForm {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	width: 60%;
+}
+
+.createEditForm div {
+	display: flex;
+	/* justify-content: space-between; */
+	justify-content: left;
+	align-items: center;
+	width: 100%;
+}
+.createEditForm div label {
+	width: 15%;
+	/* margin-right: 10px; */
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/styles.css" />
+		<link rel="stylesheet" href="/css/headerStyles.css" />
+		<link rel="stylesheet" href="/css/footerStyles.css" />
+		<link rel="stylesheet" href="/css/loginRegisterStyles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+		<link href="/fontawesome/css/all.css" rel="stylesheet" />
+		<title>Carga de Prodcto</title>
+	</head>
+
+	<%- include('../partials/header') %>
+
+	<body>
+		<main>
+			<div>
+				<div>
+					<span>
+						<a class="icono_go_back" href="#"
+							><i class="fas fa-long-arrow-alt-left fa-lg"></i
+						></a>
+					</span>
+				</div>
+				<section class="createEditFormSection">
+					<h1 class="formTitle">Carga de Producto</h1>
+
+					<form action="products" method="POST" class="createEditForm">
+						<div class="formRegisterPadding">
+							<label for="“name”">Nombre:</label>
+							<input
+								type="text"
+								name="name"
+								id="name"
+								placeholder="Box Ferrero Rocher"
+								required
+								class="regAndLogInputs"
+							/>
+						</div>
+
+						<div class="formRegisterPadding">
+							<label for="description">Precio:</label>
+							<input
+								type="text"
+								rows="4"
+								cols="50"
+								name="precio"
+								id="precio"
+								placeholder="1500"
+								class="regAndLogInputs"
+							/>
+						</div>
+
+						<div class="formRegisterPadding">
+							<label for="discount">Descuento%:</label>
+							<input
+								type="number"
+								name="discount"
+								id="discount"
+								class="regAndLogInputs"
+							/>
+						</div>
+
+						<div class="formRegisterPadding">
+							<label for="image">Imagen:</label>
+							<input type="file" name="image" id="image" />
+						</div>
+
+						<div class="formRegisterPadding">
+							<label for="image">Categoría:</label>
+
+							<select name="category" id="category" class="regAndLogInputs">
+								<option value="chocolate">Gaming</option>
+								<option value="cerveza">Mate</option>
+								<option value="chocolate">Cerveza</option>
+								<option value="cerveza">Musica</option>
+								<option value="chocolate">Gourmet</option>
+								<option value="cerveza">Deportes</option>
+							</select>
+						</div>
+
+						<div class="formRegisterPadding">
+							<label for="stock">Stock:</label>
+							<input
+								type="number"
+								name="stock"
+								id="stock"
+								class="regAndLogInputs"
+							/>
+						</div>
+
+						<div class="formRegisterPadding">
+							<label for="masvendido">Más vendido</label>
+							<input
+								type="checkbox"
+								name="masvendido"
+								id="masvendido"
+								class="regAndLogInputs"
+							/>
+						</div>
+
+						<div class="formRegisterPadding">
+							<label for="description">Descripción:</label>
+							<textarea
+								rows="4"
+								cols="50"
+								name="description"
+								id="description"
+								class="regAndLogInputs"
+								placeholder="Este box incluye..."
+							></textarea>
+						</div>
+
+						<button id="formButton" type="“submit”">Guardar</button>
+					</form>
+				</section>
+			</div>
+		</main>
+
+		<%- include('../partials/footer') %>
+	</body>
+</html>
