@@ -1,6 +1,9 @@
 const productsController = {
 	products: (req, res) => {
-		res.render('./Products/productsList');
+		res.render('Products/productsList');
+	},
+	create: (req, res) => {
+		res.render('Products/productCreate');
 	},
 };
 
