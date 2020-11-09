@@ -1,4 +1,5 @@
 const express = require('express');
+const productsController = require('../controllers/productsController');
 const router = express.Router();
 const controller = require('../controllers/productsController');
 
@@ -6,5 +7,8 @@ const controller = require('../controllers/productsController');
 router.get('/', controller.products);
 //ir a la pagina de carga de producto
 router.get('/create', controller.create);
+//ir a la pagina de Edicion de producto
+router.get('/edit', productsController.edit);
+
 
 module.exports = router;

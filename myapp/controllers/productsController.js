@@ -3,11 +3,13 @@ const productsController = {
 	products: (req, res) => {
 		res.render('Products/productsList');
 	},
-
 	/* Navigates to the Create product page */
 	create: (req, res) => {
 		res.render('Products/productCreate');
 	},
+	edit: (req, res)=> {
+		res.render('Products/productEdit');
+	}
 };
 
 module.exports = productsController;
