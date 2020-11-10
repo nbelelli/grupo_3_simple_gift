@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="/css/headerStyles.css" />   
+		<link rel="stylesheet" href="/css/headerStyles.css" />
 		<link rel="stylesheet" href="/css/styles.css" />
 		<link rel="stylesheet" href="/css/indexStyles.css" />
-		<link rel="stylesheet" href="/css/footerStyles.css"/>
+		<link rel="stylesheet" href="/css/footerStyles.css" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
@@ -24,16 +24,14 @@
 		<title>Home</title>
 	</head>
 	<body>
-
-<%- include('./partials/header') %>
-
+		<%- include('./partials/header') %>
 
 		<main>
 			<!--******  C A T E G O R I A S  *******-->
 			<section class="categorias" id="homeCategorias">
 				<div class="sectionHeader">
 					<div class="sectionTitle">Categorías.</div>
-					<div class="sectionVerMas"><a href="#">Ver más</a></div>
+					<div class="sectionVerMas"><a href="/products">Ver más</a></div>
 				</div>
 
 				<div class="tilesSlider">
@@ -75,7 +73,9 @@
 			<section class="homeElegidos" id="homeElegidos">
 				<div class="sectionHeader">
 					<div class="sectionTitle">Los más elegidos.</div>
-					<div class="sectionVerMas"><a href="#">Ver todos los boxes</a></div>
+					<div class="sectionVerMas">
+						<a href="/products">Ver todos los boxes</a>
+					</div>
 				</div>
 
 				<div class="elegidosSlider">
@@ -192,8 +192,6 @@
 			</section>
 		</main>
 
-		<footer>  
-			<%- include('./partials/footer') %>
-		</footer>
+		<footer><%- include('./partials/footer') %></footer>
 	</body>
 </html>
