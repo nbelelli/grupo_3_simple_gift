@@ -131,7 +131,7 @@ textarea.regAndLogInputs {
 	flex-direction: column;
 	width: 100%;
 	margin-bottom: 60px;
-	margin-left: 5%;
+	margin-left: 4%;
 }
 
 .createEditForm {
@@ -151,4 +151,12 @@ textarea.regAndLogInputs {
 .createEditForm div label {
 	width: 15%;
 	/* margin-right: 10px; */
+}
+
+.createEditForm button {
+	background-color: red;
+}
+
+#CreateformButton {
+	color: green;
 }
