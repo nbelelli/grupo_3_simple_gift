@@ -155,3 +155,48 @@ textarea.regAndLogInputs {
 	width: 15%;
 	/* margin-right: 10px; */
 }
+
+/* **********  M O B I L E  *********** */
+
+
+@media (max-width: 460px){
+	.fotoLoginRegister:{
+    display: none;
+		} 
+	.formSeccion{
+		margin-left: 2%;
+		font-size: 0.8em;
+		}
+	.createEditFormSection{
+		margin-left: 2%;
+		font-size: 0.8em;
+	}  /*no convendria esta y formSeccion que sean misma etiqueta?*/
+
+	.icono_go_back{
+		margin-left: 2%;
+		}
+	.formTitle{
+		font-size: 1.5em;
+	}
+	.formsArticle{
+		margin-bottom: 2%;
+	}
+	.mainform{
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start
+	}
+	.registerYaTenesCuenta{
+		font-size: 1em;
+		padding-top: 2%;
+	}
+	main {
+		position: relative;
+		margin-top: 40px;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+}
+
+
+	

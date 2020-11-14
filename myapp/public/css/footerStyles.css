@@ -1,94 +1,168 @@
-/* ESTILO FOOTER*/
-
-footer {
+footer{
+	position: relative;
+	bottom: 0px;
 	width: 100%;
-	height: 150px;
+	background: rgb(170, 169, 169);
 	font-family: 'Poppins', sans-serif;
-	background: #b3afaf;
+  }
+  .main-content{
 	display: flex;
-	font-size: small;
-	color: black;
-}
-
-.main-content {
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: center;
-	margin-left: 80px;
-	width: 85%;
-	height: 25vh;
-}
-
-.footer_nosotros {
-	width: 33%;
-	padding-bottom: 20px;
-}
-
-.footer_nosotros h2 {
-	padding-bottom: 10px;
-	padding-top: 10px;
-}
-
-.footer_nosotros p {
-	font-size: 1.2em;
-}
-
-.content {
-	font-size: 1em;
-}
-
-footer h2{
-	font-size: 2em;
-}
-
-.footer_direccion {
-	width: 33%;
-}
-
-.footer_social {
-	width: 33%;
-	display: flex;
-	flex-direction: column;
-	color: black;
-}
-
-.footer_social a {
-	font-size: medium;
-}
-
-.footer_social h2 {
-	padding-bottom: 10px;
-	padding-top: 10px;
-}
-
-.footer_direccion h2 {
-	padding-bottom: 10px;
-	padding-top: 10px;
-}
-
-.footer_direccion span {
-	font-size: medium;
-}
-
-.footer-redes a {
-	display: inline-block;
-	text-decoration: none;
-	width: 40px;
+  }
+  .main-content .box{
+	flex-basis: 50%;
+	padding: 10px 20px;
+  }
+  .box h3{
+	font-size: 1.125rem;
+	font-weight: 600;
+	text-transform: uppercase;
+  }
+  .box .content{
+	margin: 20px 0 0 0;
+	position: relative;
+  }
+  .box .content:before{
+	position: absolute;
+	content: '';
+	top: -10px;
+	height: 2px;
+	width: 100%;
+	background: #f7f7f7;
+  }
+  .box .content:after{
+	position: absolute;
+	content: '';
+	height: 2px;
+	width: 15%;
+	background: #e8623f;
+	top: -10px;
+  }
+  .left .content p{
+	text-align: justify;
+  }
+  .left .content .social{
+	margin: 20px 0 0 0;
+  }
+  .left .content .social a{
+	padding: 0 2px;
+  }
+  .left .content .social a span{
 	height: 40px;
+	width: 40px;
+	background: #f7f7f7;
 	line-height: 40px;
-	border-radius: 50%;
 	text-align: center;
-	color: #000;
-	background: white;
-}
+	font-size: 18px;
+	border-radius: 5px;
+	transition: 0.3s;
+  }
+  .left .content .social a span:hover{
+	background: #6c7ae0;
+  }
+  .center .content .fas{
+	font-size: 1.4375rem;
+	background: #f7f7f7;
+	height: 45px;
+	width: 45px;
+	line-height: 45px;
+	text-align: center;
+	border-radius: 50%;
+	transition: 0.3s;
+	cursor: pointer;
+  }
+  .center .content .fas:hover{
+	background: #6c7ae0;
+  }
+  .center .content .text{
+	font-size: 1.0625rem;
+	font-weight: 500;
+	padding-left: 10px;
+  }
+  .center .content .phone{
+	margin: 15px 0;
+  }
+  .right form .text{
+	font-size: 1.0625rem;
+	margin-bottom: 2px;
+	color: #1d1c1c;
+  }
+  .right form .msg{
+	margin-top: 10px;
+  }
 
-@media screen and (max-width: 768px){
+  .msgForm:focus{
+	border: 1px solid #6c7ae0; 
+	outline-color: #6c7ae0;
+  }
+
+  .right form input, .right form .msgForm{
+	width: 100%;
+	font-size: 1.0625rem;
+	background: #f7f4f4;
+	padding-left: 10px;
+	border: 1px solid #6c7ae0;
+  }
+  .right form input:focus,
+  .right form .msgForm:focus{
+	outline-color: #6c7ae0;
+  }
+  .right form input{
+	height: 35px;
+  }
+  .right form .btn{
+	margin-top: 10px;
+  }
+  .right form .btn button{
+	height: 40px;
+	width: 100%;
+	border: none;
+	outline: none;
+	background: #6c7ae0;
+	font-size: 1.0625rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: .3s;
+	border-radius: 2px;
+  }
+  .right form .btn button:hover{
+	background: #6c7ae0;
+  }
+  .bottom center{
+	padding: 5px;
+	font-size: 0.9375rem;
+	background: #656565;
+  }
+  .bottom center span{
+	color: #656565;
+  }
+  .bottom center a{
+	color: #6c7ae0;
+	text-decoration: none;
+  }
+  .bottom center a:hover{
+	text-decoration: underline;
+  }
+
+/* **********  M O B I L E  *********** */
+
+  @media screen and (max-width: 900px) {
+	footer{
+	  position: relative;
+	  bottom: 0px;
+	}
 	.main-content{
-		display: flex;
-		flex-direction: column;
-		margin: auto;
-		height: 25vh;
-		} 
+	  flex-wrap: wrap;
+	  flex-direction: column;
+	}
+	.main-content .box{
+	  margin: 5px 0;
+	}
+ }
+
+  @media (max-width: 460px){
+	.main-content{
+    font-size: 0.8em;
+	} 
 } 
 
-@media screen and 
+ 
