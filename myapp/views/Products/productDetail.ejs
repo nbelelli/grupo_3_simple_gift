@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/styles.css" />
+		<link rel="stylesheet" href="/css/headerStyles.css" />
+		<link rel="stylesheet" href="/css/footerStyles.css" />
+		<link rel="stylesheet" href="/css/loginRegisterStyles.css" />
+		<link rel="stylesheet" href="/css/productDetail.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
-    <link rel="stylesheet" href="/css/productDetail.css" />
-    <link rel="stylesheet" href="/css/footerStyles.css"/>
-    <link rel="stylesheet" href="/css/headerStyles.css">
-    <link rel="stylesheet" href="/css/registerStyles.css">
-    <title>Document</title>
-</head>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+		<link href="/fontawesome/css/all.css" rel="stylesheet" />
+		<title>Detalle Producto</title>
+	</head>
 
-<body>
-    <%- include('../partials/header') %>
+	<%- include('../partials/header') %>
 
-    <main>
-        <section>
+	<body>
+		<main class="prodDetailMain">
+			<div id="prodDetailLeft" class="prodDetailLeft">
+				<div class="prodDetailImgContainer">
+					<img src="/images/Box Bartender primeros pasos 2.jpg" alt="" />
+				</div>
+			</div>
+			<div id="prodDetailRight" class="prodDetailRight">
+				<div class="prodDetailTitle">Box Bartender</div>
+				<div class="prodDetailDescription">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
+					explicabo consectetur odit, ea ut distinctio doloribus ratione fuga
+					aliquid quaerat placeat! Ea nisi maiores obcaecati corrupti aliquid
+					consectetur, quis neque. Lorem ipsum dolor sit amet consectetur
+					adipisicing elit. Magni incidunt impedit ducimus ad similique sint
+					adipisci odit a deleniti, autem libero, optio vero non natus sapiente
+					itaque et nemo ipsam?
+				</div>
+				<div class="prodDetailPrice">$6740</div>
+				<button class="formButton">Comprar</button>
+			</div>
+		</main>
 
-            <div><img class="imagen_del_producto" src="/images/Box Bartender primeros pasos 1.jpg" alt="">
-            </div>
-
-            <div>
-                <p class="texto_descripcion">
-                    <strong>descripcion: </strong>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam fugiat nemo aut
-                    nulla minus similique
-                    cumque impedit animi! Adipisci, veniam. Necessitatibus possimus asperiores dolor fugit mollitia
-                    molestias in, accusantium iste veniam. Necessitatibus possimus asperiores dolor fugit mollitia
-                </p>
-            </div>
-
-            <button class="botones_productDetail" id="registro_button" type=“submit”>Enviar al carrito</button>
-            </div>
-
-            <button class="botones_productDetail" id="registro_button" type=“submit”>Medios de pago</button>
-            </div>
-
-            </div>
-
-        </section>
-    </main>
-    <%- include('../partials/footer') %>
-
-</body>
-
+		<%- include('../partials/footer') %>
+	</body>
 </html>
