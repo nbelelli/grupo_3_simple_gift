@@ -9,10 +9,14 @@ const productsController = {
 		res.locals.title = "Create";  
 		res.render('Products/productCreate');
 	},
+
 	edit: (req, res)=> {
 		res.locals.title = "Edit";  
 		res.render('Products/productEdit');
-	}
+	},
+	detail: (req, res) => {
+		res.render('Products/productDetail');
+	},
 };
 
 module.exports = productsController;
