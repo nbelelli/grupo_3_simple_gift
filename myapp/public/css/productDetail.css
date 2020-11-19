@@ -16,9 +16,6 @@
 	justify-content: space-around;
 }
 
-.prodCardImageContainer {
-}
-
 .prodDetailRight {
 	/* border: 2px solid red; */
 	width: 50%;
@@ -28,6 +25,7 @@
 	flex-direction: column;
 	justify-content: space-around;
 }
+
 .prodDetailImgContainer img {
 	max-width: 350px;
 }
