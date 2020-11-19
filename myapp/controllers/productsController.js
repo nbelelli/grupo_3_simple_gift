@@ -40,7 +40,13 @@ const productsController = {
 		res.render('Products/productEdit');
 	},
 	detail: (req, res) => {
-		res.render('Products/productDetail');
+		const products = getAllProducts();
+		const theProduct = products.find((prod) => {
+			return prod.id == req.params.id;
+		});
+		console.log(theProduct);
+
+		res.render('Products/productDetail', { theProduct: theProduct });
 	},
 };
 
