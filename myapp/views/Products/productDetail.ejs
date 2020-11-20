@@ -37,7 +37,10 @@
 				<div class="buttons">
 					<a href="#">Comprar</a>
 					<a href="#">Editar</a>
-					<form method="POST" action="/products/3/delete/?_method=DELETE">
+					<form
+						method="POST"
+						action="/products/<%=theProduct.id%> /delete/?_method=DELETE"
+					>
 						<button type="submit">Borrar</button>
 					</form>
 				</div>
