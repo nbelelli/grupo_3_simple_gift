@@ -45,8 +45,11 @@ const productsController = {
 			return prod.id == req.params.id;
 		});
 		console.log(theProduct);
-
-		res.render('Products/productDetail', { theProduct: theProduct });
+		if (theProduct == undefined) {
+			res.send('Producto no encontrado');
+		} else {
+			res.render('Products/productDetail', { theProduct: theProduct });
+		}
 	},
 };
 
