@@ -1,3 +1,4 @@
+const { renderFile } = require('ejs');
 const fs = require('fs');
 const path = require('path');
 
@@ -26,11 +27,10 @@ const productsController = {
 	/* Navigates to the products list page */
 	products: (req, res) => {
 		res.locals.title = 'Products';
-
 		const products = getAllProducts();
-
 		res.render('Products/productsList', { products: products });
 	},
+
 	/* Navigates to the Create product page */
 	create: (req, res) => {
 		res.locals.title = 'Create';
@@ -52,6 +52,18 @@ const productsController = {
 		} else {
 			res.render('Products/productDetail', { theProduct: theProduct });
 		}
+	},
+	delete: (req, res) => {
+		const products = getAllProducts();
+		const newProducts = [];
+		for (product of products) {
+			if (product.id != req.params.id) {
+				newProducts.push(product);
+			}
+		}
+
+		writeProducts(newProducts);
+		res.redirect('/products');
 	},
 };
 
