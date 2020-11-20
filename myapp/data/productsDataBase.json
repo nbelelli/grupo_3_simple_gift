@@ -8,7 +8,7 @@
         "description": "Box de vino malbec + 2 copas de vidrio",
         "stock": 80,
         "masVendido":"true",
-        "image" : ""
+        "image" : "vino1.jpg"
     },
     {
         "id": 2,
@@ -19,7 +19,7 @@
         "description": "Box de degustacion de cerveza Patagonia",
         "stock": 90,
         "masVendido":"true",
-        "image" : ""
+        "image" : "beer1.webp"
     },
     {
         "id": 3,
@@ -30,7 +30,7 @@
         "description": "Consola Xbox one + Fifa 21",
         "stock": 25,
         "masVendido":"true",
-        "image" : ""
+        "image" : "gaming1.jpg"
     },
     {
         "id": 4,
@@ -41,7 +41,7 @@
         "description": "Termo Stanley + mate + bolso matero",
         "stock": 50,
         "masVendido":"true",
-        "image" : ""
+        "image" : "stanley1.jpg"
     },
     {
         "id": 5,
@@ -52,6 +52,6 @@
         "description": "Box de chocolates",
         "stock": 55,
         "masVendido":"false",
-        "image" : ""
+        "image" : "chocolate1.jpg"
     }
 ]

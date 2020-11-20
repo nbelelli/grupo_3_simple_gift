@@ -27,21 +27,13 @@
 		<main class="prodDetailMain">
 			<div id="prodDetailLeft" class="prodDetailLeft">
 				<div class="prodDetailImgContainer">
-					<img src="/images/Box Bartender primeros pasos 2.jpg" alt="" />
+					<img src="/images/products/<%=theProduct.image%>" alt="" />
 				</div>
 			</div>
 			<div id="prodDetailRight" class="prodDetailRight">
-				<div class="prodDetailTitle">Box Bartender</div>
-				<div class="prodDetailDescription">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
-					explicabo consectetur odit, ea ut distinctio doloribus ratione fuga
-					aliquid quaerat placeat! Ea nisi maiores obcaecati corrupti aliquid
-					consectetur, quis neque. Lorem ipsum dolor sit amet consectetur
-					adipisicing elit. Magni incidunt impedit ducimus ad similique sint
-					adipisci odit a deleniti, autem libero, optio vero non natus sapiente
-					itaque et nemo ipsam?
-				</div>
-				<div class="prodDetailPrice">$6740</div>
+				<div class="prodDetailTitle"><%=theProduct.name %></div>
+				<div class="prodDetailDescription"><%=theProduct.description %></div>
+				<div class="prodDetailPrice">$<%=theProduct.price %></div>
 				<button class="formButton">Comprar</button>
 			</div>
 		</main>
