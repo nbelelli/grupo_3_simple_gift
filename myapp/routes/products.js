@@ -11,6 +11,6 @@ router.get('/edit', productsController.edit);
 //ir a la pagina de Detalle de Producto
 router.get('/:id', productsController.detail);
 //borrar un producto
-router.get('/:id/delete', productsController.delete);
+router.delete('/:id/delete', productsController.delete);
 
 module.exports = router;
