@@ -31,7 +31,7 @@
 	width: 100%;
 }
 
-.prodDetailRight .buttons button {
+.prodDetailRight .buttons a {
 	width: 20%;
 	background-color: #6c7ae0;
 	color: #fff;
