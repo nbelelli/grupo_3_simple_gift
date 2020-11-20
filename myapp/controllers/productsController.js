@@ -26,8 +26,10 @@ const productsController = {
 	/* Navigates to the products list page */
 	products: (req, res) => {
 		res.locals.title = 'Products';
-		res.render('Products/productsList');
-		console.log(generateNewId());
+
+		const products = getAllProducts();
+
+		res.render('Products/productsList', { products: products });
 	},
 	/* Navigates to the Create product page */
 	create: (req, res) => {
@@ -44,7 +46,7 @@ const productsController = {
 		const theProduct = products.find((prod) => {
 			return prod.id == req.params.id;
 		});
-		console.log(theProduct);
+
 		if (theProduct == undefined) {
 			res.send('Producto no encontrado');
 		} else {
