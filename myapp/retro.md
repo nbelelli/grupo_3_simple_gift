@@ -2,6 +2,31 @@
 
 ## Keep Doing
 
+- Como metodologia, atomizar más los trabajos/proyectos.
+- Continuar con la buena comunicacion de equipo
+- Agregar code reviews antes de Mergear a Main + Merge a Master
+- Tener reunion semanal (scrum)
+- Mantener el compromiso
+
+## Start Doing
+
+- Regression Testing antes de pushear
+- Investigar metodos de estandarizacion de codigo
+
+## Stop Doing
+
+## Less of
+
+## More off
+
+- Investigacion de negocio y mercado
+- Buscar valor agregado que nos diferencia de la competencia con el fin de ganar mas mercado
+- Investigar UX asociado a nuestro e-commerce
+
+# Retrostpective Meeting (For Sprint 2)
+
+## Keep Doing
+
 - Continuar con la buena comunicacion de equipo.
 - Investigar metodos de estandarizacion de codigo (prettier) o Emmet (sistema de abreviación)
 - Agregar code reviews antes de Mergear a Main
