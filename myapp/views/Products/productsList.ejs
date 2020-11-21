@@ -17,160 +17,30 @@
 
 		<section id="productsList" class="productsList">
 			<div class="prodListResultsContainer">
-				<!-- ELEGIDO 2  PRUEBA-->
-				<a href="#" class="elegidoTile">
-					<div class="elegidoTileImage">
-						<img
-							src="/images/categoriesTiles/beer1.webp"
-							alt=""
-							class="prodImage"
-						/>
-						<div class="elegidoTileTitle">Prueba</div>
-					</div>
-					<div class="elegidoInfoCard">
-						<div class="elegidoTileDescription">
-							Consola de ultigma generacion + Fifa 21
-						</div>
-						<div class="elegidoTilePrice">$ 5.000</div>
-					</div>
-				</a>
+			
+				
 
-				<a href="#" class="elegidoTile">
-					<div class="elegidoTileImage">
-						<img
-							src="/images/categoriesTiles/beer1.webp"
-							alt=""
-							class="prodImage"
-						/>
-						<div class="elegidoTileTitle">Prueba</div>
-					</div>
-					<div class="elegidoInfoCard">
-						<div class="elegidoTileDescription">
-							Consola de ultigma generacion + Fifa 21
+				<% for(product of products){ %> 
+					<a href="/products/<%= product.id %> " class="elegidoTile">
+						<div class="elegidoTileImage">
+							<img
+								src="/images/Products/<%=product.image%> "
+								alt=""
+								class="prodImage"
+							/>
+							<div class="elegidoTileTitle"><%= product.name %> </div>
 						</div>
-						<div class="elegidoTilePrice">$ 5.000</div>
-					</div>
-				</a>
+						<div class="elegidoInfoCard">
+							<div class="elegidoTileDescription">
+								<%= product.description %> 
+							</div>
+							<div class="elegidoTilePrice">$ <%= product.price %> </div>
+						</div>
+					</a>
 
-				<a href="#" class="elegidoTile">
-					<div class="elegidoTileImage">
-						<img
-							src="/images/categoriesTiles/beer1.webp"
-							alt=""
-							class="prodImage"
-						/>
-						<div class="elegidoTileTitle">Prueba</div>
-					</div>
-					<div class="elegidoInfoCard">
-						<div class="elegidoTileDescription">
-							Consola de ultigma generacion + Fifa 21
-						</div>
-						<div class="elegidoTilePrice">$ 5.000</div>
-					</div>
-				</a>
+				<% } %> 
 
-				<a href="#" class="elegidoTile">
-					<div class="elegidoTileImage">
-						<img
-							src="/images/categoriesTiles/beer1.webp"
-							alt=""
-							class="prodImage"
-						/>
-						<div class="elegidoTileTitle">Prueba</div>
-					</div>
-					<div class="elegidoInfoCard">
-						<div class="elegidoTileDescription">
-							Consola de ultigma generacion + Fifa 21
-						</div>
-						<div class="elegidoTilePrice">$ 5.000</div>
-					</div>
-				</a>
-
-				<a href="#" class="elegidoTile">
-					<div class="elegidoTileImage">
-						<img
-							src="/images/categoriesTiles/beer1.webp"
-							alt=""
-							class="prodImage"
-						/>
-						<div class="elegidoTileTitle">Prueba</div>
-					</div>
-					<div class="elegidoInfoCard">
-						<div class="elegidoTileDescription">
-							Consola de ultigma generacion + Fifa 21
-						</div>
-						<div class="elegidoTilePrice">$ 5.000</div>
-					</div>
-				</a>
-
-				<a href="#" class="elegidoTile">
-					<div class="elegidoTileImage">
-						<img
-							src="/images/categoriesTiles/beer1.webp"
-							alt=""
-							class="prodImage"
-						/>
-						<div class="elegidoTileTitle">Prueba</div>
-					</div>
-					<div class="elegidoInfoCard">
-						<div class="elegidoTileDescription">
-							Consola de ultigma generacion + Fifa 21
-						</div>
-						<div class="elegidoTilePrice">$ 5.000</div>
-					</div>
-				</a>
-
-				<a href="#" class="elegidoTile">
-					<div class="elegidoTileImage">
-						<img
-							src="/images/categoriesTiles/beer1.webp"
-							alt=""
-							class="prodImage"
-						/>
-						<div class="elegidoTileTitle">Prueba</div>
-					</div>
-					<div class="elegidoInfoCard">
-						<div class="elegidoTileDescription">
-							Consola de ultigma generacion + Fifa 21
-						</div>
-						<div class="elegidoTilePrice">$ 5.000</div>
-					</div>
-				</a>
-
-				<a href="#" class="elegidoTile">
-					<div class="elegidoTileImage">
-						<img
-							src="/images/categoriesTiles/beer1.webp"
-							alt=""
-							class="prodImage"
-						/>
-						<div class="elegidoTileTitle">Prueba</div>
-					</div>
-					<div class="elegidoInfoCard">
-						<div class="elegidoTileDescription">
-							Consola de ultigma generacion + Fifa 21
-						</div>
-						<div class="elegidoTilePrice">$ 5.000</div>
-					</div>
-				</a>
-
-				<a href="#" class="elegidoTile">
-					<div class="elegidoTileImage">
-						<img
-							src="/images/categoriesTiles/beer1.webp"
-							alt=""
-							class="prodImage"
-						/>
-						<div class="elegidoTileTitle">Prueba</div>
-					</div>
-					<div class="elegidoInfoCard">
-						<div class="elegidoTileDescription">
-							Consola de ultigma generacion + Fifa 21
-						</div>
-						<div class="elegidoTilePrice">$ 5.000</div>
-					</div>
-				</a>
-				<!-- PRUEBA 2 -->
+				
 			</div>
 		</section>
 		<%- include('../partials/footer') %>

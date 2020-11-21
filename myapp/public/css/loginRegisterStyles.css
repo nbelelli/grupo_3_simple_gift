@@ -158,35 +158,34 @@ textarea.regAndLogInputs {
 
 /* **********  M O B I L E  *********** */
 
-
-@media (max-width: 460px){
-	.fotoLoginRegister:{
-    display: none;
-		} 
-	.formSeccion{
+@media (max-width: 460px) {
+	.fotologinregister: {
+		display: none;
+	}
+	.formSeccion {
 		margin-left: 2%;
 		font-size: 0.8em;
-		}
-	.createEditFormSection{
+	}
+	.createEditFormSection {
 		margin-left: 2%;
 		font-size: 0.8em;
-	}  /*no convendria esta y formSeccion que sean misma etiqueta?*/
+	} /*no convendria esta y formSeccion que sean misma etiqueta?*/
 
-	.icono_go_back{
+	.icono_go_back {
 		margin-left: 2%;
-		}
-	.formTitle{
+	}
+	.formTitle {
 		font-size: 1.5em;
 	}
-	.formsArticle{
+	.formsArticle {
 		margin-bottom: 2%;
 	}
-	.mainform{
+	.mainform {
 		display: flex;
 		flex-direction: row;
-		align-items: flex-start
+		align-items: flex-start;
 	}
-	.registerYaTenesCuenta{
+	.registerYaTenesCuenta {
 		font-size: 1em;
 		padding-top: 2%;
 	}
@@ -197,6 +196,3 @@ textarea.regAndLogInputs {
 		margin-right: 5%;
 	}
 }
-
-
-	

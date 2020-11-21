@@ -1,57 +1,57 @@
 [
-    {
-        "id": 1,
-        "name": "Malbec Calafate",
-        "price": 7000,
-        "discount": 0,
-        "category": "vino",
-        "description": "Box de vino malbec + 2 copas de vidrio",
-        "stock": 80,
-        "masVendido":"true",
-        "image" : ""
-    },
-    {
-        "id": 2,
-        "name": "Cerveza Patagonia",
-        "price": 8000,
-        "discount":10,
-        "category": "cerveza",
-        "description": "Box de degustacion de cerveza Patagonia",
-        "stock": 90,
-        "masVendido":"true",
-        "image" : ""
-    },
-    {
-        "id": 3,
-        "name": "Xbox one",
-        "price": 50000,
-        "discount": 5,
-        "category": "gaming",
-        "description": "Consola Xbox one + Fifa 21",
-        "stock": 25,
-        "masVendido":"true",
-        "image" : ""
-    },
-    {
-        "id": 4,
-        "name": "Box Stanley",
-        "price": 11000,
-        "discount": 7,
-        "category": "mate",
-        "description": "Termo Stanley + mate + bolso matero",
-        "stock": 50,
-        "masVendido":"true",
-        "image" : ""
-    },
-    {
-        "id": 5,
-        "name": "Box chocolatoso",
-        "price": 3000,
-        "discount": 5,
-        "category": "chocolates",
-        "description": "Box de chocolates",
-        "stock": 55,
-        "masVendido":"false",
-        "image" : ""
-    }
+ {
+  "id": 1,
+  "name": "Malbec Calafate",
+  "price": 7000,
+  "discount": 0,
+  "category": "vino",
+  "description": "Box de vino malbec + 2 copas de vidrio",
+  "stock": 80,
+  "masVendido": "true",
+  "image": "vino1.jpg"
+ },
+ {
+  "id": 2,
+  "name": "Cerveza Patagonia",
+  "price": 8000,
+  "discount": 10,
+  "category": "cerveza",
+  "description": "Box de degustacion de cerveza Patagonia",
+  "stock": 90,
+  "masVendido": "true",
+  "image": "beer1.webp"
+ },
+ {
+  "id": 3,
+  "name": "Xbox one",
+  "price": 50000,
+  "discount": 5,
+  "category": "gaming",
+  "description": "Consola Xbox one + Fifa 21",
+  "stock": 25,
+  "masVendido": "true",
+  "image": "gaming1.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Box Stanley",
+  "price": 11000,
+  "discount": 7,
+  "category": "mate",
+  "description": "Termo Stanley + mate + bolso matero",
+  "stock": 50,
+  "masVendido": "true",
+  "image": "stanley1.jpg"
+ },
+ {
+  "id": 5,
+  "name": "Box chocolatoso",
+  "price": 3000,
+  "discount": 5,
+  "category": "chocolates",
+  "description": "Box de chocolates",
+  "stock": 55,
+  "masVendido": "false",
+  "image": "chocolate1.jpg"
+ }
 ]

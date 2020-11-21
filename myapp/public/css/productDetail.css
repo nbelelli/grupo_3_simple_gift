@@ -26,6 +26,26 @@
 	justify-content: space-around;
 }
 
+.prodDetailRight .buttons {
+	display: flex;
+	width: 100%;
+}
+
+.prodDetailRight .buttons a {
+	width: 20%;
+	background-color: #6c7ae0;
+	color: #fff;
+	height: 36px;
+	line-height: 2.25rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+}
+
 .prodDetailImgContainer img {
 	max-width: 350px;
 }

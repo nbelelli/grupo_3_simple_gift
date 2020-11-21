@@ -22,7 +22,9 @@ router.get('/create', productsController.create);
 //ir a la pagina de Edicion de producto
 router.get('/edit', productsController.edit);
 //ir a la pagina de Detalle de Producto
-router.get('/detail', productsController.detail);
+router.get('/:id', productsController.detail);
+//borrar un producto
+router.delete('/:id/delete', productsController.delete);
 
 
 module.exports = router;
