@@ -33,23 +33,12 @@
   "image": "gaming1.jpg"
  },
  {
-  "id": 4,
-  "name": "Box Stanley",
-  "price": 11000,
-  "discount": 7,
-  "category": "mate",
-  "description": "Termo Stanley + mate + bolso matero",
-  "stock": 50,
-  "masVendido": "true",
-  "image": "stanley1.jpg"
- },
- {
   "id": 5,
   "name": "Box chocolatoso",
   "price": 3000,
   "discount": 5,
   "category": "chocolates",
-  "description": "Box de chocolates",
+  "description": "Box de chocolates ",
   "stock": 55,
   "masVendido": "false",
   "image": "chocolate1.jpg"
