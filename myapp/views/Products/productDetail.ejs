@@ -34,7 +34,16 @@
 				<div class="prodDetailTitle"><%=theProduct.name %></div>
 				<div class="prodDetailDescription"><%=theProduct.description %></div>
 				<div class="prodDetailPrice">$<%=theProduct.price %></div>
-				<button class="formButton">Comprar</button>
+				<div class="buttons">
+					<a href="#">Comprar</a>
+					<a href="#">Editar</a>
+					<form
+						method="POST"
+						action="/products/<%=theProduct.id%> /delete/?_method=DELETE"
+					>
+						<button type="submit">Borrar</button>
+					</form>
+				</div>
 			</div>
 		</main>
 
