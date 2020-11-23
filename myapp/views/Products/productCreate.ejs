@@ -15,7 +15,7 @@
 				<section class="createEditFormSection">
 					<h1 class="formTitle">Carga de Producto</h1>
 
-					<form action="products" method="POST" class="createEditForm" enctype="multipart/form-data">
+					<form action="/products/create" method="POST" class="createEditForm">
 						<div class="formRegisterPadding">
 							<label for="“name”">Nombre:</label>
 							<input
@@ -34,7 +34,7 @@
 								type="text"
 								rows="4"
 								cols="50"
-								name="precio"
+								name="price"
 								id="precio"
 								placeholder="1500"
 								class="regAndLogInputs"
@@ -60,12 +60,11 @@
 							<label for="image">Categoría:</label>
 
 							<select name="category" id="category" class="regAndLogInputs">
-								<option value="chocolate">Gaming</option>
-								<option value="cerveza">Mate</option>
-								<option value="chocolate">Cerveza</option>
-								<option value="cerveza">Musica</option>
-								<option value="chocolate">Gourmet</option>
-								<option value="cerveza">Deportes</option>
+								<option value="gaming">Gaming</option>
+								<option value="mate">Mate</option>
+								<option value="cerveza">Cerveza</option>
+								<option value="musica">Musica</option>
+								<option value="gourmet">Gourmet</option>
 							</select>
 						</div>
 
@@ -83,7 +82,7 @@
 							<label for="masvendido">Más vendido</label>
 							<input
 								type="checkbox"
-								name="masvendido"
+								name="bestSeller"
 								id="masvendido"
 								class="regAndLogInputs"
 							/>

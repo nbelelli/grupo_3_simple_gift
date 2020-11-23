@@ -44,36 +44,23 @@
   "image": "chocolate1.jpg"
  },
  {
-    "id": 5,
-    "name": "Box chocolatoso 2",
-    "price": 3000,
-    "discount": 5,
-    "category": "chocolates",
-    "description": "Otra caja de chocolares ",
-    "stock": 55,
-    "masVendido": true,
-    "image": "chocolate1.jpg"
-   },
-   {
-    "id": 6,
-    "name": "Box chocolatoso 3",
-    "price": 3000,
-    "discount": 5,
-    "category": "chocolates",
-    "description": "Aun mas chocolate!",
-    "stock": 55,
-    "masVendido": true,
-    "image": "chocolate1.jpg"
-   },
-   {
-    "id": 7,
-    "name": "Box chocolatoso 4",
-    "price": 3000,
-    "discount": 5,
-    "category": "chocolates",
-    "description": "no mas chocolate",
-    "stock": 55,
-    "masVendido": false,
-    "image": "chocolate1.jpg"
-   }
+  "id": 5,
+  "name": "Whisky Edicion Dia del Padre",
+  "price": "6000",
+  "discount": "-5",
+  "stock": "15",
+  "bestSeller": "on",
+  "description": "Whisky especial con vasos ",
+  "image": "vino1.jpg"
+ },
+ {
+  "id": 6,
+  "name": "Regalo dia de la Madre",
+  "price": "6000",
+  "discount": "-5",
+  "stock": "5",
+  "bestSeller": "on",
+  "description": "Dia de Spa para la madre más linda",
+  "image": "vino1.jpg"
+ }
 ]
