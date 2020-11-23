@@ -28,6 +28,16 @@ const productsController = {
 	products: (req, res) => {
 		res.locals.title = 'Products';
 		const products = getAllProducts();
+
+		if (req.params.cat) {
+			const catProducts = products.filter((product) => {
+				return product.category == req.params.cat;
+			});
+
+			console.log(catProducts);
+			return res.render('Products/productsList', { products: catProducts });
+		}
+
 		res.render('Products/productsList', { products: products });
 	},
 

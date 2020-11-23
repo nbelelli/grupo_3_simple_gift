@@ -30,7 +30,6 @@ indexController = {
 		const elegidos = products.filter((product) => {
 			return product.masVendido == true;
 		});
-		console.log(elegidos);
 		res.render('index', { elegidos: elegidos });
 	},
 };
