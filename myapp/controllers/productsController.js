@@ -13,7 +13,7 @@ function getAllProducts() {
 function writeProducts(productsToSave) {
 	//Recibe un Array de objetos literales.
 	//Lo convierte en un JSON
-	//Reemplaza TODO el json de DB con este neuvo JSON
+	//Reemplaza TODO el json de DB con este nuevo JSON
 	const productsToStringify = JSON.stringify(productsToSave, null, ' ');
 	return fs.writeFileSync(productsFilePath, productsToStringify);
 }
@@ -40,6 +40,28 @@ const productsController = {
 		res.locals.title = 'Edit';
 		res.render('Products/productEdit');
 	},
+	/*  Store new product  */
+	store:(req,res)=>{
+		const newProduct ={
+			id: generateNewId(),
+			name: req.body.name,
+			price: req.body.price,   
+			discount: req.body.discount,
+			//select ver como lo solicito, no tiene name
+			stock: req.body.stock,
+			bestSeller: req.body.bestSeller,
+			description: req.body.description,
+			image: "vino1.jpg"
+			//image: req.files[0].filesname 
+			}
+		//return newProduct;
+		const products = getAllProducts();
+		products.push(newProduct);
+		writeProducts(products);
+		res.redirect("/");
+	
+	},
+
 	detail: (req, res) => {
 		const products = getAllProducts();
 		const theProduct = products.find((prod) => {

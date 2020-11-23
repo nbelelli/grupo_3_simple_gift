@@ -53,5 +53,25 @@
   "stock": 55,
   "masVendido": "false",
   "image": "chocolate1.jpg"
+ },
+ {
+  "id": 6,
+  "name": "Whisky Edicion Dia del Padre",
+  "price": "6000",
+  "discount": "-5",
+  "stock": "15",
+  "bestSeller": "on",
+  "description": "Whisky especial con vasos ",
+  "image": "vino1.jpg"
+ },
+ {
+  "id": 7,
+  "name": "Regalo dia de la Madre",
+  "price": "6000",
+  "discount": "-5",
+  "stock": "5",
+  "bestSeller": "on",
+  "description": "Dia de Spa para la madre más linda",
+  "image": "vino1.jpg"
  }
 ]
