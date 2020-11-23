@@ -58,80 +58,27 @@
 						<a href="#"><i class="fas fa-chevron-left"></i></a>
 					</div>
 
-					<div class="elegidoTile">
-						<div class="elegidoTileImage elegidoTileVino">
-							<div class="elegidoTileTitle">Vino Malbec</div>
-						</div>
-						<div class="elegidoInfoCard">
-							<div class="elegidoTileDescription">
-								Box de vino malbec + 2 copas finas de vidrio
+					<% for(product of elegidos){ %> 
+						<a href="/products/<%= product.id %> " class="elegidoTile">
+							<div class="elegidoTileImage">
+								<img
+									src="/images/Products/<%=product.image%> "
+									alt=""
+									class="prodImage"
+								/>
+								<div class="elegidoTileTitle"><%= product.name %> </div>
 							</div>
-							<div class="elegidoTilePrice">$ 5.000</div>
-						</div>
-					</div>
-
-					<div class="elegidoTile">
-						<div class="elegidoTileImage elegidoTileBeer">
-							<div class="elegidoTileTitle">Patagonia</div>
-						</div>
-						<div class="elegidoInfoCard">
-							<div class="elegidoTileDescription">
-								Box de degustacion de cerveza Patagonia
+							<div class="elegidoInfoCard">
+								<div class="elegidoTileDescription">
+									<%= product.description %> 
+								</div>
+								<div class="elegidoTilePrice">$ <%= product.price %> </div>
 							</div>
-							<div class="elegidoTilePrice">$ 5.000</div>
-						</div>
-					</div>
+						</a>
+	
+					<% } %> 
 
-					<div class="elegidoTile">
-						<div class="elegidoTileImage elegidoTileXbox">
-							<div class="elegidoTileTitle">Xbox One</div>
-						</div>
-
-						<div class="elegidoInfoCard">
-							<div class="elegidoTileDescription">
-								Consola de ultigma generacion + Fifa 21
-							</div>
-							<div class="elegidoTilePrice">$ 5.000</div>
-						</div>
-					</div>
-
-					<div class="elegidoTile">
-						<div class="elegidoTileImage elegidoTileXbox">
-							<div class="elegidoTileTitle">Xbox One</div>
-						</div>
-
-						<div class="elegidoInfoCard">
-							<div class="elegidoTileDescription">
-								Consola de ultigma generacion + Fifa 21
-							</div>
-							<div class="elegidoTilePrice">$ 5.000</div>
-						</div>
-					</div>
-					<!-- ELEGIDO 2 -->
-					<div class="elegidoTile">
-						<div class="elegidoTileImage elegidoTileXbox">
-							<div class="elegidoTileTitle">Xbox One</div>
-						</div>
-						<div class="elegidoInfoCard">
-							<div class="elegidoTileDescription">
-								Consola de ultigma generacion + Fifa 21
-							</div>
-							<div class="elegidoTilePrice">$ 5.000</div>
-						</div>
-					</div>
-					<!-- ELEGIDO 3 -->
-					<div class="elegidoTile">
-						<div class="elegidoTileImage elegidoTileXbox">
-							<div class="elegidoTileTitle">Xbox One</div>
-						</div>
-
-						<div class="elegidoInfoCard">
-							<div class="elegidoTileDescription">
-								Consola de ultigma generacion + Fifa 21
-							</div>
-							<div class="elegidoTilePrice">$ 5.000</div>
-						</div>
-					</div>
+					
 
 					<div class="tilesSliderArrow">
 						<a href="#"><i class="fas fa-chevron-right"></i></a>
@@ -158,12 +105,10 @@
 					</div>
 				</a>
 
-				<!-- 				<div class="bottomTile" id="ayuda">
-					<div>Necesitás ayuda? Escribinos</div>
-					<div>
-						<a href="#"><i class="fas fa-chevron-right"></i></a>
-					</div>
-				</div> -->
+				
+				
+
+
 			</section>
 		</main>
 
