@@ -28,6 +28,16 @@ const productsController = {
 	products: (req, res) => {
 		res.locals.title = 'Products';
 		const products = getAllProducts();
+
+		if (req.params.cat) {
+			const catProducts = products.filter((product) => {
+				return product.category == req.params.cat;
+			});
+
+			console.log(catProducts);
+			return res.render('Products/productsList', { products: catProducts });
+		}
+
 		res.render('Products/productsList', { products: products });
 	},
 
@@ -36,7 +46,7 @@ const productsController = {
 		res.locals.title = 'Create';
 		res.render('Products/productCreate');
 	},
-  	edit: (req, res) => {
+	edit: (req, res) => {
 		res.locals.title = 'Edit';
 		res.render('Products/productEdit');
 	},
@@ -67,6 +77,11 @@ const productsController = {
 		const theProduct = products.find((prod) => {
 			return prod.id == req.params.id;
 		});
+		if (theProduct) {
+			res.locals.title = theProduct.name;
+		} else {
+			res.locals.title = 'not found';
+		}
 
 		if (theProduct == undefined) {
 			res.send('Producto no encontrado');

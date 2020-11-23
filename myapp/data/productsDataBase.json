@@ -7,7 +7,7 @@
   "category": "vino",
   "description": "Box de vino malbec + 2 copas de vidrio",
   "stock": 80,
-  "masVendido": "true",
+  "masVendido": true,
   "image": "vino1.jpg"
  },
  {
@@ -18,7 +18,7 @@
   "category": "cerveza",
   "description": "Box de degustacion de cerveza Patagonia",
   "stock": 90,
-  "masVendido": "true",
+  "masVendido": true,
   "image": "beer1.webp"
  },
  {
@@ -29,33 +29,22 @@
   "category": "gaming",
   "description": "Consola Xbox one + Fifa 21",
   "stock": 25,
-  "masVendido": "true",
+  "masVendido": true,
   "image": "gaming1.jpg"
  },
  {
   "id": 4,
-  "name": "Box Stanley",
-  "price": 11000,
-  "discount": 7,
-  "category": "mate",
-  "description": "Termo Stanley + mate + bolso matero",
-  "stock": 50,
-  "masVendido": "true",
-  "image": "stanley1.jpg"
- },
- {
-  "id": 5,
   "name": "Box chocolatoso",
   "price": 3000,
   "discount": 5,
   "category": "chocolates",
-  "description": "Box de chocolates",
+  "description": "Box de chocolates ",
   "stock": 55,
-  "masVendido": "false",
+  "masVendido": true,
   "image": "chocolate1.jpg"
  },
  {
-  "id": 6,
+  "id": 5,
   "name": "Whisky Edicion Dia del Padre",
   "price": "6000",
   "discount": "-5",
@@ -65,7 +54,7 @@
   "image": "vino1.jpg"
  },
  {
-  "id": 7,
+  "id": 6,
   "name": "Regalo dia de la Madre",
   "price": "6000",
   "discount": "-5",

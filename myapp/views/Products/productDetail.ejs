@@ -13,16 +13,20 @@
 				<div class="prodDetailTitle"><%=theProduct.name %></div>
 				<div class="prodDetailDescription"><%=theProduct.description %></div>
 				<div class="prodDetailPrice">$<%=theProduct.price %></div>
-				<div class="buttons">
-					<a href="#">Comprar</a>
-					<a href="#">Editar</a>
+				<a  class="prodDetailRightButtons"href="#">Comprar</a>
+				<div class="prodDetailFormsCointainer">
+					<form action="" method="get">
+						<button id="prodEditButton" class="prodDetailRightButtons" type="submit">Editar</button>
+					</form>
 					<form
 						method="POST"
 						action="/products/<%=theProduct.id%> /delete/?_method=DELETE"
 					>
-						<button type="submit">Borrar</button>
+						<button id="prodDeleteButton" class="prodDetailRightButtons" type="submit">Eliminar</button>
 					</form>
 				</div>
+					
+				
 			</div>
 		</main>
 
