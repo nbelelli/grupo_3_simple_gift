@@ -15,7 +15,7 @@ var storage = multer.diskStorage({
 });
 
 //Ir al listado de productos
-router.get('/:cat?', productsController.products);
+router.get('/cat/:cat?', productsController.products);
 //ir a la pagina de carga de producto
 router.get('/create', productsController.create);
 //ir a la pagina de Edicion de producto
