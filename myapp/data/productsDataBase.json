@@ -7,7 +7,7 @@
   "category": "vino",
   "description": "Box de vino malbec + 2 copas de vidrio",
   "stock": 80,
-  "masVendido": "true",
+  "masVendido": true,
   "image": "vino1.jpg"
  },
  {
@@ -18,7 +18,7 @@
   "category": "cerveza",
   "description": "Box de degustacion de cerveza Patagonia",
   "stock": 90,
-  "masVendido": "true",
+  "masVendido": true,
   "image": "beer1.webp"
  },
  {
@@ -29,18 +29,51 @@
   "category": "gaming",
   "description": "Consola Xbox one + Fifa 21",
   "stock": 25,
-  "masVendido": "true",
+  "masVendido": true,
   "image": "gaming1.jpg"
  },
  {
-  "id": 5,
+  "id": 4,
   "name": "Box chocolatoso",
   "price": 3000,
   "discount": 5,
   "category": "chocolates",
   "description": "Box de chocolates ",
   "stock": 55,
-  "masVendido": "false",
+  "masVendido": true,
   "image": "chocolate1.jpg"
- }
+ },
+ {
+    "id": 5,
+    "name": "Box chocolatoso 2",
+    "price": 3000,
+    "discount": 5,
+    "category": "chocolates",
+    "description": "Otra caja de chocolares ",
+    "stock": 55,
+    "masVendido": true,
+    "image": "chocolate1.jpg"
+   },
+   {
+    "id": 6,
+    "name": "Box chocolatoso 3",
+    "price": 3000,
+    "discount": 5,
+    "category": "chocolates",
+    "description": "Aun mas chocolate!",
+    "stock": 55,
+    "masVendido": true,
+    "image": "chocolate1.jpg"
+   },
+   {
+    "id": 7,
+    "name": "Box chocolatoso 4",
+    "price": 3000,
+    "discount": 5,
+    "category": "chocolates",
+    "description": "no mas chocolate",
+    "stock": 55,
+    "masVendido": false,
+    "image": "chocolate1.jpg"
+   }
 ]
