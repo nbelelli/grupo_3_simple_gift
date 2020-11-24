@@ -62,5 +62,14 @@
   "bestSeller": "on",
   "description": "Dia de Spa para la madre más linda",
   "image": "vino1.jpg"
+ },
+ {
+  "id": 7,
+  "name": "Salto Bautismo ",
+  "price": "10000",
+  "discount": "5",
+  "stock": "5",
+  "bestSeller": "on",
+  "description": "Salto bautismo a 3000 metros de altura. Unico. "
  }
 ]
