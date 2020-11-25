@@ -51,7 +51,7 @@ const productsController = {
 		res.render('Products/productEdit');
 	},
 	/*  Store new product  */
-	store:(req,res)=>{
+	store:(req,res,next)=>{
 		const newProduct ={
 			id: generateNewId(),
 			name: req.body.name,
@@ -61,7 +61,7 @@ const productsController = {
 			stock: req.body.stock,
 			bestSeller: req.body.bestSeller,
 			description: req.body.description,
-			image: "vino1.jpg"
+			image: req.files[0].filesname
 			//image: req.files[0].filesname 
 			}
 		//return newProduct;

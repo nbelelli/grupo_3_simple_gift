@@ -30,7 +30,7 @@ router.get('/:id', productsController.detail);
 router.delete('/:id/delete', productsController.delete);
 
 //Acción de creación (a donde se envía el formulario)
-router.post('/create', productsController.store);
+router.post('/create', upload.any(), productsController.store);
 
 
 //products filtrado por categoria
