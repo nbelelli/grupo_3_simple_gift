@@ -23,9 +23,9 @@
 								type="text"
 								name="name"
 								id="name"
-								placeholder="Box Ferrero Rocher"
 								required
 								class="regAndLogInputs"
+								value="<%= productToEdit.name %> "
 							/>
 						</div>
 
@@ -37,7 +37,7 @@
 								cols="50"
 								name="precio"
 								id="precio"
-								placeholder="1500"
+								value="<%= productToEdit.price %> "
 								class="regAndLogInputs"
 							/>
 						</div>
@@ -49,24 +49,62 @@
 								name="discount"
 								id="discount"
 								class="regAndLogInputs"
+								value=<%= productToEdit.discount %>
 							/>
 						</div>
 
 						<div class="formRegisterPadding">
 							<label for="image">Imagen:</label>
 							<input type="file" name="image" id="image" />
+							
 						</div>
+						<img src="/images/products/<%= productToEdit.image %> " style="max-width: 20%">
 
 						<div class="formRegisterPadding">
 							<label for="image">Categoría:</label>
 
 							<select name="category" id="category" class="regAndLogInputs">
-								<option value="gaming">Gaming</option>
-								<option value="mate">Mate</option>
-								<option value="cerveza">Cerveza</option>
-								<option value="musica">Musica</option>
-								<option value="gourmet">Gourmet</option>
-								<option value="deportes">Deportes</option>
+								<option value="gaming"
+								<% if(productToEdit.category=='gaming'){  %> 
+									<%= "selected" %> 
+								<% } %> 
+								>
+								Gaming</option>
+								<option value="mate"
+								<% if(productToEdit.category=='mate'){  %> 
+									<%= "selected" %> 
+								<% } %> 
+								>Mate</option>
+								<option value="cerveza" 
+								<% if(productToEdit.category=='cerveza'){  %> 
+									<%= "selected" %> 
+								<% } %> 
+								>Cerveza</option>
+								<option value="musica"
+								<% if(productToEdit.category=='musica'){  %> 
+									<%= "selected" %> 
+								<% } %> 
+								>Musica</option>
+								<option value="gourmet"
+								<% if(productToEdit.category=='gourmet'){  %> 
+									<%= "selected" %> 
+								<% } %> 
+								>Gourmet</option>
+								<option value="deportes"
+								<% if(productToEdit.category=='deportes'){  %> 
+									<%= "selected" %> 
+								<% } %> 
+								>Deportes</option>
+								<option value="vino"
+								<% if(productToEdit.category=='vino'){  %> 
+									<%= "selected" %> 
+								<% } %> 
+								>Vino</option>
+								<option value="otros"
+								<% if(productToEdit.category=='otros'){  %> 
+									<%= "selected" %> 
+								<% } %> 
+								>Otros</option>
 							</select>
 						</div>
 
@@ -77,6 +115,7 @@
 								name="stock"
 								id="stock"
 								class="regAndLogInputs"
+								value=<%= productToEdit.stock %>
 							/>
 						</div>
 
@@ -87,6 +126,9 @@
 								name="masvendido"
 								id="masvendido"
 								class="regAndLogInputs"
+								<% if(productToEdit.bestSeller){ %> 
+									<%= "checked" %> 
+								<% } %> 
 							/>
 						</div>
 
@@ -98,12 +140,15 @@
 								name="description"
 								id="description"
 								class="regAndLogInputs"
-								placeholder="Este box incluye..."
-							></textarea>
+							><%= productToEdit.description %>
+						</textarea>
 						</div>
 
 						<button class="formButton" type="“submit”">Guardar</button>
 					</form>
+
+					
+
 				</section>
 			</div>
 		</main>

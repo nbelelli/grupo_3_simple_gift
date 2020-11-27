@@ -48,28 +48,33 @@ const productsController = {
 	},
 	edit: (req, res) => {
 		res.locals.title = 'Edit';
-		res.render('Products/productEdit');
+		const products = getAllProducts();
+		const productToEdit = products.find((product) => {
+			return product.id == req.params.id;
+		});
+		console.log('la descripcion:', productToEdit.description);
+		res.render('Products/productEdit', { productToEdit: productToEdit });
 	},
 	/*  Store new product  */
-	store:(req,res,next)=>{
-		const newProduct ={
+	store: (req, res, next) => {
+		const newProduct = {
 			id: generateNewId(),
 			name: req.body.name,
-			price: req.body.price,   
+			price: req.body.price,
 			discount: req.body.discount,
 			//select ver como lo solicito, no tiene name
 			stock: req.body.stock,
 			bestSeller: req.body.bestSeller,
 			description: req.body.description,
-			image: req.files[0].filesname
-			//image: req.files[0].filesname 
-			}
+			/* image: req.files[0].filesname, */
+			//image: req.files[0].filesname
+		};
 		//return newProduct;
+		console.log(req.body);
 		const products = getAllProducts();
 		products.push(newProduct);
 		writeProducts(products);
-		res.redirect("/");
-	
+		res.redirect('/');
 	},
 
 	detail: (req, res) => {
