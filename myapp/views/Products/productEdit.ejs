@@ -16,7 +16,7 @@
 				<section class="createEditFormSection">
 					<h1 class="formTitle">Edición de Producto</h1>
 
-					<form action="products/edit" method="POST" class="createEditForm" enctype="multipart/form-data">
+					<form method="POST" action="/products/<%= productToEdit.id %> /edit?_method=PUT" class="createEditForm" enctype="multipart/form-data">
 						<div class="formRegisterPadding">
 							<label for="“name”">Nombre:</label>
 							<input
@@ -30,12 +30,12 @@
 						</div>
 
 						<div class="formRegisterPadding">
-							<label for="description">Precio:</label>
+							<label for="price">Precio:</label>
 							<input
 								type="text"
 								rows="4"
 								cols="50"
-								name="precio"
+								name="price"
 								id="precio"
 								value="<%= productToEdit.price %> "
 								class="regAndLogInputs"
@@ -120,11 +120,11 @@
 						</div>
 
 						<div class="formRegisterPadding">
-							<label for="masvendido">Más vendido</label>
+							<label for="bestSeller">Más vendido</label>
 							<input
 								type="checkbox"
-								name="masvendido"
-								id="masvendido"
+								name="bestSeller"
+								id="bestSeller"
 								class="regAndLogInputs"
 								<% if(productToEdit.bestSeller){ %> 
 									<%= "checked" %> 

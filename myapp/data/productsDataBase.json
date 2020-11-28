@@ -17,7 +17,7 @@
   "category": "cerveza",
   "description": "Box de degustacion de cerveza Patagonia",
   "stock": 90,
-  "bestSeller": "on",  
+  "bestSeller": "on",
   "image": "beer1.webp"
  },
  {
@@ -33,14 +33,14 @@
  },
  {
   "id": 4,
-  "name": "Box chocolatoso",
-  "price": 3000,
-  "discount": 5,
+  "name": "Box chocolatoso ",
+  "price": "3000 ",
+  "discount": "5",
   "category": "gourmet",
-  "description": "Box de chocolates ",
-  "stock": 55,
+  "description": "Box de chocolates \r\n\t\t\t\t\t\t",
+  "stock": "55",
   "masVendido": true,
-  "image": "chocolate1.jpg"
+  "image": "1606544544986-brownie.jpeg"
  },
  {
   "id": 5,
@@ -111,5 +111,16 @@
   "discount": "",
   "stock": "",
   "description": ""
+ },
+ {
+  "id": 13,
+  "name": "uno mas?  2 ",
+  "price": "11   ",
+  "discount": "11",
+  "stock": "11",
+  "description": "once\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t",
+  "category": "otros",
+  "bestSeller": "on",
+  "image": "1606544335739-choco1.webp"
  }
 ]

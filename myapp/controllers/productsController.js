@@ -1,5 +1,6 @@
 const { renderFile } = require('ejs');
 const fs = require('fs');
+const { get } = require('http');
 const path = require('path');
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
@@ -33,8 +34,6 @@ const productsController = {
 			const catProducts = products.filter((product) => {
 				return product.category == req.params.cat;
 			});
-
-			console.log(catProducts);
 			return res.render('Products/productsList', { products: catProducts });
 		}
 
@@ -45,15 +44,6 @@ const productsController = {
 	create: (req, res) => {
 		res.locals.title = 'Create';
 		res.render('Products/productCreate');
-	},
-	edit: (req, res) => {
-		res.locals.title = 'Edit';
-		const products = getAllProducts();
-		const productToEdit = products.find((product) => {
-			return product.id == req.params.id;
-		});
-		console.log('la descripcion:', productToEdit.description);
-		res.render('Products/productEdit', { productToEdit: productToEdit });
 	},
 	/*  Store new product  */
 	store: (req, res, next) => {
@@ -70,7 +60,6 @@ const productsController = {
 			//image: req.files[0].filesname
 		};
 		//return newProduct;
-		console.log(req.body);
 		const products = getAllProducts();
 		products.push(newProduct);
 		writeProducts(products);
@@ -105,6 +94,35 @@ const productsController = {
 
 		writeProducts(newProducts);
 		res.redirect('/products');
+	},
+	edit: (req, res) => {
+		res.locals.title = 'Edit';
+		const products = getAllProducts();
+		const productToEdit = products.find((product) => {
+			return product.id == req.params.id;
+		});
+		res.render('Products/productEdit', { productToEdit: productToEdit });
+	},
+	update: (req, res) => {
+		const products = getAllProducts();
+		const id = req.params.id;
+		console.log(req.files[0]);
+		const editedProducts = products.map(function (product) {
+			if (product.id == id) {
+				product.name = req.body.name;
+				product.price = req.body.price;
+				product.discount = req.body.discount;
+				product.category = req.body.category;
+				product.description = req.body.description;
+				product.stock = req.body.stock;
+				product.bestSeller = req.body.bestSeller;
+				product.image = req.files[0] ? req.files[0].filename : product.image;
+			}
+			return product;
+		});
+		console.log(editedProducts);
+		writeProducts(editedProducts);
+		res.redirect('/products/' + id + '/edit');
 	},
 };
 
