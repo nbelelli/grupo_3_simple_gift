@@ -61,9 +61,9 @@ const productsController = {
 			stock: req.body.stock,
 			bestSeller: req.body.bestSeller,
 			description: req.body.description,
-			image: req.files[0].filesname
-			//image: req.files[0].filesname 
+			image: req.files[0].filename
 			}
+		console.log(newProduct)
 		//return newProduct;
 		const products = getAllProducts();
 		products.push(newProduct);
