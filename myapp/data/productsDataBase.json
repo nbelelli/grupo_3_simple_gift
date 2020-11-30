@@ -69,6 +69,8 @@
   "discount": "5",
   "stock": "5",
   "bestSeller": "on",
+  "description": "Salto bautismo a 3000 metros de altura. Unico. ",
+  "image": "image-function now() { [native code] }.jpg"
   "description": "Salto bautismo a 3000 metros de altura. Unico. "
  },
  {
@@ -122,5 +124,6 @@
   "category": "otros",
   "bestSeller": "on",
   "image": "1606544335739-choco1.webp"
+
  }
 ]
