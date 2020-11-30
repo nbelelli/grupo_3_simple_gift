@@ -3,11 +3,10 @@
   "id": 1,
   "name": "Malbec Calafate",
   "price": 7000,
-  "discount": 0,
+  "discount": 25,
   "category": "vino",
   "description": "Box de vino malbec + 2 copas de vidrio",
   "stock": 80,
-  "masVendido": true,
   "image": "vino1.jpg"
  },
  {
@@ -18,7 +17,7 @@
   "category": "cerveza",
   "description": "Box de degustacion de cerveza Patagonia",
   "stock": 90,
-  "masVendido": true,
+  "bestSeller": "on",
   "image": "beer1.webp"
  },
  {
@@ -34,14 +33,14 @@
  },
  {
   "id": 4,
-  "name": "Box chocolatoso",
-  "price": 3000,
-  "discount": 5,
-  "category": "chocolates",
-  "description": "Box de chocolates ",
-  "stock": 55,
+  "name": "Box chocolatoso ",
+  "price": "3000 ",
+  "discount": "5",
+  "category": "gourmet",
+  "description": "Box de chocolates \r\n\t\t\t\t\t\t",
+  "stock": "55",
   "masVendido": true,
-  "image": "chocolate1.jpg"
+  "image": "1606544544986-brownie.jpeg"
  },
  {
   "id": 5,
@@ -72,5 +71,59 @@
   "bestSeller": "on",
   "description": "Salto bautismo a 3000 metros de altura. Unico. ",
   "image": "image-function now() { [native code] }.jpg"
+  "description": "Salto bautismo a 3000 metros de altura. Unico. "
+ },
+ {
+  "id": 8,
+  "name": "test imagen 1",
+  "price": "12",
+  "discount": "23",
+  "stock": "3",
+  "description": "asdasd"
+ },
+ {
+  "id": 9,
+  "name": "sdsf",
+  "price": "",
+  "discount": "",
+  "stock": "",
+  "description": ""
+ },
+ {
+  "id": 10,
+  "name": "sdfsdf",
+  "price": "",
+  "discount": "",
+  "stock": "",
+  "description": ""
+ },
+ {
+  "id": 11,
+  "name": "teclado mecanico",
+  "price": "10000",
+  "discount": "10",
+  "stock": "3",
+  "bestSeller": "on",
+  "description": "esta es la descripcion"
+ },
+ {
+  "id": 12,
+  "name": "no best",
+  "price": "",
+  "discount": "",
+  "stock": "",
+  "description": ""
+ },
+ {
+  "id": 13,
+  "name": "uno mas?  2 ",
+  "price": "11   ",
+  "discount": "11",
+  "stock": "11",
+  "description": "once\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t",
+  "category": "otros",
+  "bestSeller": "on",
+  "image": "1606544335739-choco1.webp"
+
  }
 ]

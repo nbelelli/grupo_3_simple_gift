@@ -15,7 +15,7 @@
 				<div class="prodDetailPrice">$<%=theProduct.price %></div>
 				<a  class="prodDetailRightButtons"href="#">Comprar</a>
 				<div class="prodDetailFormsCointainer">
-					<form action="" method="get">
+					<form action="/products/<%=theProduct.id%>/edit" method="get">
 						<button id="prodEditButton" class="prodDetailRightButtons" type="submit">Editar</button>
 					</form>
 					<form
