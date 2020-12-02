@@ -64,5 +64,15 @@
   "bestSeller": "on",
   "description": "Dia de Spa para la madre más linda",
   "image": "masajes.jpg"
+ },
+ {
+  "id": 7,
+  "name": "Dia de Campo",
+  "price": "7500",
+  "discount": "0",
+  "stock": "25",
+  "bestSeller": "true",
+  "description": "Dia de campo con asado y pileta para 2 personas. ",
+  "image": "1606866603956-Dia de Campo.jpg"
  }
 ]
