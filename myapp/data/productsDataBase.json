@@ -1,13 +1,14 @@
 [
  {
   "id": 1,
-  "name": "Malbec Calafate",
-  "price": 7000,
-  "discount": 25,
+  "name": "Malbec Calafate ",
+  "price": "7000 ",
+  "discount": "25",
   "category": "vino",
-  "description": "Box de vino malbec + 2 copas de vidrio",
-  "stock": 80,
-  "image": "vino1.jpg"
+  "description": "Box de vino malbec + 2 copas de vidrio\r\n\t\t\t\t\t\t",
+  "stock": "80",
+  "image": "vino1.jpg",
+  "bestSeller": "on"
  },
  {
   "id": 2,
@@ -22,25 +23,27 @@
  },
  {
   "id": 3,
-  "name": "Xbox one",
-  "price": 50000,
-  "discount": 5,
+  "name": "Xbox one ",
+  "price": "50000 ",
+  "discount": "5",
   "category": "gaming",
-  "description": "Consola Xbox one + Fifa 21",
-  "stock": 25,
+  "description": "Consola Xbox one + Fifa 21\r\n\t\t\t\t\t\t",
+  "stock": "25",
   "masVendido": true,
-  "image": "gaming1.jpg"
+  "image": "gaming1.jpg",
+  "bestSeller": "on"
  },
  {
   "id": 4,
-  "name": "Box chocolatoso ",
-  "price": "3000",
+  "name": "Box chocolatoso  ",
+  "price": "3000 ",
   "discount": "5",
   "category": "gourmet",
-  "description": "Box de chocolates con brownies caseros",
+  "description": "Box de chocolates con brownies caseros\r\n\t\t\t\t\t\t",
   "stock": "55",
   "masVendido": true,
-  "image": "VA1606544544986-brownie.jpeg"
+  "image": "VA1606544544986-brownie.jpeg",
+  "bestSeller": "on"
  },
  {
   "id": 5,
@@ -62,4 +65,4 @@
   "description": "Dia de Spa para la madre más linda",
   "image": "masajes.jpg"
  }
-] 
+]
