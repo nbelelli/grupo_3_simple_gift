@@ -28,7 +28,7 @@ indexController = {
 		res.locals.title = 'Home';
 		const products = getAllProducts();
 		const elegidos = products.filter((product) => {
-			return product.masVendido == true;
+			return product.bestSeller == 'on';
 		});
 		res.render('index', { elegidos: elegidos });
 	},
