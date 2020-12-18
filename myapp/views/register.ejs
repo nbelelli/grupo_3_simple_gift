@@ -14,42 +14,42 @@
     <seccion class="formSeccion">  
         <h1 class="formTitle">¡Registrate!</h1>
         <article class="formsArticle"> 
-        <form action=“validar.php” method=“POST” enctype="multipart/form-data">
+        <form action="/users/register" method="POST">
      <div class="formRegisterPadding"> 
-        <label for=“nombre”>Nombre:</label>
+        <label for="nombre">Nombre:</label>
         <input 
-            type=“text” 
-            name=“nombre” 
-            id=“nombre” 
+            type="text" 
+            name="name" 
+            id="nombre" 
             placeholder="Leandro" 
             required
             class='regAndLogInputs'>
      </div>
      <div class="formRegisterPadding">
-        <label for=“apellido”>Apellido:</label>
+        <label for="apellido">Apellido:</label>
         <input 
-            type=“text” 
-            name=“apellido” 
-            id=“apellido” 
+            type="text" 
+            name="lastname" 
+            id="apellido" 
             placeholder="Perez"
             required
             class='regAndLogInputs'>
      </div>
     <div class="formRegisterPadding">
-        <label for=“email”>Email:</label>
+        <label for="email">Email:</label>
         <input 
-            type=“email” 
-            name=“email” 
-            id=“email” 
+            type="email" 
+            name="email" 
+            id="email" 
             placeholder="ejemplo@correo.com" 
             required
             class='regAndLogInputs'>   
     </div>
     <div class="formRegisterPadding">
-        <label for=“telefono”>Telefono:</label>
+        <label for="telefono">Telefono:</label>
         <input 
-            type=“tel” 
-            name=“telefono” 
+            type="tel" 
+            name="phone" 
             placeholder="11-4444-4444" 
             required
             class='regAndLogInputs'>
@@ -61,11 +61,10 @@
             name="password" 
             id="password" 
             placeholder="contraseña" 
-            pattern=".{6,}" 
             required
             class='regAndLogInputs'>
     </div>
-    <button class="formButton" type=“submit”>Enviar</button>
+    <button class="formButton" type="submit">Enviar</button>
     </form>
 
     
