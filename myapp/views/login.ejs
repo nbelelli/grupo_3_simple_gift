@@ -1,61 +1,72 @@
-<%- include('./partials/head') %>
-		<%- include('./partials/header') %>
+<%- include('./partials/head') %> <%- include('./partials/header') %>
 
-    <!-- *******LOGIN MAIN***-->
- 
-    <main class="mainform"> 
-    <div class="login_container"> 
-        <div>
-            <span>
-                <a class="icono_go_back" href="#"><i class="fas fa-long-arrow-alt-left fa-lg"></i></a>
-            </span>
-        </div>
+<!-- *******LOGIN MAIN***-->
+<body>
+	<main class="mainform">
+		<div class="login_container">
+			<div>
+				<span>
+					<a class="icono_go_back" href="#"
+						><i class="fas fa-long-arrow-alt-left fa-lg"></i
+					></a>
+				</span>
+			</div>
 
-        <seccion class="formSeccion">  
-        <h1 class="formTitle">¡Iniciá sesión acá!</h1>
-        <article class="formsArticle"> 
+			<seccion class="formSeccion">
+				<h1 class="formTitle">¡Iniciá sesión acá!</h1>
+				<article class="formsArticle">
+					<form action="“login”" method="“POST”">
+						<div class="loginFormMail">
+							<label for="“email”">Email: </label>
+							<input
+								type="email"
+								name="email"
+								id="email"
+								placeholder="ejemplo@correo.com"
+								required
+								class="regAndLogInputs"
+							/>
+						</div>
 
-        <form action=“validar.php” method=“POST”>
-        <div class="loginFormMail">
-          <label for=“email”>Email:      </label>
-            <input 
-             type=“email” 
-             name=“email” id=“email” 
-             placeholder="ejemplo@correo.com" 
-             required
-             class='regAndLogInputs'>   
-        </div>
+						<div class="formLoginPadding">
+							<label for="password">Password:</label>
+							<input
+								type="password"
+								name="password"
+								id="password"
+								placeholder="contraseña"
+								required
+								class="regAndLogInputs"
+							/>
+						</div>
 
-        <div class="formLoginPadding">
-        <label for="password">Password:</label>
-        <input 
-            type="password" 
-            name="password" 
-            id="password" 
-            placeholder="contraseña" 
-            pattern=".{6,}" 
-            required
-            class='regAndLogInputs'>
-        </div>
-         <button class="formButton" type=“submit”>  Enviar  </button>
-        </form>
-        </article> 
-        
-    
-    <a class="forgotPassword" href="#" id="resetPassword">¿Olvidaste tu contraseña?   </a>
-    
-    
-    </seccion>
-    </div>
-    <div> 
-    <img width="70%" class="fotoLoginRegister" src="/images/register_amigos.jpg" alt="Foto_Pagina_Registro">     
-</div>
-    </main>
+						<div class="formLoginPadding">
+							<label for="rememberMe">Recuerdame: </label>
+							<input
+								type="checkbox"
+								id="rememberMe"
+								name="rememberMe"
+								style="margin-left: 30px"
+							/>
+						</div>
+						<button class="formButton" type="“submit”">Enviar</button>
+					</form>
+				</article>
 
-    
- 
-<%- include('./partials/footer') %>
+				<a class="forgotPassword" href="#" id="resetPassword"
+					>¿Olvidaste tu contraseña?
+				</a>
+			</seccion>
+		</div>
+		<div>
+			<img
+				width="70%"
+				class="fotoLoginRegister"
+				src="/images/register_amigos.jpg"
+				alt="Foto_Pagina_Registro"
+			/>
+		</div>
+	</main>
 
- 
+	<%- include('./partials/footer') %>
 </body>
- 
