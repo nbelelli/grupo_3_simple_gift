@@ -1,0 +1,45 @@
+[
+ {
+  "id": 0
+ },
+ {
+  "id": 1,
+  "name": "Nicolas",
+  "lastname": "Brunfman",
+  "email": "nicolasbrunfman@gmail.com",
+  "phone": "01140921984",
+  "password": "$2a$06$Q8hooISF3mZe66ZnRemmDuefBRJgIwcpMz8jjPGGP74c1C3afGlo."
+ },
+ {
+  "id": 2,
+  "name": "Joaquin",
+  "lastname": "Di Toma",
+  "email": "tengoCalor@comprameUnAire.com",
+  "phone": "11444444",
+  "password": "$2a$06$2lrcvud2TAcZt/5PsVuk9.oxstSIG73wcyxvPnwH5hvREkFU/ZXTW"
+ },
+ {
+  "id": 3,
+  "name": "Gonzalo",
+  "lastname": "Zevallos",
+  "email": "milanesa_a_caballo@conFritas.com",
+  "phone": "157777777",
+  "password": "$2a$06$5uaet/zZtV7Fwcqh/LokM.ITZxiOPFEpjCZvIPISamiu7VDZTVwGe"
+ },
+ {
+  "id": 4,
+  "name": "Nicolas",
+  "lastname": "Belleli",
+  "email": "nicolas@belelli.com",
+  "phone": "151111112",
+  "password": "$2a$06$letP7hOC9MPl9guowIm7TenYpUJ5ahu4tw4OYToEzWVIWOrLax7.e"
+ },
+ {
+  "id": 5,
+  "name": "Manuel",
+  "lastname": "Vazquez",
+  "email": "ManuelVazquez@hotmail.com",
+  "phone": "1155555555",
+  "password": "$2a$06$/cDQnua0KMEvj6JYXog1T.kG4meEiMppQomYCbyma99I1g8gYIyO6"
+ }
+]

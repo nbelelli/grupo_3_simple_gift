@@ -24,10 +24,10 @@ var upload = multer({ storage: storage })
 });/*
 
 * GET login page. */
-
 router.get('/login', usersController.login);
 
-/* POST register page. */
+/* POST register page: User Generator */
+router.post('/register', usersController.storeUser);
 
 router.get('/register', usersController.register);
 
