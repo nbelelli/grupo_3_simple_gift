@@ -24,6 +24,7 @@
 	</div>
 
 	<div class="right_header">
+		<% if(!userLogged){ %>
 		<div><a href="/users/login">Ingresá</a></div>
 		<div><a href="/users/register">Registrate</a></div>
 		<div class="carrito">
@@ -33,6 +34,17 @@
 				</i>
 			</a>
 		</div>
+		<% } %> <% if(userLogged){ %>
+		<div><a href="#">Perfil</a></div>
+		<div><a href="#">Log Out</a></div>
+		<div class="carrito">
+			<a href="/cart">
+				<i class="fas fa-shopping-cart">
+					<div class="carritoCantidad">2</div>
+				</i>
+			</a>
+		</div>
+		<% } %>
 	</div>
 </header>
 <!-- *******M O B I L E      H E A D E R ***-->
