@@ -50,8 +50,9 @@ const usersController = {
 	processLogin: (req, res) => {
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
-			console.log('los errores', errors.errors);
-			return res.send(errors.errors);
+			res.locals.title = 'Login';
+			console.log('los errores', errors);
+			return res.render('login', { errors: errors.errors });
 		}
 
 		req.session.user = getAllUsers().find((user) => {
