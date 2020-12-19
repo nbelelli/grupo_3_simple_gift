@@ -47,6 +47,10 @@
 								style="margin-left: 30px"
 							/>
 						</div>
+						<% if(typeof errors!='undefined'){ for (error of errors){ %>
+						<li style="color: red"><%= error.msg %></li>
+						<% } %> <% } %>
+
 						<button class="formButton" type="“submit”">Enviar</button>
 					</form>
 				</article>
