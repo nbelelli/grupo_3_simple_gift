@@ -5,6 +5,7 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const { check, validationResult, body } = require('express-validator');
+const cookieParser = require('cookie-parser');
 
 const file = path.join(__dirname, '../data/usersDataBase.json');
 
@@ -51,13 +52,17 @@ const usersController = {
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
 			res.locals.title = 'Login';
-			console.log('los errores', errors);
 			return res.render('login', { errors: errors.errors });
 		}
-
+		//Set Session
 		req.session.user = getAllUsers().find((user) => {
 			return user.email == req.body.email;
 		});
+
+		//Set Cookie
+		if (req.body.rememberMe) {
+			res.cookie('userId', req.session.user.id, { maxAge: 1000 * 60 * 60 });
+		}
 
 		return res.redirect('/');
 	},
