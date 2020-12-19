@@ -14,7 +14,7 @@
     <seccion class="formSeccion">  
         <h1 class="formTitle">¡Registrate!</h1>
         <article class="formsArticle"> 
-        <form action="/users/register" method="POST">
+        <form action="/users/register" method="POST" enctype="multipart/form-data">
      <div class="formRegisterPadding"> 
         <label for="nombre">Nombre:</label>
         <input 
@@ -63,6 +63,10 @@
             placeholder="contraseña" 
             required
             class='regAndLogInputs'>
+    </div>
+    <div class="formRegisterPadding">
+        <label for="image">Avatar:</label>
+        <input type="file" name="avatar" id="image" />
     </div>
     <button class="formButton" type="submit">Enviar</button>
     </form>

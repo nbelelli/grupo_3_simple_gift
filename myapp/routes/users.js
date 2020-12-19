@@ -7,11 +7,11 @@ const path=require('path');
 //Multer
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'public/images/products')
+    cb(null, 'public/images/avatar')
   },
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now + path.extname(file.originalname))
-  }
+		cb(null, Date.now() + '-' + file.originalname);
+	}
 })
 
 var upload = multer({ storage: storage })
@@ -27,7 +27,7 @@ var upload = multer({ storage: storage })
 router.get('/login', usersController.login);
 
 /* POST register page: User Generator */
-router.post('/register', usersController.storeUser);
+router.post('/register', upload.any(), usersController.storeUser);
 
 router.get('/register', usersController.register);
 

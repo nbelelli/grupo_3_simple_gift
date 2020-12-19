@@ -41,5 +41,41 @@
   "email": "ManuelVazquez@hotmail.com",
   "phone": "1155555555",
   "password": "$2a$06$/cDQnua0KMEvj6JYXog1T.kG4meEiMppQomYCbyma99I1g8gYIyO6"
+ },
+ {
+  "id": 6,
+  "name": "Nicolas",
+  "lastname": "Brunfman",
+  "email": "nicolasbrunfman@gmail.com",
+  "phone": "01140921984",
+  "avatar": "avatar-function now() { [native code] }.jpg",
+  "password": "$2a$06$PfJlyuU.7osEPC4C/qYe0uM6Bw6p6aggxI7jnVykRZT3NDTRQpLEO"
+ },
+ {
+  "id": 7,
+  "name": "Juan Roberto",
+  "lastname": "Etchegaray",
+  "email": "EtchegararJR@gmail.com",
+  "phone": "1177889445",
+  "avatar": "avatar-function now() { [native code] }.jpg",
+  "password": "$2a$06$Ich/QGxCt..WGUCLDujd4eJ9xnDjCYb7uVbgAimRkIJD6sZobCp.y"
+ },
+ {
+  "id": 8,
+  "name": "Matias ",
+  "lastname": "Camisani",
+  "email": "matiascamisani@gmail.com",
+  "phone": "114545484",
+  "avatar": "avatar-function now() { [native code] }.jpg",
+  "password": "$2a$06$d3zzvcg.xBqBDvn4UXtDSuUqQwg.ZOxlOwMrU2wsDpG4sAXQUhzx."
+ },
+ {
+  "id": 9,
+  "name": "Nicolas",
+  "lastname": "Brunfman",
+  "email": "nicolasbrunfman@gmail.com",
+  "phone": "01140921984",
+  "avatar": "1608417936639-11222913_910551389026070_2051406890132802246_n.jpg",
+  "password": "$2a$06$tKezUm0GAbPgIJIlibWiQekooeLZed.DbeAOK.ThtQW6d7MZoiPVe"
  }
 ]

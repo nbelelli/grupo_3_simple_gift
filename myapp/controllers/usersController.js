@@ -40,11 +40,11 @@ const usersController = {
 			lastname:req.body.lastname,
 			email: req.body.email,
 			phone:req.body.phone,
+			avatar: req.files[0].filename,
 			password:passwordHashed
 		}
 		writeUser(newUser);
-		console.log(newUser);
-		res.redirect('/users/register');
+		res.redirect('/users/login');
 	}
 };
 
