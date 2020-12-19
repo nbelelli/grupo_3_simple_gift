@@ -41,5 +41,21 @@
   "email": "ManuelVazquez@hotmail.com",
   "phone": "1155555555",
   "password": "$2a$06$/cDQnua0KMEvj6JYXog1T.kG4meEiMppQomYCbyma99I1g8gYIyO6"
+ },
+ {
+  "id": 6,
+  "name": "bcrypt",
+  "lastname": "test",
+  "email": "bcrypt@test.com",
+  "phone": "111",
+  "password": "$2b$06$cuMmOtg13zDJxU017vF7JOFlLlFmCiRZfUi8jTsM8WBtZlaergswC"
+ },
+ {
+  "id": 7,
+  "name": "test",
+  "lastname": "uno",
+  "email": "test1@test.com",
+  "phone": "1122",
+  "password": "$2b$06$pvkHqyIiWPlVrtbLzgI.Ue1dZ4YTBvslkS23bV7A629vFzhcYT7kS"
  }
 ]

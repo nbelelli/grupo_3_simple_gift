@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 const methodOverride = require('method-override');
+const setLocals = require('../myapp/middlewares/setLocals');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -12,6 +13,17 @@ const cartRouter = require('./routes/cart');
 const productsRouter = require('./routes/products');
 
 var app = express();
+
+//express-session
+const session = require('express-session');
+app.use(
+	session({
+		secret: 'SecretMessage',
+		resave: true,
+		saveUninitialized: true,
+	})
+);
+app.use(setLocals);
 
 // view engine setup - rutas
 
