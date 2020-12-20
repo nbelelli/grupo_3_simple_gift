@@ -6,12 +6,25 @@ var logger = require('morgan');
 
 const methodOverride = require('method-override');
 
+const setSession = require('../myapp/middlewares/setSession');
+const setLocals = require('../myapp/middlewares/setLocals');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const cartRouter = require('./routes/cart');
 const productsRouter = require('./routes/products');
 
 var app = express();
+
+//express-session
+const session = require('express-session');
+app.use(
+	session({
+		secret: 'SecretMessage',
+		resave: true,
+		saveUninitialized: true,
+	})
+);
 
 // view engine setup - rutas
 
@@ -24,6 +37,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(setSession);
+app.use(setLocals);
 
 app.use('/', indexRouter);
 app.use('/cart', cartRouter);

@@ -68,14 +68,5 @@
   "phone": "114545484",
   "avatar": "avatar-function now() { [native code] }.jpg",
   "password": "$2a$06$d3zzvcg.xBqBDvn4UXtDSuUqQwg.ZOxlOwMrU2wsDpG4sAXQUhzx."
- },
- {
-  "id": 9,
-  "name": "Nicolas",
-  "lastname": "Brunfman",
-  "email": "nicolasbrunfman@gmail.com",
-  "phone": "01140921984",
-  "avatar": "1608417936639-11222913_910551389026070_2051406890132802246_n.jpg",
-  "password": "$2a$06$tKezUm0GAbPgIJIlibWiQekooeLZed.DbeAOK.ThtQW6d7MZoiPVe"
  }
 ]
