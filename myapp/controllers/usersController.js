@@ -41,12 +41,14 @@ const usersController = {
 			name: req.body.name,
 			lastname: req.body.lastname,
 			email: req.body.email,
-			phone: req.body.phone,
-			password: passwordHashed,
+			phone:req.body.phone,
+			password:passwordHashed,
+      avatar: req.files[0].filename
 		};
 		writeUser(newUser);
-		console.log(newUser);
-		res.redirect('/users/register');
+		res.redirect('/users/login');
+	}
+};
 	},
 	processLogin: (req, res) => {
 		const errors = validationResult(req);
@@ -58,7 +60,7 @@ const usersController = {
 		req.session.user = getAllUsers().find((user) => {
 			return user.email == req.body.email;
 		});
-
+ 
 		//Set Cookie
 		if (req.body.rememberMe) {
 			res.cookie('userId', req.session.user.id, { maxAge: 1000 * 60 * 60 });

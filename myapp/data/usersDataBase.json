@@ -44,18 +44,29 @@
  },
  {
   "id": 6,
-  "name": "bcrypt",
-  "lastname": "test",
-  "email": "bcrypt@test.com",
-  "phone": "111",
-  "password": "$2b$06$cuMmOtg13zDJxU017vF7JOFlLlFmCiRZfUi8jTsM8WBtZlaergswC"
+  "name": "Nicolas",
+  "lastname": "Brunfman",
+  "email": "nicolasbrunfman@gmail.com",
+  "phone": "01140921984",
+  "avatar": "avatar-function now() { [native code] }.jpg",
+  "password": "$2a$06$PfJlyuU.7osEPC4C/qYe0uM6Bw6p6aggxI7jnVykRZT3NDTRQpLEO"
  },
  {
   "id": 7,
-  "name": "Nicolas",
-  "lastname": "uno",
-  "email": "test1@test.com",
-  "phone": "1122",
-  "password": "$2b$06$pvkHqyIiWPlVrtbLzgI.Ue1dZ4YTBvslkS23bV7A629vFzhcYT7kS"
+  "name": "Juan Roberto",
+  "lastname": "Etchegaray",
+  "email": "EtchegararJR@gmail.com",
+  "phone": "1177889445",
+  "avatar": "avatar-function now() { [native code] }.jpg",
+  "password": "$2a$06$Ich/QGxCt..WGUCLDujd4eJ9xnDjCYb7uVbgAimRkIJD6sZobCp.y"
+ },
+ {
+  "id": 8,
+  "name": "Matias ",
+  "lastname": "Camisani",
+  "email": "matiascamisani@gmail.com",
+  "phone": "114545484",
+  "avatar": "avatar-function now() { [native code] }.jpg",
+  "password": "$2a$06$d3zzvcg.xBqBDvn4UXtDSuUqQwg.ZOxlOwMrU2wsDpG4sAXQUhzx."
  }
 ]

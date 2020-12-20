@@ -7,11 +7,11 @@ const validations = require('../middlewares/validations');
 
 //Multer
 var storage = multer.diskStorage({
-	destination: function (req, file, cb) {
-		cb(null, 'public/images/products');
-	},
-	filename: function (req, file, cb) {
-		cb(null, file.fieldname + '-' + Date.now + path.extname(file.originalname));
+  destination: function (req, file, cb) {
+    cb(null, 'public/images/avatar')
+  },
+  filename: function (req, file, cb) {
+		cb(null, Date.now() + '-' + file.originalname);
 	},
 });
 
@@ -27,7 +27,7 @@ router.get('/login', usersController.login);
 router.post('/login', validations.login, usersController.processLogin);
 
 /* POST register page: User Generator */
-router.post('/register', usersController.storeUser);
+router.post('/register', upload.any(), usersController.storeUser);
 
 router.get('/register', usersController.register);
 
