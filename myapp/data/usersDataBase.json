@@ -77,5 +77,14 @@
   "phone": "111111",
   "password": "$2b$06$wBXTY6JaUQanKf/65n1W6um9qWHYAeemaZwI.BJh9Ut375kao4T6u",
   "avatar": "1608574450020-sample_640×426.png"
+ },
+ {
+  "id": 10,
+  "name": "test",
+  "lastname": "imagen",
+  "email": "test@imagen.com",
+  "phone": "555",
+  "password": "$2b$06$mqSKKm.g1sxxGTLyUZWRquvIe1r5q/vUrp/xU4J/PkMY3FiMGjH.O",
+  "avatar": "1608575627493-sample_640×426.bmp"
  }
 ]
