@@ -68,5 +68,14 @@
   "phone": "114545484",
   "avatar": "avatar-function now() { [native code] }.jpg",
   "password": "$2a$06$d3zzvcg.xBqBDvn4UXtDSuUqQwg.ZOxlOwMrU2wsDpG4sAXQUhzx."
+ },
+ {
+  "id": 9,
+  "name": "Nicolas",
+  "lastname": "Belelli",
+  "email": "nico@nico.com",
+  "phone": "111111",
+  "password": "$2b$06$wBXTY6JaUQanKf/65n1W6um9qWHYAeemaZwI.BJh9Ut375kao4T6u",
+  "avatar": "1608574450020-sample_640×426.png"
  }
 ]
