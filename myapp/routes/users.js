@@ -31,4 +31,7 @@ router.post('/register', upload.any(), usersController.storeUser);
 
 router.get('/register', usersController.register);
 
+/* Log Out */
+router.get('/logout', usersController.logout);
+
 module.exports = router;

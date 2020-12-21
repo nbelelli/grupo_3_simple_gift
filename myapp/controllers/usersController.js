@@ -68,6 +68,13 @@ const usersController = {
 
 		return res.redirect('/');
 	},
+	logout: (req, res, next) => {
+		req.session.destroy();
+		if (req.cookies.userId) {
+			res.cookie('userId', 'logout', { maxAge: -1 });
+		}
+		return res.redirect('/');
+	},
 };
 
 module.exports = usersController;
