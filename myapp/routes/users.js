@@ -36,4 +36,7 @@ router.get('/register', guest, usersController.register);
 /* Log Out */
 router.get('/logout', auth, usersController.logout);
 
+/* Profile */
+router.get('/profile', auth, usersController.profile)
+
 module.exports = router;
