@@ -107,7 +107,6 @@ const productsController = {
 	update: (req, res) => {
 		const products = getAllProducts();
 		const id = req.params.id;
-		console.log(req.files[0]);
 		const editedProducts = products.map(function (product) {
 			if (product.id == id) {
 				product.name = req.body.name;
