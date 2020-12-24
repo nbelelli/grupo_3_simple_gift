@@ -1,41 +1,38 @@
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/headerStyles.css" />   
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/indexStyles.css" />
-    <link rel="stylesheet" href="/css/footerStyles.css"/>
-    <link rel="stylesheet" href="/css/loginRegisterStyles.css"/>
-    <link rel="stylesheet" href="/css/productCartStyles.css" />
-    <link rel="stylesheet" href="/css/productDetail.css" />
-    <link rel="stylesheet" href="/css/productsListStyles.css" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/css/headerStyles.css" />
+	<link rel="stylesheet" href="/css/styles.css" />
+	<link rel="stylesheet" href="/css/indexStyles.css" />
+	<link rel="stylesheet" href="/css/footerStyles.css" />
+	<link rel="stylesheet" href="/css/loginRegisterStyles.css" />
+	<link rel="stylesheet" href="/css/productCartStyles.css" />
+	<link rel="stylesheet" href="/css/productDetail.css" />
+	<link rel="stylesheet" href="/css/productsListStyles.css" />
 
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+	/>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+		rel="stylesheet"
+	/>
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
-        rel="stylesheet"
-    />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+		rel="stylesheet"
+	/>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
-        rel="stylesheet"
-    />
+	<title>Profile</title>
+</head>
 
-    <title>Profile</title> 
-    </head>
-
-	<%- include('./partials/header') %>
-
+<%- include('./partials/header') %>
 
 <!-- *******PROFILE MAIN***-->
 
 <body>
 	<main class="mainform">
-		 
 		<div class="login_container">
 			<div>
 				<span>
@@ -46,20 +43,24 @@
 			</div>
 
 			<seccion class="profileSeccion">
-				<h2 class="profileTitle"> ¡Bienvenido a tu perfil <%= name %>!</h2>
-				<p class="profileSubTitle">Estos son los datos de tu cuenta:</p><br>
-				<div class="profileUserData">Nombre completo: <%= name %> <%= lastname %></div> <br>
-				<div class="profileUserData">Mail: <%= email %> </div> <br>
-				<div class="profileUserData">Telefono: <%= phone %> </div> <br>
-				
+				<h2 class="profileTitle">¡Bienvenido a tu perfil <%= name %>!</h2>
+				<p class="profileSubTitle">Estos son los datos de tu cuenta:</p>
+				<br />
+				<div class="profileUserData">
+					Nombre completo: <%= name %> <%= lastname %>
+				</div>
+				<br />
+				<div class="profileUserData">Mail: <%= email %></div>
+				<br />
+				<div class="profileUserData">Telefono: <%= phone %></div>
+				<br />
 
-				<form action="/users/profile/edit">
+				<!-- 				<form action="/users/profile/edit">
 					<button class="profile-edit-button"><i class="fas fa-edit profile-icons"></i>Editar perfil</button>
-				</form>
-		</seccion>
-			
+				</form> -->
+			</seccion>
 		</div>
-		</main>
+	</main>
 
 	<%- include('./partials/footer') %>
 </body>
