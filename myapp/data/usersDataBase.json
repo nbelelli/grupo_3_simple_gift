@@ -86,5 +86,14 @@
   "phone": "555",
   "password": "$2b$06$mqSKKm.g1sxxGTLyUZWRquvIe1r5q/vUrp/xU4J/PkMY3FiMGjH.O",
   "avatar": "1608575627493-sample_640×426.bmp"
+ },
+ {
+  "id": 11,
+  "name": "Nico",
+  "lastname": "Belelli",
+  "email": "nico2@nico.com",
+  "phone": "555444",
+  "password": "$2b$06$JMRJoCVqqlYRdkPtbknyg.h5JOoQc1wJXVDfi6dAbXeK58bpGZT4a",
+  "avatar": "1608778775808-sample_1920×1280.jpg"
  }
 ]
