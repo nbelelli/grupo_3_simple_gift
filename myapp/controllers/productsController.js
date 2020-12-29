@@ -30,16 +30,21 @@ const productsController = {
 	products: async (req, res) => {
 		res.locals.title = 'Products';
 		const products = await db.Product.findAll();
-		console.log(products);
 
 		if (req.params.cat) {
-			const catProducts = products.filter((product) => {
-				return product.category == req.params.cat;
+			/* const catProducts = products.filter((product) => {
+				product.category == req.params.cat;
+			}); */
+			const catProducts = await db.Product.findAll({
+				where: {
+					category_id: req.params.cat,
+				},
 			});
+
 			return res.render('Products/productsList', { products: catProducts });
 		}
 
-		res.render('Products/productsList', { products: products });
+		return res.render('Products/productsList', { products: products });
 	},
 
 	/* Navigates to the Create product page */
@@ -69,11 +74,8 @@ const productsController = {
 		res.redirect('/');
 	},
 
-	detail: (req, res) => {
-		const products = getAllProducts();
-		const theProduct = products.find((prod) => {
-			return prod.id == req.params.id;
-		});
+	detail: async (req, res) => {
+		const theProduct = await db.Product.findByPk(req.params.id);
 		if (theProduct) {
 			res.locals.title = theProduct.name;
 		} else {
@@ -81,9 +83,9 @@ const productsController = {
 		}
 
 		if (theProduct == undefined) {
-			res.send('Producto no encontrado');
+			return res.send('Producto no encontrado');
 		} else {
-			res.render('Products/productDetail', { theProduct: theProduct });
+			return res.render('Products/productDetail', { theProduct: theProduct });
 		}
 	},
 	delete: (req, res) => {
