@@ -1,6 +1,3 @@
-const { DataTypes } = require('sequelize/types');
-const { sequelize } = require('.');
-
 module.exports = (sequelize, DataTypes) => {
 	const alias = 'Product';
 	const cols = {
@@ -30,6 +27,9 @@ module.exports = (sequelize, DataTypes) => {
 		stock: {
 			type: DataTypes.INTEGER,
 		},
+		category_id: {
+			type: DataTypes.INTEGER,
+		},
 	};
 
 	const config = {
@@ -38,5 +38,13 @@ module.exports = (sequelize, DataTypes) => {
 	};
 
 	const Product = sequelize.define(alias, cols, config);
+
+	Product.associate = (models) => {
+		Product.belongsTo(models.Category, {
+			as: 'Category',
+			foreignKey: 'category_id',
+		});
+	};
+
 	return Product;
 };

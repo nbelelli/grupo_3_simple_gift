@@ -1,5 +1,3 @@
-const { DataTypes } = require('sequelize/types');
-
 module.exports = (sequelize, DataTypes) => {
 	const alias = 'Category';
 	const cols = {
@@ -18,6 +16,13 @@ module.exports = (sequelize, DataTypes) => {
 	};
 
 	const Category = sequelize.define(alias, cols, config);
+
+	Category.associate = (models) => {
+		Category.hasMany(models.Product, {
+			as: 'Product',
+			foreignKey: 'category_id',
+		});
+	};
 
 	return Category;
 };

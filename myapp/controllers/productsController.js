@@ -2,14 +2,15 @@ const { renderFile } = require('ejs');
 const fs = require('fs');
 const { get } = require('http');
 const path = require('path');
+const db = require('../database/models');
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 
-function getAllProducts() {
+/* function getAllProducts() {
 	//Devuelve la DB en un array de objetos literales
 	return JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-}
+} */
 
 function writeProducts(productsToSave) {
 	//Recibe un Array de objetos literales.
@@ -26,9 +27,10 @@ function generateNewId() {
 
 const productsController = {
 	/* Navigates to the products list page */
-	products: (req, res) => {
+	products: async (req, res) => {
 		res.locals.title = 'Products';
-		const products = getAllProducts();
+		const products = await db.Product.findAll();
+		console.log(products);
 
 		if (req.params.cat) {
 			const catProducts = products.filter((product) => {
@@ -57,8 +59,8 @@ const productsController = {
 			bestSeller: req.body.bestSeller,
 			description: req.body.description,
 
-			image: req.files[0].filename
-			}
+			image: req.files[0].filename,
+		};
 
 		//return newProduct;
 		const products = getAllProducts();
