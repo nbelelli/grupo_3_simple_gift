@@ -76,16 +76,12 @@ const productsController = {
 			return res.render('Products/productDetail', { theProduct: theProduct });
 		}
 	},
-	delete: (req, res) => {
-		const products = getAllProducts();
-		const newProducts = [];
-		for (product of products) {
-			if (product.id != req.params.id) {
-				newProducts.push(product);
-			}
-		}
-
-		writeProducts(newProducts);
+	delete: async (req, res) => {
+		await db.Product.destroy({
+			where: {
+				id: req.params.id,
+			},
+		});
 		res.redirect('/products');
 	},
 	edit: async (req, res) => {
