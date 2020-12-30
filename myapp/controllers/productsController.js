@@ -7,11 +7,6 @@ const db = require('../database/models');
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 
-/* function getAllProducts() {
-	//Devuelve la DB en un array de objetos literales
-	return JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-} */
-
 function writeProducts(productsToSave) {
 	//Recibe un Array de objetos literales.
 	//Lo convierte en un JSON
@@ -32,9 +27,6 @@ const productsController = {
 		const products = await db.Product.findAll();
 
 		if (req.params.cat) {
-			/* const catProducts = products.filter((product) => {
-				product.category == req.params.cat;
-			}); */
 			const catProducts = await db.Product.findAll({
 				where: {
 					category_id: req.params.cat,
@@ -48,30 +40,25 @@ const productsController = {
 	},
 
 	/* Navigates to the Create product page */
-	create: (req, res) => {
+	create: async (req, res) => {
 		res.locals.title = 'Create';
-		res.render('Products/productCreate');
+		const categories = await db.Category.findAll();
+		res.render('Products/productCreate', { categories: categories });
 	},
 	/*  Store new product  */
-	store: (req, res, next) => {
-		const newProduct = {
-			id: generateNewId(),
+	store: async (req, res, next) => {
+		await db.Product.create({
+			category_id: req.body.category,
 			name: req.body.name,
 			price: req.body.price,
 			discount: req.body.discount,
-			//select ver como lo solicito, no tiene name
 			stock: req.body.stock,
-			bestSeller: req.body.bestSeller,
+			best_seller: req.body.bestSeller ? 1 : 0,
 			description: req.body.description,
-
 			image: req.files[0].filename,
-		};
+		});
 
-		//return newProduct;
-		const products = getAllProducts();
-		products.push(newProduct);
-		writeProducts(products);
-		res.redirect('/');
+		return res.redirect('/');
 	},
 
 	detail: async (req, res) => {
@@ -124,7 +111,6 @@ const productsController = {
 			}
 			return product;
 		});
-		console.log(editedProducts);
 		writeProducts(editedProducts);
 		res.redirect('/products/' + id + '/edit');
 	},
