@@ -100,23 +100,24 @@ const productsController = {
 			categories: categories,
 		});
 	},
-	update: (req, res) => {
-		const products = getAllProducts();
-		const id = req.params.id;
-		const editedProducts = products.map(function (product) {
-			if (product.id == id) {
-				product.name = req.body.name;
-				product.price = req.body.price;
-				product.discount = req.body.discount;
-				product.category = req.body.category;
-				product.description = req.body.description;
-				product.stock = req.body.stock;
-				product.bestSeller = req.body.bestSeller;
-				product.image = req.files[0] ? req.files[0].filename : product.image;
+	update: async (req, res) => {
+		await db.Product.update(
+			{
+				category_id: req.body.category,
+				name: req.body.name,
+				price: req.body.price,
+				discount: req.body.discount,
+				stock: req.body.stock,
+				best_seller: req.body.bestSeller ? 1 : 0,
+				description: req.body.description,
+				image: req.files[0] ? req.files[0].filename : product.image,
+			},
+			{
+				where: {
+					id: req.params.id,
+				},
 			}
-			return product;
-		});
-		writeProducts(editedProducts);
+		);
 		res.redirect('/products/' + id + '/edit');
 	},
 };
