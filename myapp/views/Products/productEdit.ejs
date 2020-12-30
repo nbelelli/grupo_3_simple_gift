@@ -64,47 +64,13 @@
 							<label for="image">Categoría:</label>
 
 							<select name="category" id="category" class="regAndLogInputs">
-								<option value="gaming"
-								<% if(productToEdit.category=='gaming'){  %> 
-									<%= "selected" %> 
+								<% for (category of categories){ %> 
+									<% if(category.id == productToEdit.category_id){  %>
+										<option value=<%= category.id %> selected>  <%= category.name %>
+									<% }else{ %>  
+										<option value=<%= category.id %> >  <%= category.name %>
+									<% } %> 
 								<% } %> 
-								>
-								Gaming</option>
-								<option value="mate"
-								<% if(productToEdit.category=='mate'){  %> 
-									<%= "selected" %> 
-								<% } %> 
-								>Mate</option>
-								<option value="cerveza" 
-								<% if(productToEdit.category=='cerveza'){  %> 
-									<%= "selected" %> 
-								<% } %> 
-								>Cerveza</option>
-								<option value="musica"
-								<% if(productToEdit.category=='musica'){  %> 
-									<%= "selected" %> 
-								<% } %> 
-								>Musica</option>
-								<option value="gourmet"
-								<% if(productToEdit.category=='gourmet'){  %> 
-									<%= "selected" %> 
-								<% } %> 
-								>Gourmet</option>
-								<option value="deportes"
-								<% if(productToEdit.category=='deportes'){  %> 
-									<%= "selected" %> 
-								<% } %> 
-								>Deportes</option>
-								<option value="vino"
-								<% if(productToEdit.category=='vino'){  %> 
-									<%= "selected" %> 
-								<% } %> 
-								>Vino</option>
-								<option value="otros"
-								<% if(productToEdit.category=='otros'){  %> 
-									<%= "selected" %> 
-								<% } %> 
-								>Otros</option>
 							</select>
 						</div>
 

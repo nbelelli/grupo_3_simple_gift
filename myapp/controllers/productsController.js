@@ -3,6 +3,7 @@ const fs = require('fs');
 const { get } = require('http');
 const path = require('path');
 const db = require('../database/models');
+const Product = require('../database/models/Product');
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -87,13 +88,17 @@ const productsController = {
 		writeProducts(newProducts);
 		res.redirect('/products');
 	},
-	edit: (req, res) => {
+	edit: async (req, res) => {
 		res.locals.title = 'Edit';
-		const products = getAllProducts();
-		const productToEdit = products.find((product) => {
+		const categories = await db.Category.findAll();
+		const productToEdit = await db.Product.findByPk(req.params.id);
+		/* 		const productToEdit = products.find((product) => {
 			return product.id == req.params.id;
+		}); */
+		res.render('Products/productEdit', {
+			productToEdit: productToEdit,
+			categories: categories,
 		});
-		res.render('Products/productEdit', { productToEdit: productToEdit });
 	},
 	update: (req, res) => {
 		const products = getAllProducts();
