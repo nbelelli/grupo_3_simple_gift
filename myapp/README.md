@@ -1,27 +1,5 @@
-SPRINT 4
-
-Enlace al tablero de trabajo en el archivo:
-https://trello.com/b/xdl3jnl5/sprint-4-2-12
-
----
-
-SPRINT 3
-
-Enlace al tablero de trabajo en el archivo ​README.md:
-
-https://trello.com/b/HPHlJ6iq/sprint-3-13-11
-
----
-
-SPRINT 2
-
-Enlace al tablero de trabajo en el archivo ​README.md:
-
-https://trello.com/b/1D4ts2WV/sprint-2-23-10
-
----
-
-SPRINT 1
+Scrum Board:
+https://trello.com/b/a4nphBdT/simple-box-scrum-board
 
 # grupo_3_boxclub
 
