@@ -60,11 +60,12 @@
 							<label for="image">Categoría:</label>
 
 							<select name="category" id="category" class="regAndLogInputs">
-								<option value="gaming">Gaming</option>
-								<option value="mate">Mate</option>
-								<option value="cerveza">Cerveza</option>
-								<option value="musica">Musica</option>
-								<option value="gourmet">Gourmet</option>
+
+								<% for (category of categories){ %> 
+									<option value=<%= category.id %> > <%= category.name %>  
+
+									</option>  
+								<% } %> 
 							</select>
 						</div>
 

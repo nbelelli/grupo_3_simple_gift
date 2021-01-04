@@ -1,6 +1,8 @@
 const { renderFile } = require('ejs');
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
+const Product = require('../database/models/Product');
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -24,12 +26,18 @@ function generateNewId() {
 }
 
 indexController = {
-	home: (req, res) => {
+	home: async (req, res) => {
 		res.locals.title = 'Home';
-		const products = getAllProducts();
+		/* 		const products = getAllProducts();
 		const elegidos = products.filter((product) => {
 			return product.bestSeller == 'on';
+		}); */
+		const elegidos = await db.Product.findAll({
+			where: {
+				best_seller: 1,
+			},
 		});
+		console.log(elegidos);
 		res.render('index', { elegidos: elegidos });
 	},
 };

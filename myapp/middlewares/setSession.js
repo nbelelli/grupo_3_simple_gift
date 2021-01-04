@@ -12,7 +12,6 @@ module.exports = (req, res, next) => {
 		req.session.user = getAllUsers().find((user) => {
 			return user.id == req.cookies.userId;
 		});
-		console.log('la sessoin deberia ser...', req.session.user);
 		return next();
 	}
 	return next();

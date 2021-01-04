@@ -73,20 +73,18 @@ const usersController = {
 		}
 		return res.redirect('/');
 	},
-	profile: (req, res)=>{
+	profile: (req, res) => {
 		const user = getAllUsers().find((user) => {
 			return user.email === req.session.user.email;
 		});
-		console.log("usuario", user)
 		res.render('profile', {
 			name: user.name,
 			lastname: user.lastname,
 			email: user.email,
 			phone: user.phone,
-			avatar: user.filename
+			avatar: user.filename,
 		});
-		
-	}
+	},
 };
 
 module.exports = usersController;
