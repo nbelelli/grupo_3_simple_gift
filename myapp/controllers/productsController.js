@@ -116,7 +116,7 @@ const productsController = {
 				},
 			}
 		);
-		res.redirect('/products/' + req.params.id + '/edit');
+		res.redirect('/products/' + req.params.id);
 	},
 };
 
