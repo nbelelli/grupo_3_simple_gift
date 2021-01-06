@@ -97,6 +97,8 @@ const productsController = {
 		});
 	},
 	update: async (req, res) => {
+		const productToEdit = await db.Product.findByPk(req.params.id);
+		const currentImage = productToEdit.image;
 		await db.Product.update(
 			{
 				category_id: req.body.category,
@@ -106,7 +108,7 @@ const productsController = {
 				stock: req.body.stock,
 				best_seller: req.body.bestSeller ? 1 : 0,
 				description: req.body.description,
-				image: req.files[0] ? req.files[0].filename : product.image,
+				image: req.files[0] ? req.files[0].filename : currentImage,
 			},
 			{
 				where: {
@@ -114,7 +116,7 @@ const productsController = {
 				},
 			}
 		);
-		res.redirect('/products/' + id + '/edit');
+		res.redirect('/products/' + req.params.id + '/edit');
 	},
 };
 
