@@ -4,6 +4,8 @@ const { get } = require('http');
 const path = require('path');
 const db = require('../database/models');
 const Product = require('../database/models/Product');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -33,8 +35,16 @@ const productsController = {
 					category_id: req.params.cat,
 				},
 			});
-
 			return res.render('Products/productsList', { products: catProducts });
+		}
+
+		if (req.query.search) {
+			/* const foundProducts = await db.Product.findAll(); */
+
+			const foundProducts = await db.Product.findAll({
+				where: { name: { [Op.like]: '%' + req.query.search + '%' } },
+			});
+			return res.render('Products/productsList', { products: foundProducts });
 		}
 
 		return res.render('Products/productsList', { products: products });

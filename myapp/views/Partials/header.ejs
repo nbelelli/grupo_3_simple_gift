@@ -15,10 +15,11 @@
 
 		<!-- SEARCH -->
 		<div class="search_bar">
-			<form action="">
-				<input type="text" placeholder="Buscar..." required />
-
-				<a class="search_btn" href="#"><i class="fas fa-search"></i></a>
+			<form action="/products" method="GET">
+				<input name="search" type="text" placeholder="Buscar..." required />
+				<button class="search_btn" type="submit">
+					<i class="fas fa-search"></i>
+				</button>
 			</form>
 		</div>
 	</div>
