@@ -4,6 +4,8 @@ const { get } = require('http');
 const path = require('path');
 const db = require('../database/models');
 const Product = require('../database/models/Product');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -33,8 +35,16 @@ const productsController = {
 					category_id: req.params.cat,
 				},
 			});
-
 			return res.render('Products/productsList', { products: catProducts });
+		}
+
+		if (req.query.search) {
+			/* const foundProducts = await db.Product.findAll(); */
+
+			const foundProducts = await db.Product.findAll({
+				where: { name: { [Op.like]: '%' + req.query.search + '%' } },
+			});
+			return res.render('Products/productsList', { products: foundProducts });
 		}
 
 		return res.render('Products/productsList', { products: products });
@@ -97,6 +107,8 @@ const productsController = {
 		});
 	},
 	update: async (req, res) => {
+		const productToEdit = await db.Product.findByPk(req.params.id);
+		const currentImage = productToEdit.image;
 		await db.Product.update(
 			{
 				category_id: req.body.category,
@@ -106,7 +118,7 @@ const productsController = {
 				stock: req.body.stock,
 				best_seller: req.body.bestSeller ? 1 : 0,
 				description: req.body.description,
-				image: req.files[0] ? req.files[0].filename : product.image,
+				image: req.files[0] ? req.files[0].filename : currentImage,
 			},
 			{
 				where: {
@@ -114,7 +126,7 @@ const productsController = {
 				},
 			}
 		);
-		res.redirect('/products/' + id + '/edit');
+		res.redirect('/products/' + req.params.id);
 	},
 };
 
