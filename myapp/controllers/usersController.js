@@ -6,6 +6,10 @@ const bcrypt = require('bcrypt');
 const session = require('express-session');
 const { check, validationResult, body } = require('express-validator');
 const cookieParser = require('cookie-parser');
+const db = require('../database/models');
+const User = require('../database/models/User');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 const file = path.join(__dirname, '../data/usersDataBase.json');
 
