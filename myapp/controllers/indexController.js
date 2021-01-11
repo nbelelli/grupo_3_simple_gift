@@ -37,7 +37,6 @@ indexController = {
 				best_seller: 1,
 			},
 		});
-		console.log(elegidos);
 		res.render('index', { elegidos: elegidos });
 	},
 };

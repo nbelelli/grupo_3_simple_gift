@@ -52,16 +52,19 @@ const usersController = {
 		writeUser(newUser);
 		res.redirect('/users/login');
 	},
-	processLogin: (req, res) => {
+	processLogin: async (req, res) => {
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
 			res.locals.title = 'Login';
 			return res.render('login', { errors: errors.errors });
 		}
 		//Set Session
-		req.session.user = getAllUsers().find((user) => {
-			return user.email == req.body.email;
+		req.session.user = await db.User.findOne({
+			where: {
+				email: req.body.email,
+			},
 		});
+		console.log('en sesion', req.session.user);
 
 		//Set Cookie
 		if (req.body.rememberMe) {
