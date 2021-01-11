@@ -30,29 +30,36 @@ function writeUser(user) {
 }
 
 const usersController = {
-	register: (req, res) => {
+  register: (req, res) => {
 		res.locals.title = 'Register';
 		res.render('register');
 	},
+  
 	login: (req, res) => {
 		res.locals.title = 'Login';
 		res.render('login');
 	},
-	storeUser: (req, res) => {
-		const passwordHashed = bcrypt.hashSync(req.body.password, 6);
-		const newUser = {
-			id: generateNewId(),
-			name: req.body.name,
-			lastname: req.body.lastname,
-			email: req.body.email,
-			phone: req.body.phone,
-			password: passwordHashed,
-			avatar: req.files[0].filename,
-		};
-		writeUser(newUser);
+  
+	storeUser: async(req, res) =>{
+        // Verifica que no existan errores en el form
+		const errors = validationResult(req);
+		if (!errors.isEmpty()) {
+			res.locals.title = 'Login';
+			return res.render('login', { errors: errors.errors });
+		}
+        // Crea un nuevo registro en la DB
+        await db.User.create({
+                name: req.body.name,
+                lastName: req.body.lastName, 
+				email: req.body.email,
+				phone: req.body.phone,
+                password: bcrypt.hashSync(req.body.password, 5),
+                image: req.files[0].filename
+        })
 		res.redirect('/users/login');
-	},
-	processLogin: async (req, res) => {
+   },
+  
+   processLogin: async (req, res) => {
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
 			res.locals.title = 'Login';
