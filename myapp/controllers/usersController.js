@@ -30,14 +30,16 @@ function writeUser(user) {
 }
 
 const usersController = {
-	register: (req, res) => {
+  register: (req, res) => {
 		res.locals.title = 'Register';
 		res.render('register');
 	},
+  
 	login: (req, res) => {
 		res.locals.title = 'Login';
 		res.render('login');
 	},
+  
 	storeUser: async(req, res) =>{
         // Verifica que no existan errores en el form
 		const errors = validationResult(req);
@@ -55,18 +57,21 @@ const usersController = {
                 image: req.files[0].filename
         })
 		res.redirect('/users/login');
-    },
-
-	processLogin: (req, res) => {
+   },
+  
+   processLogin: async (req, res) => {
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
 			res.locals.title = 'Login';
 			return res.render('login', { errors: errors.errors });
 		}
 		//Set Session
-		req.session.user = getAllUsers().find((user) => {
-			return user.email == req.body.email;
+		req.session.user = await db.User.findOne({
+			where: {
+				email: req.body.email,
+			},
 		});
+		console.log('en sesion', req.session.user);
 
 		//Set Cookie
 		if (req.body.rememberMe) {
