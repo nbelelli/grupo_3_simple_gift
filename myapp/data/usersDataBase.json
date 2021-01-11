@@ -1,15 +1,5 @@
 [
- {
-  "id": 0
- },
- {
-  "id": 1,
-  "name": "Nicolas",
-  "lastname": "Brunfman",
-  "email": "nicolasbrunfman@gmail.com",
-  "phone": "01140921984",
-  "password": "$2a$06$Q8hooISF3mZe66ZnRemmDuefBRJgIwcpMz8jjPGGP74c1C3afGlo."
- },
+
  {
   "id": 2,
   "name": "Joaquin",
@@ -68,15 +58,6 @@
   "phone": "114545484",
   "avatar": "avatar-function now() { [native code] }.jpg",
   "password": "$2a$06$d3zzvcg.xBqBDvn4UXtDSuUqQwg.ZOxlOwMrU2wsDpG4sAXQUhzx."
- },
- {
-  "id": 9,
-  "name": "Nicolas js",
-  "lastname": "Belelli",
-  "email": "nico@nico.com",
-  "phone": "111111",
-  "password": "$2b$06$wBXTY6JaUQanKf/65n1W6um9qWHYAeemaZwI.BJh9Ut375kao4T6u",
-  "avatar": "1608574450020-sample_640×426.png"
  },
  {
   "id": 10,
