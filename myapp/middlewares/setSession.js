@@ -1,5 +1,3 @@
-const path = require('path');
-const fs = require('fs');
 const db = require('../database/models');
 
 module.exports = async (req, res, next) => {
