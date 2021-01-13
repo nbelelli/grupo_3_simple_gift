@@ -24,7 +24,7 @@
 		rel="stylesheet"
 	/>
 
-	<title>Profile</title>
+	<title>Perfil de <%= name %></title>
 </head>
 
 <%- include('./partials/header') %>
@@ -54,6 +54,7 @@
 				<br />
 				<div class="profileUserData">Telefono: <%= phone %></div>
 				<br />
+				<a href="/users/edit" ><button class="formButton" type="submit" href="/users/edit">Editar</button></a>
 
 				<!-- 				<form action="/users/profile/edit">
 					<button class="profile-edit-button"><i class="fas fa-edit profile-icons"></i>Editar perfil</button>

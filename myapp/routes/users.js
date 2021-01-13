@@ -39,4 +39,10 @@ router.get('/logout', auth, usersController.logout);
 /* Profile */
 router.get('/profile', auth, usersController.profile);
 
+/* Edit Profile */
+router.get('/:id/edit', auth, usersController.edit)
+
+//Editar un usuario 
+router.post('/:id/edit', upload.any(), usersController.update);
+
 module.exports = router;
