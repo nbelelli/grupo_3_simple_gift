@@ -99,6 +99,37 @@ const usersController = {
 			avatar: user.filename,
 		});
 	},
+	
+	edit: async (req, res) => {
+		res.locals.title = 'Edit User';
+		const userToEdit = await db.User.findByPk(req.params.id);
+		if (userToEdit== undefined){
+			return res.send('Usuario no encontrado');
+		} else { 
+		res.render('userEdit', {userToEdit: userToEdit});
+		}
+	},
+	update: async (req, res) => {
+		res.locals.title = 'Edit User';
+		const userToEdit = await db.User.findByPk(req.params.id);
+		await db.user.update(
+			{
+				id: req.body.id,
+				name: req.body.name,
+				lastname: req.body.lastname,
+				email: req.body.email,
+				phone: req.body.phone,
+				avatar: req.files[0] ? req.files[0].filename : currentImage,
+			}, 
+			{
+				where: {
+					id:req.params.id,
+				},
+			}
+		);
+		res.redirect('/users/login');
+	},
+
 };
 
 module.exports = usersController;

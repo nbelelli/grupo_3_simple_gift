@@ -1,0 +1,114 @@
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/css/headerStyles.css" />
+	<link rel="stylesheet" href="/css/styles.css" />
+	<link rel="stylesheet" href="/css/indexStyles.css" />
+	<link rel="stylesheet" href="/css/footerStyles.css" />
+	<link rel="stylesheet" href="/css/loginRegisterStyles.css" />
+	<link rel="stylesheet" href="/css/productCartStyles.css" />
+	<link rel="stylesheet" href="/css/productDetail.css" />
+	<link rel="stylesheet" href="/css/productsListStyles.css" />
+
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+	/>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+		rel="stylesheet"
+	/>
+
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+		rel="stylesheet"
+	/>
+
+	<title>Profile</title>
+</head>
+	<%- include('./partials/header') %>
+
+	<body>
+		<main>
+			<div>
+				<div>
+					<span>
+						<a class="icono_go_back" href="#"
+							><i class="fas fa-long-arrow-alt-left fa-lg"></i
+						></a>
+					</span>
+				</div>
+				<section class="createEditFormSection">
+					<h1 class="formTitle">Aqui vas a poder editar tu Perfil, <%=userToEdit.name %> <%=userToEdit.lastname%></h1>
+
+					<form method="POST" action="/products/<%= userToEdit.id %> /edit?_method=PUT" class="createEditForm" enctype="multipart/form-data">
+						<div class="formRegisterPadding">
+							<label for="name">Nombre:</label>
+							<input
+								type="text"
+								name="name"
+								id="name"
+								required
+								class="regAndLogInputs"
+								value="<%= userToEdit.name %> "
+							/>
+						</div>
+
+						<div class="formRegisterPadding">
+							<label for="lastname">Apellido:</label>
+							<input
+								type="text"
+								name="lastname"
+								id="apellido"
+								required
+								class="regAndLogInputs"
+								value="<%= userToEdit.lastname %> "
+							/>
+						</div>
+						
+						<div class="formRegisterPadding">
+							<label for="email">Email:</label>
+							<input
+								type="email"
+								name="email"
+								id="email"
+								required
+								class="regAndLogInputs"
+								value="<%= userToEdit.email %> "
+							/>
+						</div>
+
+						<div class="formRegisterPadding">
+							<label for="tel">Telefono:</label>
+							<input
+								type="tel"
+								name="phone"
+								id="email"
+								required
+								class="regAndLogInputs"
+								value="<%= userToEdit.phone %> "
+							/>
+						</div>
+
+						
+
+						<div class="formRegisterPadding">
+							<label for="image">Avatar:</label>
+							<input type="file" name="image" id="image" />
+							
+						</div>
+						<img src="/images/avatar/<%= userToEdit.avatar %> " style="max-width: 20%">
+
+						
+						<button class="formButton" type="“submit”">Guardar</button>
+					</form>
+
+					
+
+				</section>
+			</div>
+		</main>
+
+		<%- include('./partials/footer') %>
+	</body>
+</html>
