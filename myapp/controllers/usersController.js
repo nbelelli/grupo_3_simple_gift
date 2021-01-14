@@ -30,36 +30,36 @@ function writeUser(user) {
 }
 
 const usersController = {
-  register: (req, res) => {
+	register: (req, res) => {
 		res.locals.title = 'Register';
 		res.render('register');
 	},
-  
+
 	login: (req, res) => {
 		res.locals.title = 'Login';
 		res.render('login');
 	},
-  
-	storeUser: async(req, res) =>{
-        // Verifica que no existan errores en el form
+
+	storeUser: async (req, res) => {
+		// Verifica que no existan errores en el form
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
 			res.locals.title = 'Login';
 			return res.render('login', { errors: errors.errors });
 		}
-        // Crea un nuevo registro en la DB
-        await db.User.create({
-                name: req.body.name,
-                lastName: req.body.lastName, 
-				email: req.body.email,
-				phone: req.body.phone,
-                password: bcrypt.hashSync(req.body.password, 5),
-                image: req.files[0].filename
-        })
+		// Crea un nuevo registro en la DB
+		await db.User.create({
+			name: req.body.name,
+			lastName: req.body.lastName,
+			email: req.body.email,
+			phone: req.body.phone,
+			password: bcrypt.hashSync(req.body.password, 5),
+			image: req.files[0].filename,
+		});
 		res.redirect('/users/login');
-   },
-  
-   processLogin: async (req, res) => {
+	},
+
+	processLogin: async (req, res) => {
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
 			res.locals.title = 'Login';
@@ -87,10 +87,17 @@ const usersController = {
 		}
 		return res.redirect('/');
 	},
-	profile: (req, res) => {
-		const user = getAllUsers().find((user) => {
+	profile: async (req, res) => {
+		/* 		const user = getAllUsers().find((user) => {
 			return user.email === req.session.user.email;
+		}); */
+
+		const user = await db.User.findOne({
+			where: {
+				email: req.session.user.email,
+			},
 		});
+		console.log(user);
 		res.render('profile', {
 			name: user.name,
 			lastname: user.lastname,
@@ -99,14 +106,14 @@ const usersController = {
 			avatar: user.filename,
 		});
 	},
-	
+
 	edit: async (req, res) => {
 		res.locals.title = 'Edit User';
 		const userToEdit = await db.User.findByPk(req.params.id);
-		if (userToEdit== undefined){
+		if (userToEdit == undefined) {
 			return res.send('Usuario no encontrado');
-		} else { 
-		res.render('userEdit', {userToEdit: userToEdit});
+		} else {
+			res.render('userEdit', { userToEdit: userToEdit });
 		}
 	},
 	update: async (req, res) => {
@@ -120,16 +127,15 @@ const usersController = {
 				email: req.body.email,
 				phone: req.body.phone,
 				avatar: req.files[0] ? req.files[0].filename : currentImage,
-			}, 
+			},
 			{
 				where: {
-					id:req.params.id,
+					id: req.params.id,
 				},
 			}
 		);
 		res.redirect('/users/login');
 	},
-
 };
 
 module.exports = usersController;
