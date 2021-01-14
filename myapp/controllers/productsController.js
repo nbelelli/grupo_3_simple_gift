@@ -1,27 +1,9 @@
 const { renderFile } = require('ejs');
-const fs = require('fs');
 const { get } = require('http');
-const path = require('path');
 const db = require('../database/models');
 const Product = require('../database/models/Product');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-
-const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-
-function writeProducts(productsToSave) {
-	//Recibe un Array de objetos literales.
-	//Lo convierte en un JSON
-	//Reemplaza TODO el json de DB con este nuevo JSON
-	const productsToStringify = JSON.stringify(productsToSave, null, ' ');
-	return fs.writeFileSync(productsFilePath, productsToStringify);
-}
-
-function generateNewId() {
-	const products = getAllProducts();
-	return products.pop().id + 1;
-}
 
 const productsController = {
 	/* Navigates to the products list page */
@@ -39,8 +21,6 @@ const productsController = {
 		}
 
 		if (req.query.search) {
-			/* const foundProducts = await db.Product.findAll(); */
-
 			const foundProducts = await db.Product.findAll({
 				where: { name: { [Op.like]: '%' + req.query.search + '%' } },
 			});
@@ -98,9 +78,6 @@ const productsController = {
 		res.locals.title = 'Edit';
 		const categories = await db.Category.findAll();
 		const productToEdit = await db.Product.findByPk(req.params.id);
-		/* 		const productToEdit = products.find((product) => {
-			return product.id == req.params.id;
-		}); */
 		res.render('Products/productEdit', {
 			productToEdit: productToEdit,
 			categories: categories,
