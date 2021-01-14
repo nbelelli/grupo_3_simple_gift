@@ -1,7 +1,5 @@
 const { renderFile } = require('ejs');
-const fs = require('fs');
 const { get } = require('http');
-const path = require('path');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const { check, validationResult, body } = require('express-validator');
@@ -10,24 +8,6 @@ const db = require('../database/models');
 const User = require('../database/models/User');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-
-const file = path.join(__dirname, '../data/usersDataBase.json');
-
-function getAllUsers() {
-	return JSON.parse(fs.readFileSync(file, 'utf-8'));
-}
-
-function generateNewId() {
-	const users = getAllUsers();
-	return users.pop().id + 1;
-}
-
-function writeUser(user) {
-	const users = getAllUsers();
-	const usersToSave = [...users, user];
-	const userToJson = JSON.stringify(usersToSave, null, ' ');
-	fs.writeFileSync(file, userToJson);
-}
 
 const usersController = {
 	register: (req, res) => {
@@ -47,14 +27,16 @@ const usersController = {
 			res.locals.title = 'Login';
 			return res.render('login', { errors: errors.errors });
 		}
+
 		// Crea un nuevo registro en la DB
+
 		await db.User.create({
 			name: req.body.name,
-			lastName: req.body.lastName,
+			lastname: req.body.lastname,
 			email: req.body.email,
 			phone: req.body.phone,
 			password: bcrypt.hashSync(req.body.password, 5),
-			image: req.files[0].filename,
+			avatar: req.files[0].filename,
 		});
 		res.redirect('/users/login');
 	},
@@ -71,7 +53,6 @@ const usersController = {
 				email: req.body.email,
 			},
 		});
-		console.log('en sesion', req.session.user);
 
 		//Set Cookie
 		if (req.body.rememberMe) {
@@ -88,16 +69,12 @@ const usersController = {
 		return res.redirect('/');
 	},
 	profile: async (req, res) => {
-		/* 		const user = getAllUsers().find((user) => {
-			return user.email === req.session.user.email;
-		}); */
-
 		const user = await db.User.findOne({
 			where: {
 				email: req.session.user.email,
 			},
 		});
-		console.log(user);
+
 		res.render('profile', {
 			name: user.name,
 			lastname: user.lastname,
