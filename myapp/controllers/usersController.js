@@ -56,7 +56,7 @@ const usersController = {
 			email: req.body.email,
 			phone: req.body.phone,
 			password: bcrypt.hashSync(req.body.password, 5),
-			image: req.files[0].filename,
+			avatar: req.files[0].filename,
 		});
 		res.redirect('/users/login');
 	},
