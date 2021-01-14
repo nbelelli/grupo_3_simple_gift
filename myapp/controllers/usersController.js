@@ -47,10 +47,12 @@ const usersController = {
 			res.locals.title = 'Login';
 			return res.render('login', { errors: errors.errors });
 		}
+
 		// Crea un nuevo registro en la DB
+
 		await db.User.create({
 			name: req.body.name,
-			lastName: req.body.lastName,
+			lastname: req.body.lastname,
 			email: req.body.email,
 			phone: req.body.phone,
 			password: bcrypt.hashSync(req.body.password, 5),
