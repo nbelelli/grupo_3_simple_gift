@@ -41,7 +41,7 @@
 				<section class="createEditFormSection">
 					<h1 class="formTitle">Aqui vas a poder editar tu Perfil, <%=userToEdit.name %> <%=userToEdit.lastname%></h1>
 
-					<form method="POST" action="/products/<%= userToEdit.id %> /edit?_method=PUT" class="createEditForm" enctype="multipart/form-data">
+					<form method="POST" action="/users/<%= userToEdit.id %>/edit?_method=PUT" class="createEditForm" enctype="multipart/form-data">
 						<div class="formRegisterPadding">
 							<label for="name">Nombre:</label>
 							<input
@@ -72,8 +72,7 @@
 								type="email"
 								name="email"
 								id="email"
-								required
-								class="regAndLogInputs"
+								readonly
 								value="<%= userToEdit.email %> "
 							/>
 						</div>
