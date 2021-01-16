@@ -28,6 +28,7 @@
 </head>
 
 <%- include('./partials/header') %>
+<script src="/javascripts/history.js"></script>
 
 <!-- *******PROFILE MAIN***-->
 
@@ -36,7 +37,7 @@
 		<div class="login_container">
 			<div>
 				<span>
-					<a class="icono_go_back" href="#"
+					<a class="icono_go_back" href="#" id="back_button"
 						><i class="fas fa-long-arrow-alt-left fa-lg"></i
 					></a>
 				</span>
@@ -54,11 +55,9 @@
 				<br />
 				<div class="profileUserData">Telefono: <%= phone %></div>
 				<br />
-				<a href="/users/edit" ><button class="formButton" type="submit" href="/users/edit">Editar</button></a>
-
-				<!-- 				<form action="/users/profile/edit">
-					<button class="profile-edit-button"><i class="fas fa-edit profile-icons"></i>Editar perfil</button>
-				</form> -->
+				<a href="/users/<%= id %>/edit"
+					><button class="formButton">Editar</button></a
+				>
 			</section>
 		</div>
 	</main>

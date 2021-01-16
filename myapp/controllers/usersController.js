@@ -76,6 +76,7 @@ const usersController = {
 		});
 
 		res.render('profile', {
+			id: user.id,
 			name: user.name,
 			lastname: user.lastname,
 			email: user.email,
@@ -96,12 +97,11 @@ const usersController = {
 	update: async (req, res) => {
 		res.locals.title = 'Edit User';
 		const userToEdit = await db.User.findByPk(req.params.id);
-		await db.user.update(
+		const currentImage = userToEdit.avatar;
+		await db.User.update(
 			{
-				id: req.body.id,
 				name: req.body.name,
 				lastname: req.body.lastname,
-				email: req.body.email,
 				phone: req.body.phone,
 				avatar: req.files[0] ? req.files[0].filename : currentImage,
 			},
