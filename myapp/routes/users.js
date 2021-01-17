@@ -29,7 +29,13 @@ router.get('/login', guest, usersController.login);
 router.post('/login', validations.login, usersController.processLogin);
 
 /* POST register page: User Generator */
-router.post('/register', upload.any(), usersController.storeUser);
+router.post(
+	'/register',
+	upload.any(),
+	validations.register,
+
+	usersController.storeUser
+);
 
 router.get('/register', guest, usersController.register);
 
