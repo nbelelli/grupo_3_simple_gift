@@ -1,14 +1,8 @@
+const db = require('../database/models');
 const { check, validationResult, body } = require('express-validator');
 const path = require('path');
-const fs = require('fs');
 const bcrypt = require('bcrypt');
 const usersController = require('../controllers/usersController');
-
-const usersPath = path.join(__dirname, '../data/usersDataBase.json');
-
-function getAllUsers() {
-	return JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
-}
 
 module.exports = {
 	login: [
@@ -16,19 +10,27 @@ module.exports = {
 			.notEmpty()
 			.withMessage('Por favor, ingrese su Email')
 			.bail()
-			.custom((value) => {
-				return getAllUsers().find((user) => {
-					return user.email == value;
+			.custom(async (value) => {
+				let theUser = await db.User.findOne({
+					where: {
+						email: value,
+					},
 				});
+				if (!theUser) {
+					return Promise.reject();
+				}
 			})
 			.withMessage('El usuario ingresado no existe')
 			.bail()
-			.custom((value, { req }) => {
-				const theUser = getAllUsers().find((user) => {
-					return user.email == value;
+			.custom(async (value, { req }) => {
+				let theUser = await db.User.findOne({
+					where: {
+						email: value,
+					},
 				});
-
-				return bcrypt.compareSync(req.body.password, theUser.password);
+				if (!bcrypt.compareSync(req.body.password, theUser.password)) {
+					return Promise.reject();
+				}
 			})
 			.withMessage('La contraseña es incorrecta'),
 	],

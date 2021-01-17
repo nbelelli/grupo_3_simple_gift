@@ -26,7 +26,7 @@ var upload = multer({ storage: storage });
 
 * GET login page. */
 router.get('/login', guest, usersController.login);
-router.post('/login' /* , validations.login */, usersController.processLogin);
+router.post('/login', validations.login, usersController.processLogin);
 
 /* POST register page: User Generator */
 router.post('/register', upload.any(), usersController.storeUser);
