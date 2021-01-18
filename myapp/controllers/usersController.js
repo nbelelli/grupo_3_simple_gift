@@ -23,20 +23,23 @@ const usersController = {
 	storeUser: async (req, res) => {
 		// Verifica que no existan errores en el form
 		const errors = validationResult(req);
+		console.log('errores', errors);
+		console.log('body', req.body);
 		if (!errors.isEmpty()) {
-			res.locals.title = 'Login';
-			return res.render('login', { errors: errors.errors });
+			res.locals.title = 'Register';
+			return res.render('register', { errors: errors.errors });
 		}
 
 		// Crea un nuevo registro en la DB
-
+		/* 		console.log('avatar: ', req.files[0].filename); */
 		await db.User.create({
 			name: req.body.name,
 			lastname: req.body.lastname,
 			email: req.body.email,
 			phone: req.body.phone,
 			password: bcrypt.hashSync(req.body.password, 5),
-			avatar: req.files[0].filename,
+			/* avatar: req.files[0].filename, */
+			avatar: req.files[0] ? req.files[0].filename : '',
 		});
 		res.redirect('/users/login');
 	},

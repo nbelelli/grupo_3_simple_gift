@@ -23,8 +23,7 @@
             name="name" 
             id="nombre" 
             placeholder="Leandro" 
-            required
-            class='regAndLogInputs'>
+             class='regAndLogInputs'>
      </div>
      <div class="formRegisterPadding">
         <label for="apellido">Apellido:</label>
@@ -33,7 +32,6 @@
             name="lastname" 
             id="apellido" 
             placeholder="Perez"
-            required
             class='regAndLogInputs'>
      </div>
     <div class="formRegisterPadding">
@@ -43,7 +41,6 @@
             name="email" 
             id="email" 
             placeholder="ejemplo@correo.com" 
-            required
             class='regAndLogInputs'>   
     </div>
     <div class="formRegisterPadding">
@@ -52,7 +49,6 @@
             type="tel" 
             name="phone" 
             placeholder="11-4444-4444" 
-            required
             class='regAndLogInputs'>
     </div>
     <div class="formRegisterPadding">
@@ -62,7 +58,15 @@
             name="password" 
             id="password" 
             placeholder="contraseña" 
-            required
+            class='regAndLogInputs'>
+    </div>
+    <div class="formRegisterPadding">
+        <label for="password">Retype</label>
+        <input 
+            type="password" 
+            name="retype" 
+            id="retype" 
+            placeholder="contraseña" 
             class='regAndLogInputs'>
     </div>
     <div class="formRegisterPadding">
@@ -71,9 +75,13 @@
     </div>
     <button class="formButton" type="submit">Enviar</button>
     </form>
+    
+    <% if(typeof errors!='undefined'){ for (error of errors){ %>
+        <li style="color: red"><%= error.msg %></li>
+        <% } %> <% } %>
 
     
-    <h3 class="registerYaTenesCuenta">¿Ya tenés una cuenta de Simple Gift?  <a href="/views/login.html" id="registerStartSection">  Iniciá Sección</a></h3>
+    <h3 class="registerYaTenesCuenta">¿Ya tenés una cuenta de Simple Gift?  <a href="/users/login" id="registerStartSection">  Iniciá Sesión</a></h3>
     
     </form>
     </article>
