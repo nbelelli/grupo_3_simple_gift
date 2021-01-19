@@ -1,0 +1,37 @@
+<%- include('../partials/head') %> <%- include('../partials/header') %>
+<script src="/javascripts/history.js"></script>
+
+<!-- *******PROFILE MAIN***-->
+
+<body>
+	<main class="mainform">
+		<div class="login_container">
+			<div>
+				<span>
+					<a class="icono_go_back" href="#" id="back_button"
+						><i class="fas fa-long-arrow-alt-left fa-lg"></i
+					></a>
+				</span>
+			</div>
+
+			<section class="profileSeccion">
+				<h2 class="profileTitle">¡Bienvenido a tu perfil <%= name %>!</h2>
+				<p class="profileSubTitle">Estos son los datos de tu cuenta:</p>
+				<br />
+				<div class="profileUserData">
+					Nombre completo: <%= name %> <%= lastname %>
+				</div>
+				<br />
+				<div class="profileUserData">Email: <%= email %></div>
+				<br />
+				<div class="profileUserData">Telefono: <%= phone %></div>
+				<br />
+				<a href="/users/<%= id %>/edit"
+					><button class="formButton">Editar</button></a
+				>
+			</section>
+		</div>
+	</main>
+
+	<%- include('../partials/footer') %>
+</body>
