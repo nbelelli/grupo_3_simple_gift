@@ -12,12 +12,12 @@ const Op = Sequelize.Op;
 const usersController = {
 	register: (req, res) => {
 		res.locals.title = 'Register';
-		res.render('register');
+		res.render('Users/register');
 	},
 
 	login: (req, res) => {
 		res.locals.title = 'Login';
-		res.render('login');
+		res.render('Users/login');
 	},
 
 	storeUser: async (req, res) => {
@@ -27,7 +27,7 @@ const usersController = {
 		console.log('body', req.body);
 		if (!errors.isEmpty()) {
 			res.locals.title = 'Register';
-			return res.render('register', { errors: errors.errors });
+			return res.render('Users/register', { errors: errors.errors });
 		}
 
 		// Crea un nuevo registro en la DB
@@ -41,14 +41,14 @@ const usersController = {
 			/* avatar: req.files[0].filename, */
 			avatar: req.files[0] ? req.files[0].filename : '',
 		});
-		res.redirect('/users/login');
+		res.redirect('/Users/login');
 	},
 
 	processLogin: async (req, res) => {
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
 			res.locals.title = 'Login';
-			return res.render('login', { errors: errors.errors });
+			return res.render('Users/login', { errors: errors.errors });
 		}
 		//Set Session
 		req.session.user = await db.User.findOne({
@@ -72,13 +72,14 @@ const usersController = {
 		return res.redirect('/');
 	},
 	profile: async (req, res) => {
+		res.locals.title = 'Profile Page';
 		const user = await db.User.findOne({
 			where: {
 				email: req.session.user.email,
 			},
 		});
 
-		res.render('profile', {
+		res.render('Users/profile', {
 			id: user.id,
 			name: user.name,
 			lastname: user.lastname,
@@ -94,7 +95,7 @@ const usersController = {
 		if (userToEdit == undefined) {
 			return res.send('Usuario no encontrado');
 		} else {
-			res.render('userEdit', { userToEdit: userToEdit });
+			res.render('Users/userEdit', { userToEdit: userToEdit });
 		}
 	},
 	update: async (req, res) => {
@@ -114,7 +115,7 @@ const usersController = {
 				},
 			}
 		);
-		res.redirect('/users/login');
+		res.redirect('/Users/login');
 	},
 };
 

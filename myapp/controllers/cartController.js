@@ -1,7 +1,7 @@
 cartController = {
 	cart: (req, res) => {
-		res.locals.title = "Product Cart";  
-		res.render('productCart');
+		res.locals.title = 'Product Cart';
+		res.render('Products/productCart');
 	},
 };
 
