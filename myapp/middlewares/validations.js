@@ -35,8 +35,16 @@ module.exports = {
 			.withMessage('La contraseña es incorrecta'),
 	],
 	register: [
-		body('name').notEmpty().withMessage('El nombre no puede estar vacio'),
-		body('lastname').notEmpty().withMessage('El apellido no puede estar vacio'),
+		body('name')
+			.notEmpty()
+			.withMessage('El nombre no puede estar vacio')
+			.isLength({ min: 2 })
+			.withMessage('Nombre minimo 2'),
+		body('lastname')
+			.notEmpty()
+			.withMessage('El apellido no puede estar vacio')
+			.isLength({ min: 2 })
+			.withMessage('Apellido minimo 2'),
 
 		body('email')
 			.notEmpty()
@@ -57,8 +65,8 @@ module.exports = {
 		body('password')
 			.notEmpty()
 			.withMessage('La contraseña no puede estar vacia')
-			.isLength({ min: 6 })
-			.withMessage('La contraseña debe tener al menos 6 caracteres'),
+			.isLength({ min: 8 })
+			.withMessage('La contraseña debe tener al menos 8 caracteres'),
 		body('retype')
 			.notEmpty()
 			.withMessage('Por favor repita su contraseña')
@@ -66,5 +74,17 @@ module.exports = {
 				return value == req.body.password;
 			})
 			.withMessage('Las contraseñas deben coincidir'),
+
+		body('avatar')
+			.custom((value, { req }) => {
+				return req.files[0];
+			})
+			.withMessage('La imagen es obligatoria')
+			.bail()
+			.custom((value, { req }) => {
+				const extn = path.extname(req.files[0].originalname);
+				return extn == '.jpg' || extn == '.png' || extn == '.jpeg';
+			})
+			.withMessage('Formato incorrecto'),
 	],
 };
