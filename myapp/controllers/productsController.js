@@ -38,7 +38,7 @@ const productsController = {
 	},
 	/*  Store new product  */
 	store: async (req, res, next) => {
-		await db.Product.create({
+		const productCreated = await db.Product.create({
 			category_id: req.body.category,
 			name: req.body.name,
 			price: req.body.price,
@@ -46,9 +46,17 @@ const productsController = {
 			stock: req.body.stock,
 			best_seller: req.body.bestSeller ? 1 : 0,
 			description: req.body.description,
-			image: req.files[0].filename,
+			/* image: req.files[0].filename, */
 		});
-
+		const images = req.files;
+		const imagesArray = images.map((image) => {
+			const newImage = {
+				file_name: image.filename,
+				product_id: productCreated.id,
+			};
+			return newImage;
+		});
+		await db.Image.bulkCreate(imagesArray);
 		return res.redirect('/');
 	},
 
