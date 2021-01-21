@@ -9,7 +9,13 @@ const productsController = {
 	/* Navigates to the products list page */
 	products: async (req, res) => {
 		res.locals.title = 'Products';
-		const products = await db.Product.findAll();
+		const products = await db.Product.findAll({
+			include: [
+				{
+					association: 'Images',
+				},
+			],
+		});
 
 		if (req.params.cat) {
 			const catProducts = await db.Product.findAll({
