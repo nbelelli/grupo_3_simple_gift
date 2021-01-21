@@ -18,9 +18,6 @@ module.exports = (sequelize, DataTypes) => {
 		discount: {
 			type: DataTypes.INTEGER,
 		},
-		image: {
-			type: DataTypes.STRING,
-		},
 		best_seller: {
 			type: DataTypes.INTEGER,
 		},
@@ -43,6 +40,11 @@ module.exports = (sequelize, DataTypes) => {
 		Product.belongsTo(models.Category, {
 			as: 'Category',
 			foreignKey: 'category_id',
+		});
+
+		Product.hasMany(models.Image, {
+			as: 'Images',
+			foreignKey: 'product_id',
 		});
 	};
 

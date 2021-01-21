@@ -14,7 +14,11 @@
 				
 				<div class="prodDetailImgContainer">
 					
-					<img src="/images/products/<%=theProduct.image%>" alt="" />
+					
+					<% for(image of theProduct.Images){ %> 
+						<img src="/images/products/<%=image.file_name%>" alt="">
+					<% } %> 
+
 				</div>
 			</div>
 			<div id="prodDetailRight" class="prodDetailRight">

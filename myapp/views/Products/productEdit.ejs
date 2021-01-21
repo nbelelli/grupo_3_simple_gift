@@ -54,10 +54,18 @@
 
 						<div class="formRegisterPadding">
 							<label for="image">Imagen:</label>
-							<input type="file" name="image" id="image" />
+							<input type="file" name="image" id="image" multiple="multiple"/>
 							
 						</div>
-						<img src="/images/products/<%= productToEdit.image %> " style="max-width: 20%">
+						
+
+						<% for(image of productToEdit.Images){ %> 
+							<div>
+								<img src="/images/products/<%=image.file_name%>" alt="" style="max-width: 20%">
+								<button>Eliminar</button>
+							</div>
+						<% } %> 
+						<button>Agregar Imagen</button>
 
 						<div class="formRegisterPadding">
 							<label for="image">Categoría:</label>

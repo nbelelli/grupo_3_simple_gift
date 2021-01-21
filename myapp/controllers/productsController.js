@@ -9,13 +9,24 @@ const productsController = {
 	/* Navigates to the products list page */
 	products: async (req, res) => {
 		res.locals.title = 'Products';
-		const products = await db.Product.findAll();
+		const products = await db.Product.findAll({
+			include: [
+				{
+					association: 'Images',
+				},
+			],
+		});
 
 		if (req.params.cat) {
 			const catProducts = await db.Product.findAll({
 				where: {
 					category_id: req.params.cat,
 				},
+				include: [
+					{
+						association: 'Images',
+					},
+				],
 			});
 			return res.render('Products/productsList', { products: catProducts });
 		}
@@ -23,6 +34,11 @@ const productsController = {
 		if (req.query.search) {
 			const foundProducts = await db.Product.findAll({
 				where: { name: { [Op.like]: '%' + req.query.search + '%' } },
+				include: [
+					{
+						association: 'Images',
+					},
+				],
 			});
 			return res.render('Products/productsList', { products: foundProducts });
 		}
@@ -38,7 +54,7 @@ const productsController = {
 	},
 	/*  Store new product  */
 	store: async (req, res, next) => {
-		await db.Product.create({
+		const productCreated = await db.Product.create({
 			category_id: req.body.category,
 			name: req.body.name,
 			price: req.body.price,
@@ -46,14 +62,30 @@ const productsController = {
 			stock: req.body.stock,
 			best_seller: req.body.bestSeller ? 1 : 0,
 			description: req.body.description,
-			image: req.files[0].filename,
 		});
-
+		const images = req.files;
+		const imagesArray = images.map((image) => {
+			const newImage = {
+				file_name: image.filename,
+				product_id: productCreated.id,
+			};
+			return newImage;
+		});
+		await db.Image.bulkCreate(imagesArray);
 		return res.redirect('/');
 	},
 
 	detail: async (req, res) => {
-		const theProduct = await db.Product.findByPk(req.params.id);
+		const theProduct = await db.Product.findOne({
+			where: {
+				id: req.params.id,
+			},
+			include: [
+				{
+					association: 'Images',
+				},
+			],
+		});
 		if (theProduct) {
 			res.locals.title = theProduct.name;
 		} else {
@@ -77,15 +109,33 @@ const productsController = {
 	edit: async (req, res) => {
 		res.locals.title = 'Edit';
 		const categories = await db.Category.findAll();
-		const productToEdit = await db.Product.findByPk(req.params.id);
+		const productToEdit = await db.Product.findOne({
+			where: {
+				id: req.params.id,
+			},
+			include: [
+				{
+					association: 'Images',
+				},
+			],
+		});
 		res.render('Products/productEdit', {
 			productToEdit: productToEdit,
 			categories: categories,
 		});
 	},
 	update: async (req, res) => {
-		const productToEdit = await db.Product.findByPk(req.params.id);
-		const currentImage = productToEdit.image;
+		const productToEdit = await db.Product.findOne({
+			where: {
+				id: req.params.id,
+			},
+			include: [
+				{
+					association: 'Images',
+				},
+			],
+		});
+		/* const currentImages = productToEdit.Images; */
 		await db.Product.update(
 			{
 				category_id: req.body.category,
@@ -95,7 +145,7 @@ const productsController = {
 				stock: req.body.stock,
 				best_seller: req.body.bestSeller ? 1 : 0,
 				description: req.body.description,
-				image: req.files[0] ? req.files[0].filename : currentImage,
+				/* Images: req.files[0] ? req.files[0].filename : currentImage, */
 			},
 			{
 				where: {
@@ -103,6 +153,22 @@ const productsController = {
 				},
 			}
 		);
+		if (req.files[0]) {
+			await db.Image.destroy({
+				where: {
+					product_id: req.params.id,
+				},
+			});
+			const images = req.files;
+			const imagesArray = images.map((image) => {
+				const newImage = {
+					file_name: image.filename,
+					product_id: req.params.id,
+				};
+				return newImage;
+			});
+			await db.Image.bulkCreate(imagesArray);
+		}
 		res.redirect('/products/' + req.params.id);
 	},
 };

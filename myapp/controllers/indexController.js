@@ -9,7 +9,13 @@ indexController = {
 			where: {
 				best_seller: 1,
 			},
+			include: [
+				{
+					association: 'Images',
+				},
+			],
 		});
+		console.log('elegidos', elegidos);
 		res.render('index', { elegidos: elegidos });
 	},
 };
