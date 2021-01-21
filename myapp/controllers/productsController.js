@@ -125,8 +125,17 @@ const productsController = {
 		});
 	},
 	update: async (req, res) => {
-		const productToEdit = await db.Product.findByPk(req.params.id);
-		const currentImage = productToEdit.image;
+		const productToEdit = await db.Product.findOne({
+			where: {
+				id: req.params.id,
+			},
+			include: [
+				{
+					association: 'Images',
+				},
+			],
+		});
+		/* const currentImages = productToEdit.Images; */
 		await db.Product.update(
 			{
 				category_id: req.body.category,
@@ -136,7 +145,7 @@ const productsController = {
 				stock: req.body.stock,
 				best_seller: req.body.bestSeller ? 1 : 0,
 				description: req.body.description,
-				image: req.files[0] ? req.files[0].filename : currentImage,
+				/* Images: req.files[0] ? req.files[0].filename : currentImage, */
 			},
 			{
 				where: {
@@ -144,6 +153,22 @@ const productsController = {
 				},
 			}
 		);
+		if (req.files[0]) {
+			await db.Image.destroy({
+				where: {
+					product_id: req.params.id,
+				},
+			});
+			const images = req.files;
+			const imagesArray = images.map((image) => {
+				const newImage = {
+					file_name: image.filename,
+					product_id: req.params.id,
+				};
+				return newImage;
+			});
+			await db.Image.bulkCreate(imagesArray);
+		}
 		res.redirect('/products/' + req.params.id);
 	},
 };
