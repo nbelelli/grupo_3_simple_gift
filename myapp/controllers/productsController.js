@@ -109,7 +109,16 @@ const productsController = {
 	edit: async (req, res) => {
 		res.locals.title = 'Edit';
 		const categories = await db.Category.findAll();
-		const productToEdit = await db.Product.findByPk(req.params.id);
+		const productToEdit = await db.Product.findOne({
+			where: {
+				id: req.params.id,
+			},
+			include: [
+				{
+					association: 'Images',
+				},
+			],
+		});
 		res.render('Products/productEdit', {
 			productToEdit: productToEdit,
 			categories: categories,

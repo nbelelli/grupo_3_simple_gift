@@ -57,7 +57,11 @@
 							<input type="file" name="image" id="image" />
 							
 						</div>
-						<img src="/images/products/<%= productToEdit.image %> " style="max-width: 20%">
+						
+
+						<% for(image of productToEdit.Images){ %> 
+							<img src="/images/products/<%=image.file_name%>" alt="" style="max-width: 20%">
+						<% } %> 
 
 						<div class="formRegisterPadding">
 							<label for="image">Categoría:</label>
