@@ -22,6 +22,11 @@ const productsController = {
 				where: {
 					category_id: req.params.cat,
 				},
+				include: [
+					{
+						association: 'Images',
+					},
+				],
 			});
 			return res.render('Products/productsList', { products: catProducts });
 		}
@@ -29,6 +34,11 @@ const productsController = {
 		if (req.query.search) {
 			const foundProducts = await db.Product.findAll({
 				where: { name: { [Op.like]: '%' + req.query.search + '%' } },
+				include: [
+					{
+						association: 'Images',
+					},
+				],
 			});
 			return res.render('Products/productsList', { products: foundProducts });
 		}
