@@ -18,9 +18,6 @@ module.exports = (sequelize, DataTypes) => {
 		discount: {
 			type: DataTypes.INTEGER,
 		},
-		image: {
-			type: DataTypes.STRING,
-		},
 		best_seller: {
 			type: DataTypes.INTEGER,
 		},

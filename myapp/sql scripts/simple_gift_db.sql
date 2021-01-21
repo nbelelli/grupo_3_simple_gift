@@ -45,3 +45,15 @@ CREATE TABLE categories (
 
 ALTER TABLE products
 ADD FOREIGN KEY (category_id) REFERENCES categories(id);
+
+CREATE TABLE images (
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	file_name VARCHAR(255) NOT NULL,
+    description VARCHAR(255),
+    product_id INT UNSIGNED,
+    FOREIGN KEY (product_id) REFERENCES products(id),
+
+	created_at DATETIME DEFAULT CURRENT_TIMESTAMP, -- Fecha de alta
+    updated_at DATETIME ON UPDATE CURRENT_TIMESTAMP, -- Fecha de modificación
+    deleted_at DATETIME -- Fecha de borrado del registro completo
+);
