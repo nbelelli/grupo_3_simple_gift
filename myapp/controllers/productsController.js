@@ -62,7 +62,6 @@ const productsController = {
 			stock: req.body.stock,
 			best_seller: req.body.bestSeller ? 1 : 0,
 			description: req.body.description,
-			/* image: req.files[0].filename, */
 		});
 		const images = req.files;
 		const imagesArray = images.map((image) => {
@@ -77,7 +76,16 @@ const productsController = {
 	},
 
 	detail: async (req, res) => {
-		const theProduct = await db.Product.findByPk(req.params.id);
+		const theProduct = await db.Product.findOne({
+			where: {
+				id: req.params.id,
+			},
+			include: [
+				{
+					association: 'Images',
+				},
+			],
+		});
 		if (theProduct) {
 			res.locals.title = theProduct.name;
 		} else {
