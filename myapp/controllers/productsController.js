@@ -99,6 +99,12 @@ const productsController = {
 		}
 	},
 	delete: async (req, res) => {
+		await db.Image.destroy({
+			where: {
+				product_id: req.params.id,
+			},
+		});
+
 		await db.Product.destroy({
 			where: {
 				id: req.params.id,
