@@ -39,12 +39,12 @@ module.exports = {
 			.notEmpty()
 			.withMessage('El nombre no puede estar vacio')
 			.isLength({ min: 2 })
-			.withMessage('Nombre minimo 2'),
+			.withMessage('El nombre debe tener al menos 2 caracteres'),
 		body('lastname')
 			.notEmpty()
 			.withMessage('El apellido no puede estar vacio')
 			.isLength({ min: 2 })
-			.withMessage('Apellido minimo 2'),
+			.withMessage('El apellido debe tener al menos 2 caracteres'),
 
 		body('email')
 			.notEmpty()

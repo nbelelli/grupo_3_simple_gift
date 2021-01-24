@@ -12,27 +12,34 @@
                 <a class="icono_go_back" href="#" id="back_button"><i class="fas fa-long-arrow-alt-left fa-lg"></i></a>
             </span>
         </div> 
+    
+    <div class="errores">
+        
+        <ul class="errors front JS">
+            <!-- Errores configurados en ValidationForm-->
+        </ul>
+    </div>
     <seccion class="formSeccion">  
         <h1 class="formTitle">¡Registrate!</h1>
         <article class="formsArticle"> 
-        <form action="/users/register" method="POST" enctype="multipart/form-data">
+        <form action="/users/register" method="POST" enctype="multipart/form-data" class="formRegister">
      <div class="formRegisterPadding"> 
         <label for="nombre">Nombre:</label>
         <input 
             type="text" 
             name="name" 
-            id="nombre" 
+            id="name" 
             placeholder="Leandro" 
-             class='regAndLogInputs'>
+            class='regAndLogInputs name'>
      </div>
      <div class="formRegisterPadding">
         <label for="apellido">Apellido:</label>
         <input 
             type="text" 
             name="lastname" 
-            id="apellido" 
+            id="lastname" 
             placeholder="Perez"
-            class='regAndLogInputs'>
+            class='regAndLogInputs lastname'>
      </div>
     <div class="formRegisterPadding">
         <label for="email">Email:</label>
@@ -48,8 +55,9 @@
         <input 
             type="tel" 
             name="phone" 
+            id="phone" 
             placeholder="11-4444-4444" 
-            class='regAndLogInputs'>
+            class='regAndLogInputs phone'>
     </div>
     <div class="formRegisterPadding">
         <label for="password">Password:</label>
@@ -58,7 +66,7 @@
             name="password" 
             id="password" 
             placeholder="contraseña" 
-            class='regAndLogInputs'>
+            class='regAndLogInputs password'>
     </div>
     <div class="formRegisterPadding">
         <label for="password">Retype</label>
@@ -67,11 +75,11 @@
             name="retype" 
             id="retype" 
             placeholder="contraseña" 
-            class='regAndLogInputs'>
+            class='regAndLogInputs retype'>
     </div>
     <div class="formRegisterPadding">
         <label for="image">Avatar:</label>
-        <input type="file" name="avatar" id="image" />
+        <input type="file" name="avatar" id="avatar" class='avatar'/>
     </div>
     <button class="formButton" type="submit">Enviar</button>
     </form>
@@ -93,7 +101,10 @@
 </main>
   
         <%- include('../partials/footer') %>
-
+        
+    
+    <script src="/javascripts/registerValidations.js"></script>
+  
 </body>
 </html>
 
