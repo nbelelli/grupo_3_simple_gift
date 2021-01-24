@@ -4,6 +4,7 @@ const productsController = require('../controllers/productsController');
 const multer = require('multer');
 const path = require('path');
 const { products } = require('../controllers/productsController');
+const productsValidations = require('../middlewares/productsValidations');
 
 //Multer
 var storage = multer.diskStorage({
@@ -33,6 +34,11 @@ router.get('/:id', productsController.detail);
 router.delete('/:id/delete', productsController.delete);
 
 //Acción de creación (a donde se envía el formulario)
-router.post('/create', upload.any(), productsController.store);
+router.post(
+	'/create',
+	upload.any(),
+	productsValidations.create,
+	productsController.store
+);
 
 module.exports = router;

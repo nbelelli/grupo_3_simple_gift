@@ -23,8 +23,6 @@ const usersController = {
 	storeUser: async (req, res) => {
 		// Verifica que no existan errores en el form
 		const errors = validationResult(req);
-		console.log('errores', errors);
-		console.log('body', req.body);
 		if (!errors.isEmpty()) {
 			res.locals.title = 'Register';
 			return res.render('Users/register', { errors: errors.errors });

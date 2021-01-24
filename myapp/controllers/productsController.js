@@ -4,6 +4,7 @@ const db = require('../database/models');
 const Product = require('../database/models/Product');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+const { check, validationResult, body } = require('express-validator');
 
 const productsController = {
 	/* Navigates to the products list page */
@@ -54,6 +55,18 @@ const productsController = {
 	},
 	/*  Store new product  */
 	store: async (req, res, next) => {
+		const errors = validationResult(req);
+		if (!errors.isEmpty()) {
+			res.locals.title = 'Create';
+			const categories = await db.Category.findAll();
+			return res.render('Products/productCreate', {
+				errors: errors.errors,
+				categories: categories,
+			});
+		}
+
+		console.log('errores', errors.errors);
+
 		const productCreated = await db.Product.create({
 			category_id: req.body.category,
 			name: req.body.name,

@@ -23,7 +23,6 @@
 								name="name"
 								id="name"
 								placeholder="Box Ferrero Rocher"
-								required
 								class="regAndLogInputs"
 							/>
 						</div>
@@ -48,6 +47,7 @@
 								name="discount"
 								id="discount"
 								class="regAndLogInputs"
+								value=0
 							/>
 						</div>
 
@@ -57,7 +57,7 @@
 						</div>
 
 						<div class="formRegisterPadding">
-							<label for="image">Categoría:</label>
+							<label for="category">Categoría:</label>
 
 							<select name="category" id="category" class="regAndLogInputs">
 
@@ -101,6 +101,10 @@
 								placeholder="Este box incluye..."
 							></textarea>
 						</div>
+
+						<% if(typeof errors!='undefined'){ for (error of errors){ %>
+							<li style="color: red"><%= error.msg %></li>
+							<% } %> <% } %>
 
 						<button class="formButton" type="“submit”">Guardar</button>
 					</form>
