@@ -14,7 +14,7 @@
 			
 			<div id="prodDetailLeft" class="prodDetailLeft">
 				<!-- SPLIDE -->
-				<div class="splide" data-splide='{"type":"loop"}'>
+				<div class="splide" data-splide='{}'>
 					<div class="splide__track">
 						<ul class="splide__list">
 							<% for(image of theProduct.Images){ %> 
@@ -52,7 +52,9 @@
 		<%- include('../partials/footer') %>
 		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 		<script>
-			new Splide( '.splide' ).mount();
+			new Splide( '.splide', {
+				type: 'loop',				
+					}, ).mount();
 		</script>
 
 	</body>
