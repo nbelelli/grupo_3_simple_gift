@@ -5,6 +5,12 @@
 	margin: 60px;
 }
 
+.errores  {
+	color: red;
+	margin: 60px;
+}
+   
+
 .loginOUT {
 	display: flex;
 	flex-direction: row;
@@ -197,3 +203,4 @@ textarea.regAndLogInputs {
 		margin-right: 5%;
 	}
 }
+
