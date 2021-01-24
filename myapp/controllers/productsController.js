@@ -65,8 +65,6 @@ const productsController = {
 			});
 		}
 
-		console.log('errores', errors.errors);
-
 		const productCreated = await db.Product.create({
 			category_id: req.body.category,
 			name: req.body.name,
@@ -154,7 +152,20 @@ const productsController = {
 				},
 			],
 		});
-		/* const currentImages = productToEdit.Images; */
+		console.log('el producto a editar', productToEdit);
+
+		const errors = validationResult(req);
+		console.log('los errores', errors.errors);
+		if (!errors.isEmpty()) {
+			res.locals.title = 'Edit';
+			const categories = await db.Category.findAll();
+			return res.render('Products/productEdit', {
+				errors: errors.errors,
+				categories: categories,
+				productToEdit: productToEdit,
+			});
+		}
+
 		await db.Product.update(
 			{
 				category_id: req.body.category,
@@ -164,7 +175,6 @@ const productsController = {
 				stock: req.body.stock,
 				best_seller: req.body.bestSeller ? 1 : 0,
 				description: req.body.description,
-				/* Images: req.files[0] ? req.files[0].filename : currentImage, */
 			},
 			{
 				where: {

@@ -27,7 +27,12 @@ router.get('/create', productsController.create);
 //ir a la pagina de Edicion de producto
 router.get('/:id/edit', productsController.edit);
 //Editar un producto(put)
-router.put('/:id/edit', upload.any(), productsController.update);
+router.put(
+	'/:id/edit',
+	upload.any(),
+	productsValidations.edit,
+	productsController.update
+);
 //ir a la pagina de Detalle de Producto
 router.get('/:id', productsController.detail);
 //borrar un producto

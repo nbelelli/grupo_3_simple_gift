@@ -22,7 +22,6 @@
 								type="text"
 								name="name"
 								id="name"
-								required
 								class="regAndLogInputs"
 								value="<%= productToEdit.name %> "
 							/>
@@ -116,6 +115,9 @@
 							><%= productToEdit.description %>
 						</textarea>
 						</div>
+						<% if(typeof errors!='undefined'){ for (error of errors){ %>
+							<li style="color: red"><%= error.msg %></li>
+							<% } %> <% } %>
 
 						<button class="formButton" type="“submit”">Guardar</button>
 					</form>
