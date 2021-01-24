@@ -34,7 +34,7 @@
 								rows="4"
 								cols="50"
 								name="price"
-								id="precio"
+								id="price"
 								value="<%= productToEdit.price %> "
 								class="regAndLogInputs"
 							/>
@@ -119,6 +119,12 @@
 							<li style="color: red"><%= error.msg %></li>
 							<% } %> <% } %>
 
+							<div class="errores" style="color:green">
+								<ul>
+	
+								</ul>
+							</div>
+
 						<button class="formButton" type="“submit”">Guardar</button>
 					</form>
 
@@ -129,5 +135,6 @@
 		</main>
 
 		<%- include('../partials/footer') %>
+		<script src="/javascripts/productValidations.js"></script>
 	</body>
 </html>

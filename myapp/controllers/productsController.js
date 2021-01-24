@@ -152,10 +152,8 @@ const productsController = {
 				},
 			],
 		});
-		console.log('el producto a editar', productToEdit);
 
 		const errors = validationResult(req);
-		console.log('los errores', errors.errors);
 		if (!errors.isEmpty()) {
 			res.locals.title = 'Edit';
 			const categories = await db.Category.findAll();
