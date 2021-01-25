@@ -4,6 +4,7 @@ const productsController = require('../controllers/productsController');
 const multer = require('multer');
 const path = require('path');
 const { products } = require('../controllers/productsController');
+const productsValidations = require('../middlewares/productsValidations');
 
 //Multer
 var storage = multer.diskStorage({
@@ -26,13 +27,23 @@ router.get('/create', productsController.create);
 //ir a la pagina de Edicion de producto
 router.get('/:id/edit', productsController.edit);
 //Editar un producto(put)
-router.put('/:id/edit', upload.any(), productsController.update);
+router.put(
+	'/:id/edit',
+	upload.any(),
+	productsValidations.edit,
+	productsController.update
+);
 //ir a la pagina de Detalle de Producto
 router.get('/:id', productsController.detail);
 //borrar un producto
 router.delete('/:id/delete', productsController.delete);
 
 //Acción de creación (a donde se envía el formulario)
-router.post('/create', upload.any(), productsController.store);
+router.post(
+	'/create',
+	upload.any(),
+	productsValidations.create,
+	productsController.store
+);
 
 module.exports = router;

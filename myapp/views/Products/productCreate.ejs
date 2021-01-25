@@ -15,7 +15,7 @@
 				<section class="createEditFormSection">
 					<h1 class="formTitle">Carga de Producto</h1>
 
-					<form action="/products/create" method="POST" class="createEditForm" enctype="multipart/form-data">
+					<form action="/products/create" method="POST" class="createEditForm" enctype="multipart/form-data" id=prodCreateForm>
 						<div class="formRegisterPadding">
 							<label for="“name”">Nombre:</label>
 							<input
@@ -23,19 +23,18 @@
 								name="name"
 								id="name"
 								placeholder="Box Ferrero Rocher"
-								required
 								class="regAndLogInputs"
 							/>
 						</div>
 
 						<div class="formRegisterPadding">
-							<label for="description">Precio:</label>
+							<label for="price">Precio:</label>
 							<input
 								type="text"
 								rows="4"
 								cols="50"
 								name="price"
-								id="precio"
+								id="price"
 								placeholder="1500"
 								class="regAndLogInputs"
 							/>
@@ -48,6 +47,7 @@
 								name="discount"
 								id="discount"
 								class="regAndLogInputs"
+								value=0
 							/>
 						</div>
 
@@ -57,7 +57,7 @@
 						</div>
 
 						<div class="formRegisterPadding">
-							<label for="image">Categoría:</label>
+							<label for="category">Categoría:</label>
 
 							<select name="category" id="category" class="regAndLogInputs">
 
@@ -102,6 +102,16 @@
 							></textarea>
 						</div>
 
+						<% if(typeof errors!='undefined'){ for (error of errors){ %>
+							<li style="color: red"><%= error.msg %></li>
+							<% } %> <% } %>
+						
+						<div class="errores" style="color:green">
+							<ul>
+
+							</ul>
+						</div>
+
 						<button class="formButton" type="“submit”">Guardar</button>
 					</form>
 				</section>
@@ -109,5 +119,6 @@
 		</main>
 
 		<%- include('../partials/footer') %>
+		<script src="/javascripts/productValidations.js"></script>
 	</body>
 </html>

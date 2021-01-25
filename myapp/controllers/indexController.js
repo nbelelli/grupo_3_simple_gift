@@ -15,7 +15,7 @@ indexController = {
 				},
 			],
 		});
-		console.log('elegidos', elegidos);
+
 		res.render('index', { elegidos: elegidos });
 	},
 };

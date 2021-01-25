@@ -8,18 +8,24 @@
 			<div class="sectionTitle" id="tuCarritoHeader">Tu Producto</div>
 		</div>
 
+
+
 		<main class="prodDetailMain">
 			
 			<div id="prodDetailLeft" class="prodDetailLeft">
-				
-				<div class="prodDetailImgContainer">
-					
-					
-					<% for(image of theProduct.Images){ %> 
-						<img src="/images/products/<%=image.file_name%>" alt="">
-					<% } %> 
+				<!-- SPLIDE -->
+				<div class="splide" data-splide='{}'>
+					<div class="splide__track">
+						<ul class="splide__list">
+							<% for(image of theProduct.Images){ %> 
+								<li class="splide__slide"><img src="/images/products/<%=image.file_name%>" alt=""></li>
+							<% } %> 
+		
+						</ul>
+					</div>
+				</div> 
+				<!-- FIN SPLIDE -->
 
-				</div>
 			</div>
 			<div id="prodDetailRight" class="prodDetailRight">
 				
@@ -44,5 +50,12 @@
 		</main>
 
 		<%- include('../partials/footer') %>
+		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+		<script>
+			new Splide( '.splide', {
+				type: 'loop',				
+					}, ).mount();
+		</script>
+
 	</body>
 </html>

@@ -4,6 +4,7 @@ const db = require('../database/models');
 const Product = require('../database/models/Product');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+const { check, validationResult, body } = require('express-validator');
 
 const productsController = {
 	/* Navigates to the products list page */
@@ -54,6 +55,16 @@ const productsController = {
 	},
 	/*  Store new product  */
 	store: async (req, res, next) => {
+		const errors = validationResult(req);
+		if (!errors.isEmpty()) {
+			res.locals.title = 'Create';
+			const categories = await db.Category.findAll();
+			return res.render('Products/productCreate', {
+				errors: errors.errors,
+				categories: categories,
+			});
+		}
+
 		const productCreated = await db.Product.create({
 			category_id: req.body.category,
 			name: req.body.name,
@@ -99,6 +110,12 @@ const productsController = {
 		}
 	},
 	delete: async (req, res) => {
+		await db.Image.destroy({
+			where: {
+				product_id: req.params.id,
+			},
+		});
+
 		await db.Product.destroy({
 			where: {
 				id: req.params.id,
@@ -135,7 +152,18 @@ const productsController = {
 				},
 			],
 		});
-		/* const currentImages = productToEdit.Images; */
+
+		const errors = validationResult(req);
+		if (!errors.isEmpty()) {
+			res.locals.title = 'Edit';
+			const categories = await db.Category.findAll();
+			return res.render('Products/productEdit', {
+				errors: errors.errors,
+				categories: categories,
+				productToEdit: productToEdit,
+			});
+		}
+
 		await db.Product.update(
 			{
 				category_id: req.body.category,
@@ -145,7 +173,6 @@ const productsController = {
 				stock: req.body.stock,
 				best_seller: req.body.bestSeller ? 1 : 0,
 				description: req.body.description,
-				/* Images: req.files[0] ? req.files[0].filename : currentImage, */
 			},
 			{
 				where: {
