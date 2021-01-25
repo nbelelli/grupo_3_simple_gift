@@ -9,7 +9,6 @@ window.addEventListener('load', function () {
 	const description = document.querySelector('#description');
 
 	form.addEventListener('submit', function (e) {
-		e.preventDefault();
 		let errors = [];
 		if (name.value == '') {
 			errors.push('El Nombre es obligatorio');
