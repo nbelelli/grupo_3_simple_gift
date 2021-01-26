@@ -15,7 +15,7 @@
 				<section class="createEditFormSection">
 					<h1 class="formTitle">Carga de Producto</h1>
 
-					<form action="/products/create" method="POST" class="createEditForm" enctype="multipart/form-data" id=prodCreateForm>
+					<form action="/products/create" method="POST" class="createEditForm" enctype="multipart/form-data" id=prodCreateForm name='createForm'>
 						<div class="formRegisterPadding">
 							<label for="“name”">Nombre:</label>
 							<input
@@ -119,6 +119,6 @@
 		</main>
 
 		<%- include('../partials/footer') %>
-		<script src="/javascripts/productValidations.js"></script>
+		<script src="/javascripts/productCreateValidations.js"></script>
 	</body>
 </html>

@@ -47,11 +47,6 @@ module.exports = {
 			.withMessage('El descuento maximo es de 99%'),
 		body('image')
 			.custom((value, { req }) => {
-				return req.files[0];
-			})
-			.withMessage('El producto debe tener al menos una imagen')
-			.bail()
-			.custom((value, { req }) => {
 				if (req.files[0]) {
 					console.log('entre al if de imagen');
 					for (image of req.files) {
