@@ -1,0 +1,68 @@
+<%- include('../partials/head') %> <%- include('../partials/header') %>
+<script src="/javascripts/history.js"></script>
+<html>
+	<body>
+		<!-- SEARCH -->
+
+		<div class="container" style="margin-top: 100px; width: 80%">
+			<div class="row">
+				<div class="col">
+					<div class="input-group">
+						<input
+							type="text"
+							class="form-control"
+							aria-label=""
+							placeholder="Busque por nombre, apellido ó usuario"
+							aria-describedby="basic-addon1"
+						/>
+						<div class="input-group-append">
+							<button class="btn btn-success" type="button">Buscar</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="dropdown">
+						<button
+							class="btn btn-secondary dropdown-toggle"
+							type="button"
+							id="dropdownMenuButton"
+							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
+						>
+							Rol de Usuario
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="#">Clientes</a>
+							<a class="dropdown-item" href="#">Admins</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div style="margin-top: 100px; width: 80%" class="container">
+			<table class="table">
+				<thead class="thead-dark">
+					<tr>
+						<th>#</th>
+						<th>Nombre</th>
+						<th>Rol</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Juan Carlos</td>
+						<td>Admin</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Ricardo</td>
+						<td>Cliente</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
