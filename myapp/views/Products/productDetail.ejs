@@ -13,18 +13,12 @@
 		<main class="prodDetailMain">
 			
 			<div id="prodDetailLeft" class="prodDetailLeft">
-				<!-- SPLIDE -->
-				<div class="splide" data-splide='{}'>
-					<div class="splide__track">
-						<ul class="splide__list">
-							<% for(image of theProduct.Images){ %> 
-								<li class="splide__slide"><img src="/images/products/<%=image.file_name%>" alt=""></li>
-							<% } %> 
-		
-						</ul>
-					</div>
-				</div> 
-				<!-- FIN SPLIDE -->
+				<ul>
+					<% for(image of theProduct.Images){ %> 
+						<li class="splide__slide"><img src="/images/products/<%=image.file_name%>" alt="" style="max-width: 300px;"></li>
+					<% } %> 
+				</ul>
+
 
 			</div>
 			<div id="prodDetailRight" class="prodDetailRight">
