@@ -115,6 +115,11 @@ const usersController = {
 		);
 		res.redirect('/Users/login');
 	},
+	usersAdmin: async (req, res) => {
+		res.locals.title = 'Users Admin';
+		const users = await db.User.findAll();
+		res.render('Users/usersAdmin', { users: users });
+	},
 };
 
 module.exports = usersController;
