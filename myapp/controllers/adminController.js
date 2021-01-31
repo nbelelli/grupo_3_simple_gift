@@ -9,7 +9,7 @@ adminController = {
 		res.locals.title = 'Users Admin';
 		res.render('Admin/usersAdmin');
 	},
-	productsAdmin: async (req, res) => {
+	/* productsAdmin: async (req, res) => {
 		res.locals.title = 'Products Admin';
 
 		const products = await db.Product.findAll({
@@ -21,7 +21,7 @@ adminController = {
 		});
 
 		res.render('Admin/productsAdmin', { products: products });
-	},
+	}, */
 };
 
 module.exports = adminController;

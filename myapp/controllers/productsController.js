@@ -198,6 +198,19 @@ const productsController = {
 		}
 		res.redirect('/products/' + req.params.id);
 	},
+	productsAdmin: async (req, res) => {
+		res.locals.title = 'Products Admin';
+
+		const products = await db.Product.findAll({
+			include: [
+				{
+					association: 'Images',
+				},
+			],
+		});
+
+		res.render('Products/productsAdmin', { products: products });
+	},
 };
 
 module.exports = productsController;
