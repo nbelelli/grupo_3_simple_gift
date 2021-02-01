@@ -121,7 +121,7 @@ const productsController = {
 				id: req.params.id,
 			},
 		});
-		res.redirect('/products');
+		res.redirect('/Admin/products');
 	},
 	edit: async (req, res) => {
 		res.locals.title = 'Edit';
