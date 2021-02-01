@@ -45,9 +45,19 @@
 						<a href="/products/<%=product.id%>/edit" class="btn btn-secondary"
 							><i class="fas fa-edit"></i
 						></a>
-						<a href="#" class="btn btn-danger"
+<!-- 						<a href="#" class="btn btn-danger"
 							><i class="fas fa-trash-alt"></i
-						></a>
+						></a> -->
+								
+						<form
+						style="display: inline;"
+						method="POST"
+						action="/products/<%=product.id%> /delete/?_method=DELETE"
+					>
+						<button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt"></i
+							></button>
+					</form>
+
 					</div>
 				</div>
 				<% } %>

@@ -27,7 +27,7 @@ router.get('/cat/:cat?', productsController.products);
 //ir a la pagina de carga de producto
 router.get('/create', authAdmin, productsController.create);
 //ir a la pagina de Edicion de producto
-router.get('/:id/edit', productsController.edit);
+router.get('/:id/edit', authAdmin, productsController.edit);
 //Editar un producto(put)
 router.put(
 	'/:id/edit',
