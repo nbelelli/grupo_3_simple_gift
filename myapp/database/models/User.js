@@ -24,6 +24,9 @@ module.exports = (sequelize, DataTypes) => {
 		avatar: {
 			type: DataTypes.STRING,
 		},
+		rol: {
+			type: DataTypes.INTEGER,
+		},
 	};
 
 	const config = {

@@ -26,6 +26,7 @@
 
 	<div class="right_header">
 		<% if(!userLogged){ %>
+
 		<div><a href="/users/login">Ingresá</a></div>
 		<div><a href="/users/register">Registrate</a></div>
 		<div class="carrito">
@@ -36,6 +37,13 @@
 			</a>
 		</div>
 		<% } %> <% if(userLogged){ %>
+
+		<!-- ADMIN START -->
+
+		<% if(userLogged.rol!=10){ %>
+		<div><a href="/admin/">Admin</a></div>
+		<% } %>
+		<!-- ADMIN FINISH -->
 		<div><a href="/users/profile"> <%= userName %> </a></div>
 		<div><a href="/users/logout">Log Out</a></div>
 		<div class="carrito">

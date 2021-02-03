@@ -5,6 +5,8 @@ const multer = require('multer');
 const path = require('path');
 const { products } = require('../controllers/productsController');
 const productsValidations = require('../middlewares/productsValidations');
+const authAdmin = require('../middlewares/authAdmin');
+const auth = require('../middlewares/auth');
 
 //Multer
 var storage = multer.diskStorage({
@@ -23,9 +25,9 @@ router.get('/', productsController.products);
 //products filtrado por categoria
 router.get('/cat/:cat?', productsController.products);
 //ir a la pagina de carga de producto
-router.get('/create', productsController.create);
+router.get('/create', authAdmin, productsController.create);
 //ir a la pagina de Edicion de producto
-router.get('/:id/edit', productsController.edit);
+router.get('/:id/edit', authAdmin, productsController.edit);
 //Editar un producto(put)
 router.put(
 	'/:id/edit',

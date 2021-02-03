@@ -121,7 +121,7 @@ const productsController = {
 				id: req.params.id,
 			},
 		});
-		res.redirect('/products');
+		res.redirect('/Admin/products');
 	},
 	edit: async (req, res) => {
 		res.locals.title = 'Edit';
@@ -197,6 +197,19 @@ const productsController = {
 			await db.Image.bulkCreate(imagesArray);
 		}
 		res.redirect('/products/' + req.params.id);
+	},
+	productsAdmin: async (req, res) => {
+		res.locals.title = 'Products Admin';
+
+		const products = await db.Product.findAll({
+			include: [
+				{
+					association: 'Images',
+				},
+			],
+		});
+
+		res.render('Products/productsAdmin', { products: products });
 	},
 };
 

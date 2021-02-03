@@ -1,0 +1,86 @@
+<%- include('../partials/head') %>
+<html>
+	<%- include('../partials/header') %>
+
+	<body>
+		<section id="productsFilterSection" class="productsFilterSection">
+			<div id="productsFilter" class="productsFilter">
+				<a class="icono_go_back" href="#" id="back_button"
+					><i class="fas fa-long-arrow-alt-left fa-lg"></i
+				></a>
+				<div class="filterTitle">Filtrar:</div>
+				<div class="filterNav" id="filterNav">
+					<a href="#" class="filterTile">Categorias</a>
+					<a href="#" class="filterTile">Precio</a>
+					<a href="#" class="filterTile">En Oferta</a>
+				</div>
+			</div>
+		</section>
+
+		<div class="container" style="margin-top: 100px; width: 80%">
+			<div class="row">
+				<div class="col">
+					<div class="input-group">
+						<input
+							type="text"
+							class="form-control"
+							aria-label=""
+							placeholder="Buscar por nombre de producto o categoria"
+							aria-describedby="basic-addon1"
+						/>
+						<div class="input-group-append">
+							<button class="btn btn-success" type="button">Buscar</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<a href="/products/create" class="btn btn-primary"
+						>+ Añadir Producto</a
+					>
+				</div>
+			</div>
+		</div>
+
+		<div class="cointainer" style="margin-top: 20px">
+			<div class="row d-flex justify-content-around">
+				<% for(product of products){ %>
+
+				<div class="card" style="width: 18rem; margin-bottom: 20px">
+					<img
+						src="/images/Products/<%=product.Images[0].file_name%> "
+						class="card-img-top prodImage"
+						alt="..."
+					/>
+					<div class="card-body">
+						<h5 class="card-title"><%= product.name %></h5>
+						<p class="card-text"><%= product.description %></p>
+						<p class="card-text">$<%= product.price %></p>
+						<a href="/products/<%= product.id %>" class="btn btn-primary"
+							><i class="fas fa-info-circle"></i
+						></a>
+						<a href="/products/<%=product.id%>/edit" class="btn btn-secondary"
+							><i class="fas fa-edit"></i
+						></a>
+						<!-- 						<a href="#" class="btn btn-danger"
+							><i class="fas fa-trash-alt"></i
+						></a> -->
+
+						<form
+							style="display: inline"
+							method="POST"
+							action="/products/<%=product.id%> /delete/?_method=DELETE"
+						>
+							<button class="btn btn-danger" type="submit">
+								<i class="fas fa-trash-alt"></i>
+							</button>
+						</form>
+					</div>
+				</div>
+				<% } %>
+			</div>
+		</div>
+
+		<%- include('../partials/footer') %>
+		<script src="/javascripts/history.js"></script>
+	</body>
+</html>

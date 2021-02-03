@@ -1,13 +1,13 @@
 <%- include('../partials/head') %>
-<%- include('../partials/header') %>
-<script src="/javascripts/history.js"></script>
-		<body>
+<html>
+	<%- include('../partials/header') %>
+	
+	<body>
 		<section id="productsFilterSection" class="productsFilterSection">
-
-					
-
 			<div id="productsFilter" class="productsFilter">
-				<a class="icono_go_back" href="#" id="back_button"><i class="fas fa-long-arrow-alt-left fa-lg"></i></a>
+				<a class="icono_go_back" href="#" id="back_button"
+					><i class="fas fa-long-arrow-alt-left fa-lg"></i
+				></a>
 				<div class="filterTitle">Filtrar:</div>
 				<div class="filterNav" id="filterNav">
 					<a href="#" class="filterTile">Categorias</a>
@@ -15,53 +15,39 @@
 					<a href="#" class="filterTile">En Oferta</a>
 				</div>
 			</div>
-		</section>
 
-		<section id="productsList" class="productsList">
-			<div class="prodListResultsContainer">
-			
-				
-				<a href="/products/create " class="elegidoTile">
-					<div class="elegidoTileImage">
-						<img
-							src="/images/add2.png"
-							alt=""
-							class="prodImage"
-						/>
-						<!-- <div class="elegidoTileTitle"> </div> -->
+
+		<div class="cointainer" style="margin-top: 20px;">
+			<div class="row d-flex justify-content-around">
+				<% for(product of products){ %>
+
+				<div class="card" style="width: 18rem; margin-bottom: 20px">
+					<img
+						src="/images/Products/<%=product.Images[0].file_name%> "
+						class="card-img-top prodImage"
+						alt="..."
+					/>
+					<div class="card-body">
+						<h5 class="card-title"><%= product.name %></h5>
+						<p class="card-text">
+                            <%= product.description %>
+                        </p>
+                        <p class="card-text">
+                            $<%= product.price %>
+						</p>
+						<a href="/products/<%= product.id %>" class="btn btn-primary"
+							>Ver</a>
+						<a href="/products/<%= product.id %>" class="btn btn-primary"
+								>Agregar al carrito</a>
+
+
 					</div>
-					<div class="elegidoInfoCard">
-						<div class="elegidoTileDescription">
-						<p style="text-align: center;">Añadir</p>
-						<p style="text-align: center;">producto</p>
-						</div>
-						<div class="elegidoTilePrice"> </div>
-					</div>
-				</a>
-
-				<% for(product of products){ %> 
-					<a href="/products/<%= product.id %> " class="elegidoTile">
-						<div class="elegidoTileImage">
-							<img
-								src="/images/Products/<%=product.Images[0].file_name%> "
-								alt=""
-								class="prodImage"
-							/>
-							<div class="elegidoTileTitle"><%= product.name %> </div>
-						</div>
-						<div class="elegidoInfoCard">
-							<div class="elegidoTileDescription">
-								<%= product.description %> 
-							</div>
-							<div class="elegidoTilePrice">$ <%= product.price %> </div>
-						</div>
-					</a>
-
-				<% } %> 
-
-				
+				</div>
+				<% } %>
 			</div>
-		</section>
-		<%- include('../partials/footer') %>
+		</div>
+
+        <%- include('../partials/footer') %>
+        <script src="/javascripts/history.js"></script>
 	</body>
 </html>
