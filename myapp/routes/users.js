@@ -3,7 +3,7 @@ const router = express.Router();
 const usersController = require('../controllers/usersController');
 const multer = require('multer');
 const path = require('path');
-const validations = require('../middlewares/validations');
+const userValidations = require('../middlewares/userValidations');
 const auth = require('../middlewares/auth');
 const guest = require('../middlewares/guest');
 
@@ -26,13 +26,13 @@ var upload = multer({ storage: storage });
 
 * GET login page. */
 router.get('/login', guest, usersController.login);
-router.post('/login', validations.login, usersController.processLogin);
+router.post('/login', userValidations.login, usersController.processLogin);
 
 /* POST register page: User Generator */
 router.post(
 	'/register',
 	upload.any(),
-	validations.register,
+	userValidations.register,
 
 	usersController.storeUser
 );

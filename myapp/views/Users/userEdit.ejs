@@ -15,6 +15,13 @@
 				</div>
 				<section class="createEditFormSection">
 					<h1 class="formTitle">Aqui vas a poder editar tu Perfil, <%=userToEdit.name %> <%=userToEdit.lastname%></h1>
+					
+					<div class="errores">
+        
+						<ul class="errors front JS">
+							<!-- Errores configurados en ValidationForm-->
+						</ul>
+					</div>
 
 					<form method="POST" action="/users/<%= userToEdit.id %>/edit?_method=PUT" class="createEditForm" enctype="multipart/form-data">
 						<div class="formRegisterPadding">
@@ -24,7 +31,7 @@
 								name="name"
 								id="name"
 								required
-								class="regAndLogInputs"
+								class="regAndLogInputs name"
 								value="<%= userToEdit.name %> "
 							/>
 						</div>
@@ -36,7 +43,7 @@
 								name="lastname"
 								id="apellido"
 								required
-								class="regAndLogInputs"
+								class="regAndLogInputs lastname"
 								value="<%= userToEdit.lastname %> "
 							/>
 						</div>
@@ -47,6 +54,7 @@
 								type="email"
 								name="email"
 								id="email"
+								class="regAndLogInputs email"
 								readonly
 								value="<%= userToEdit.email %> "
 							/>
@@ -57,14 +65,13 @@
 							<input
 								type="tel"
 								name="phone"
-								id="email"
+								id="phone"
+								class="regAndLogInputs phone"
 								required
-								class="regAndLogInputs"
+								class="regAndLogInputs phone"
 								value="<%= userToEdit.phone %> "
 							/>
 						</div>
-
-						
 
 						<div class="formRegisterPadding">
 							<label for="image">Avatar:</label>
@@ -82,6 +89,8 @@
 				</section>
 			</div>
 		</main>
+
+    <script src="/javascripts/EditValidations.js"></script>
 
 		<%- include('../partials/footer') %>
 	</body>
