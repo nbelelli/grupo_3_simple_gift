@@ -1,10 +1,9 @@
-/*const express = require('express');
+const express = require('express');
 const router = express.Router();
-const usersApiController = require('../../controllers/api/usersController');
+const usersApiController = require('../../controllers/api/usersApiController')
 
-router.get('api/users', usersApiController.list);
-//router.post('/', usersApiController.create);
-
+router.get('/', usersApiController.list)
+router.post('/', usersApiController.list)
 
 
 module.exports = router;

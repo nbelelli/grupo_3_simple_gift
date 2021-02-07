@@ -1,7 +1,9 @@
 //Register Login
+const usersList = [];
 
 window.addEventListener("load", function () {
   console.log(window, "window capturada");
+
   //variables utilizadas
   let formRegister = document.querySelector("form.formRegister");
 
@@ -18,11 +20,11 @@ window.addEventListener("load", function () {
   }
   
   
+  
   formRegister.addEventListener("submit", function (e) {
     
     
-    e.preventDefault();
-    
+  
     console.log(formRegister, "registro capturado");
     let errores = [];
 
@@ -74,20 +76,18 @@ window.addEventListener("load", function () {
     let regex =/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i; ex
 
     if (email.value == "") {
-     debugger
-
       errores.push("El email es obligatorio");
     }  else if (!regex.test(email.value)){
       errores.push('Ingrese un email valido')
-    }
-   
-
+    } 
+    
+    
     //Validaciones Extensiones
     console.log(avatar.files, "avatar atrapado");
     console.log(avatar.files[0]);
     
     if (avatar.value == "") {
-      errores.push("El avatar es obligatorio");
+      errores.push("El avatar es obligatorio");
     } 
     for (avatar of avatar.files) {
 			let extn = getFileExtn(avatar.name);
