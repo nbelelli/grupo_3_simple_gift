@@ -45,11 +45,9 @@ window.addEventListener('load', function () {
 			errors.push('El producto debe tener al menos 1 imagen');
 		} else {
 			for (image of image.files) {
-				let extension = getFileExtn(image.name);
-				if (!(extn == '.jpg' || extn == '.png' || extn == '.jpeg')) {
-					errors.push('Al menos una imagen tiene un formato incorrecto');
-					break;
-				}
+				let extn = getFileExtn(image.name);
+				if (!(extn == 'jpg' || extn == 'png' || extn == 'jpeg')) {
+					errors.push('Los formatos correctos son JPG, PGN y JPEG');				}
 			}
 		}
 
