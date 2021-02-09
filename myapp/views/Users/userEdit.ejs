@@ -48,18 +48,7 @@
 							/>
 						</div>
 						
-						<div class="formRegisterPadding">
-							<label for="email">Email:</label>
-							<input
-								type="email"
-								name="email"
-								id="email"
-								class="regAndLogInputs email"
-								readonly
-								value="<%= userToEdit.email %> "
-							/>
-						</div>
-
+						
 						<div class="formRegisterPadding">
 							<label for="tel">Telefono:</label>
 							<input
@@ -72,6 +61,24 @@
 								value="<%= userToEdit.phone %> "
 							/>
 						</div>
+						<div class="formRegisterPadding">
+							<label for="password">Password:</label>
+							<input 
+								type="password" 
+								name="password" 
+								id="password" 
+								placeholder="contraseña" 
+								class='regAndLogInputs password'>
+						</div>
+						<div class="formRegisterPadding">
+							<label for="password">Retype</label>
+							<input 
+								type="password" 
+								name="retype" 
+								id="retype" 
+								placeholder="contraseña" 
+								class='regAndLogInputs retype'>
+						</div>
 
 						<div class="formRegisterPadding">
 							<label for="image">Avatar:</label>
@@ -83,6 +90,9 @@
 						
 						<button class="formButton" type="“submit”">Guardar</button>
 					</form>
+					<% if(typeof errors!='undefined'){ for (error of errors){ %>
+						<li style="color: red"><%= error.msg %></li>
+						<% } %> <% } %>
 
 					
 
