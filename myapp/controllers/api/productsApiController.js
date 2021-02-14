@@ -3,7 +3,13 @@ const { Product } = require('../../database/models');
 const productsApiController = {
 	list: async (req, res) => {
 		try {
-			const products = await Product.findAll();
+			const products = await Product.findAll({
+				include: [
+					{
+						association: 'Images',
+					},
+				],
+			});
 			res.json({
 				meta: {
 					status: 200,
@@ -53,6 +59,39 @@ const productsApiController = {
 			});
 		}
 	},
+
+	category: async (req, res) => {
+		try {
+			const products = await Product.findAll({
+				where: {
+					category_id: req.params.cat,
+				},
+				include: [
+					{
+						association: 'Images',
+					},
+				],
+			});
+			res.json({
+				meta: {
+					status: 200,
+					count: products.length,
+					url: '/api/products',
+				},
+				data: {
+					products,
+				},
+			});
+		} catch (error) {
+			res.status(500).json({
+				meta: {
+					status: 'error',
+				},
+				error: 'No products found',
+			});
+		}
+	},
+
 	store: async (req, res) => {
 		try {
 			const productCreated = await db.Product.create({
