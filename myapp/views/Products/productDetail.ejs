@@ -1,6 +1,6 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
-<script src="/javascripts/history.js"></script>
+
 
 	<body>
 		<div class="tuCarritoBanner">
@@ -13,13 +13,43 @@
 		<main class="prodDetailMain">
 			
 			<div id="prodDetailLeft" class="prodDetailLeft">
-				<ul>
-					<% for(image of theProduct.Images){ %> 
-						<li class="splide__slide"><img src="/images/products/<%=image.file_name%>" alt="" style="max-width: 300px;"></li>
-					<% } %> 
-				</ul>
-			</div>
+				<!-- PRUEBA -->
 
+				<div id="productsCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+					<div class="carousel-inner" >
+					  <!-- primera imagen tiene que tener clase activa -->
+						<div class="carousel-item active" >
+							<img src="/images/products/<%=theProduct.Images[0].file_name%>" alt=""  class="d-block w-100" alt="..." >
+						</div>
+					  <!-- fin primera imagen -->
+
+					  <!-- SACAR PRIMER ELEMENTO DEL ARRAY -->
+					 <% theProduct.Images.shift(); %>  
+			
+					  <!-- resto de imagenes -->
+					  <% for(image of theProduct.Images){ %> 
+						<div class="carousel-item">
+							<img src="/images/products/<%=image.file_name%>" class="d-block w-100" alt="..." >
+						</div>
+   					  <% } %> 
+						<!-- FIN RESTO IMAGENES -->
+					</div>
+
+					<!-- BOTONES -->
+					<button class="carousel-control-prev" type="button" data-bs-target="#productsCarousel"  data-bs-slide="prev" style="z-index: 0;">
+					  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					  <span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#productsCarousel"  data-bs-slide="next" style="z-index: 0;">
+					  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					  <span class="visually-hidden">Next</span>
+					</button>
+				</div>
+
+				<!-- FIN PRUEBA --> 
+
+
+			</div>
 			
 			<div id="prodDetailRight" class="prodDetailRight">
 				
@@ -44,6 +74,9 @@
 		</main>
 
 		<%- include('../partials/footer') %>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+		<script src="/javascripts/history.js"></script>
+
 
 
 	</body>
