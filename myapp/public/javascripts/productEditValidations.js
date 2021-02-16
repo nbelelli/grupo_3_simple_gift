@@ -10,6 +10,12 @@ window.addEventListener('load', function () {
 
 	form.addEventListener('submit', function (e) {
 		let errors = [];
+		let ulErrores = document.querySelector('div.errores ul');
+
+		/*  Comprueba si existen errores */
+		if (ulErrores.innerHTML != '') {
+			ulErrores.innerHTML = '';
+		}
 		if (name.value == '') {
 			errors.push('El Nombre es obligatorio');
 		}
@@ -43,7 +49,6 @@ window.addEventListener('load', function () {
 
 		if (errors.length > 0) {
 			e.preventDefault();
-			let ulErrores = document.querySelector('div.errores ul');
 			for (error of errors) {
 				ulErrores.innerHTML += '<li>' + error + '</li>';
 			}
