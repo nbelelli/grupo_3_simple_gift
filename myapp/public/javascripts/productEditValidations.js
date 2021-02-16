@@ -26,28 +26,14 @@ window.addEventListener('load', function () {
 			errors.push('El maximo descuento es de 99%');
 		}
 
-
-        image.addEventListener('change', function{
-            if (image.value == '') {
-                errors.push('El producto debe tener al menos 1 imagen');
-            } else {
-                for (image of image.files) {
-                    let extn = getFileExtn(image.name);
-                    if (!(extn == 'jpg' || extn == 'png' || extn == 'jpeg')) {
-                        errors.push('Al menos una imagen tiene un formato incorrecto');
-                    }
-                }
-            }
-
-        })
-
 		if (image.value == '') {
 			errors.push('El producto debe tener al menos 1 imagen');
 		} else {
 			for (image of image.files) {
 				let extn = getFileExtn(image.name);
-				if (!(extn == 'jpg' || extn == 'png' || extn == 'jpeg')) {
-					errors.push('Los formatos correctos son JPG, PGN y JPEG');				}
+				if (!(extn == 'jpg' || extn == 'png' || extn == 'jpeg')) {
+					errors.push('Los formatos correctos son JPG, PGN y JPEG');
+				}
 			}
 		}
 
