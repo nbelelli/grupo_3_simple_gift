@@ -8,7 +8,7 @@
 
 .prodDetailLeft {
 	/* border: 2px solid blue; */
-	width: 50%;
+	width: 40%;
 	/* box-sizing: boder-box; */
 	/* padding: 2%; */
 	/* display: flex; */
@@ -76,4 +76,8 @@
 
 .prodDetailPrice {
 	font-size: 40px;
+}
+
+.carouselImg {
+	max-height: 300px;
 }

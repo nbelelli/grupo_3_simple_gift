@@ -1,112 +1,129 @@
-<%- include('../partials/head') %>
-<%- include('../partials/header') %>
-<script src="/javascripts/history.js"></script>
+<%- include('../partials/head') %> <%- include('../partials/header') %>
+<html>
+	<!-- *******REGISTER MAIN***-->
 
-    <!-- *******REGISTER MAIN***-->
+	<body>
+		<main class="mainform">
+			<div class="registerContainer">
+				<div>
+					<span>
+						<a class="icono_go_back" href="#" id="back_button"
+							><i class="fas fa-long-arrow-alt-left fa-lg"></i
+						></a>
+					</span>
+				</div>
 
-    <body>
-    <main class="mainform"> 
-    <div class="registerContainer"> 
-        <div>
-            <span>
-                <a class="icono_go_back" href="#" id="back_button"><i class="fas fa-long-arrow-alt-left fa-lg"></i></a>
-            </span>
-        </div> 
-    
-    <div class="errores">
-        
-        <ul class="errores">
-            <!-- Errores configurados en ValidationForm-->
-        </ul>
-    </div>
-    <seccion class="formSeccion">  
-        <h1 class="formTitle">¡Registrate!</h1>
-        <article class="formsArticle"> 
-        <form action="/users/register" method="POST" enctype="multipart/form-data" class="formRegister" id="formRegister">
-     <div class="formRegisterPadding"> 
-        <label for="nombre">Nombre:</label>
-        <input 
-            type="text" 
-            name="name" 
-            id="name" 
-            placeholder="Leandro" 
-            class='regAndLogInputs name'>
-     </div>
-     <div class="formRegisterPadding">
-        <label for="apellido">Apellido:</label>
-        <input 
-            type="text" 
-            name="lastname" 
-            id="lastname" 
-            placeholder="Perez"
-            class='regAndLogInputs lastname'>
-     </div>
-    <div class="formRegisterPadding">
-        <label for="email">Email:</label>
-        <input 
-            type="text" 
-            name="email" 
-            id="email" 
-            placeholder="ejemplo@correo.com" 
-            class='regAndLogInputs email'>   
-    </div>
-    <div class="formRegisterPadding">
-        <label for="telefono">Telefono:</label>
-        <input 
-            type="tel" 
-            name="phone" 
-            id="phone" 
-            placeholder="11-4444-4444" 
-            class='regAndLogInputs phone'>
-    </div>
-    <div class="formRegisterPadding">
-        <label for="password">Password:</label>
-        <input 
-            type="password" 
-            name="password" 
-            id="password" 
-            placeholder="contraseña" 
-            class='regAndLogInputs password'>
-    </div>
-    <div class="formRegisterPadding">
-        <label for="password">Retype</label>
-        <input 
-            type="password" 
-            name="retype" 
-            id="retype" 
-            placeholder="contraseña" 
-            class='regAndLogInputs retype'>
-    </div>
-    <div class="formRegisterPadding">
-        <label for="image">Avatar:</label>
-        <input type="file" name="avatar" id="avatar" class='avatar'/>
-    </div>
-    <button class="formButton" type="submit">Enviar</button>
-    </form>
-    
-    <% if(typeof errors!='undefined'){ for (error of errors){ %>
-        <li style="color: red"><%= error.msg %></li>
-        <% } %> <% } %>
+				<section class="formSeccion">
+					<h1 class="formTitle">¡Registrate!</h1>
+					<article class="formsArticle">
+						<form
+							action="/users/register"
+							method="POST"
+							enctype="multipart/form-data"
+							class="formRegister"
+							id="formRegister"
+						>
+							<div class="formRegisterPadding">
+								<label for="nombre">Nombre:</label>
+								<input
+									type="text"
+									name="name"
+									id="name"
+									placeholder="Leandro"
+									class="regAndLogInputs name"
+								/>
+							</div>
 
-    
-    <h3 class="registerYaTenesCuenta">¿Ya tenés una cuenta de Simple Gift?  <a href="/users/login" id="registerStartSection">  Iniciá Sesión</a></h3>
-    
-    </form>
-    </article>
-    </seccion>
-    </div>
-    <div class="fotoRegisterContainer"> 
-        <img width="50%" class="foto_login_amigos" src="/images/login_amigos.jpg" alt="amigos_regalo">    
-    </div>  
-</main>
-  
-        <%- include('../partials/footer') %>
-        
-    
-    <script src="/javascripts/registerValidations.js"></script>
-  
-</body>
+							<div class="formRegisterPadding">
+								<label for="apellido">Apellido:</label>
+								<input
+									type="text"
+									name="lastname"
+									id="lastname"
+									placeholder="Perez"
+									class="regAndLogInputs lastname"
+								/>
+							</div>
+							<div class="formRegisterPadding">
+								<label for="email">Email:</label>
+								<input
+									type="text"
+									name="email"
+									id="email"
+									placeholder="ejemplo@correo.com"
+									class="regAndLogInputs email"
+								/>
+							</div>
+							<div class="formRegisterPadding">
+								<label for="telefono">Telefono:</label>
+								<input
+									type="tel"
+									name="phone"
+									id="phone"
+									placeholder="11-4444-4444"
+									class="regAndLogInputs phone"
+								/>
+							</div>
+							<div class="formRegisterPadding">
+								<label for="password">Password:</label>
+								<input
+									type="password"
+									name="password"
+									id="password"
+									placeholder="contraseña"
+									class="regAndLogInputs password"
+								/>
+							</div>
+							<div class="formRegisterPadding">
+								<label for="password">Retype</label>
+								<input
+									type="password"
+									name="retype"
+									id="retype"
+									placeholder="contraseña"
+									class="regAndLogInputs retype"
+								/>
+							</div>
+							<div class="formRegisterPadding">
+								<label for="image">Avatar:</label>
+								<input type="file" name="avatar" id="avatar" class="avatar" />
+							</div>
+							<button class="formButton" type="submit">Enviar</button>
+						</form>
+
+						<% if(typeof errors!='undefined'){ for (error of errors){ %>
+						<li class="errores"><%= error.msg %></li>
+						<% } %> <% } %>
+
+						<div class="errores">
+							<ul class="errores">
+								<!-- Errores configurados en ValidationForm-->
+							</ul>
+						</div>
+
+						<h3 class="registerYaTenesCuenta">
+							¿Ya tenés una cuenta de Simple Gift?
+							<a href="/users/login" id="registerStartSection">
+								Iniciá Sesión</a
+							>
+						</h3>
+					</article>
+				</section>
+			</div>
+			<div class="fotoRegisterContainer">
+				<img
+					width="50%"
+					class="foto_login_amigos"
+					src="/images/login_amigos.jpg"
+					alt="amigos_regalo"
+				/>
+			</div>
+		</main>
+
+		<%- include('../partials/footer') %>
+
+		<script src="/javascripts/registerValidations.js"></script>
+
+		<script src="/javascripts/history.js"></script>
+	</body>
 </html>
-
-    
-  
