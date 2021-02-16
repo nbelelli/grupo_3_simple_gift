@@ -14,25 +14,18 @@
 
 			<seccion class="formSeccion">
 				<h1 class="formTitle">¡Iniciá sesión acá!</h1>
-				<article class="formsArticle">
+				<span class="formsArticle">
 
-					<div class="errores">
-        
-						<ul>
-							<!-- Errores configurados en ValidationForm-->
-						</ul>
-					</div>
 
 					<form action="login" method="POST" class="formLogin" id="formLogin">
 						<div class="loginFormMail">
 							<label for="“email”">Email: </label>
 							<input
-								type="email"
+								type="text"
 								name="email"
 								id="email"
 								placeholder="ejemplo@correo.com"
-								class="regAndLogInputs email"  
-			
+								class="regAndLogInputs email"
 							/>
 						</div>
 
@@ -57,8 +50,13 @@
 							/>
 						</div>
 						<% if(typeof errors!='undefined'){ for (error of errors){ %>
-						<li style="color: red"><%= error.msg %></li>
+						<li class="errores"><%= error.msg %></li>
 						<% } %> <% } %>
+						<div class="errores">
+							<ul>
+								<!-- Errores configurados en ValidationForm-->
+							</ul>
+						</div>
 
 						<button class="formButton" type="“submit”">Enviar</button>
 					</form>
@@ -79,7 +77,7 @@
 		</div>
 	</main>
 
-    <script src="/javascripts/loginValidations.js"></script>
+	<script src="/javascripts/loginValidations.js"></script>
 
 	<%- include('../partials/footer') %>
 </body>
