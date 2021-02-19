@@ -51,11 +51,11 @@ const productsApiController = {
 				},
 			});
 		} catch (error) {
-			res.status(404).json({
+			res.status(500).json({
 				meta: {
 					status: 'error',
 				},
-				error: 'No product found',
+				error: 'Server error',
 			});
 		}
 	},
@@ -94,7 +94,7 @@ const productsApiController = {
 
 	store: async (req, res) => {
 		try {
-			const productCreated = await db.Product.create({
+			const productCreated = await Product.create({
 				category_id: req.body.category,
 				name: req.body.name,
 				price: req.body.price,
@@ -103,6 +103,7 @@ const productsApiController = {
 				best_seller: req.body.bestSeller ? 1 : 0,
 				description: req.body.description,
 			});
+			console.log('the product', productCreated);
 			/* 			const images = req.files;
 			const imagesArray = images.map((image) => {
 				const newImage = {
@@ -113,9 +114,15 @@ const productsApiController = {
 			});
 			await db.Image.bulkCreate(imagesArray); */
 			res.json({
-				status: 200,
+				meta: {
+					status: 200,
+				},
+				data: {
+					productCreated,
+				},
 			});
 		} catch (error) {
+			console.log(error);
 			res.status(404).json({
 				meta: {
 					status: 'error',
