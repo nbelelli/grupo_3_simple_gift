@@ -13,6 +13,13 @@ window.addEventListener('load', function () {
 
 	form.addEventListener('submit', function (e) {
 		let errors = [];
+
+		let ulErrores = document.querySelector('div.errores ul');
+
+		/*  Comprueba si existen errores */
+		if (ulErrores.innerHTML != '') {
+			ulErrores.innerHTML = '';
+		}
 		if (name.value == '') {
 			errors.push('El Nombre es obligatorio');
 		}
@@ -36,8 +43,8 @@ window.addEventListener('load', function () {
 		for (image of image.files) {
 			let extn = getFileExtn(image.name);
 			if (!(extn == 'jpg' || extn == 'png' || extn == 'jpeg')) {
-				errors.push('Al menos una imagen tiene un formato incorrecto');
-				}
+				errors.push('Los formatos correctos son JPG, PGN y JPEG');
+			}
 		}
 
 		if (description.value == '') {
@@ -46,7 +53,6 @@ window.addEventListener('load', function () {
 
 		if (errors.length > 0) {
 			e.preventDefault();
-			let ulErrores = document.querySelector('div.errores ul');
 			for (error of errors) {
 				ulErrores.innerHTML += '<li>' + error + '</li>';
 			}

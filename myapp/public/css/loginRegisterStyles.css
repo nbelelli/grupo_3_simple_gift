@@ -5,11 +5,10 @@
 	margin: 60px;
 }
 
-.errores  {
+.errores {
 	color: red;
-	margin: 60px;
+	font-size: 13px;
 }
-   
 
 .loginOUT {
 	display: flex;
@@ -203,4 +202,3 @@ textarea.regAndLogInputs {
 		margin-right: 5%;
 	}
 }
-
