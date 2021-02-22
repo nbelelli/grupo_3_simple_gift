@@ -1,7 +1,7 @@
 <%- include('../partials/head') %>
 <html>
 	<%- include('../partials/header') %>
-	
+
 	<body>
 		<section id="productsFilterSection" class="productsFilterSection">
 			<div id="productsFilter" class="productsFilter">
@@ -15,39 +15,17 @@
 					<a href="#" class="filterTile">En Oferta</a>
 				</div>
 			</div>
+		</section>
 
-
-		<div class="cointainer" style="margin-top: 20px;">
-			<div class="row d-flex justify-content-around">
-				<% for(product of products){ %>
-
-				<div class="card" style="width: 18rem; margin-bottom: 20px">
-					<img
-						src="/images/Products/<%=product.Images[0].file_name%> "
-						class="card-img-top prodImage"
-						alt="..."
-					/>
-					<div class="card-body">
-						<h5 class="card-title"><%= product.name %></h5>
-						<p class="card-text">
-                            <%= product.description %>
-                        </p>
-                        <p class="card-text">
-                            $<%= product.price %>
-						</p>
-						<a href="/products/<%= product.id %>" class="btn btn-primary"
-							>Ver</a>
-						<a href="/products/<%= product.id %>" class="btn btn-primary"
-								>Agregar al carrito</a>
-
-
-					</div>
-				</div>
-				<% } %>
-			</div>
+		<!-- PRUEBA -->
+		<div class="cointainer" style="margin-top: 20px">
+			<div id="prueba" class="row d-flex justify-content-around"></div>
 		</div>
+		<!-- FIN PRUEBA -->
 
-        <%- include('../partials/footer') %>
-        <script src="/javascripts/history.js"></script>
+		<%- include('../partials/footer') %>
+		<script src="/javascripts/history.js"></script>
+		<script src="/javascripts/products.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	</body>
 </html>
