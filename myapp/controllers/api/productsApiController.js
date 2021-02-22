@@ -1,4 +1,5 @@
 const { Product } = require('../../database/models');
+const sequelize = require('sequelize');
 
 const productsApiController = {
 	list: async (req, res) => {
@@ -8,16 +9,32 @@ const productsApiController = {
 					{
 						association: 'Images',
 					},
+					{
+						association: 'Category',
+					},
 				],
 			});
+
+			const countArray = await Product.sequelize.query(
+				'SELECT products.category_id, categories.name, COUNT(*) AS count FROM products JOIN categories ON category_id= categories.id	GROUP BY categories.name;',
+				{ type: sequelize.QueryTypes.SELECT }
+			);
+
+			let countByCategory = {};
+
+			for (category of countArray) {
+				countByCategory[category.name] = category.count;
+			}
+
 			res.json({
 				meta: {
 					status: 200,
 					count: products.length,
 					url: '/api/products',
+					countByCategory: countByCategory,
 				},
 				data: {
-					products,
+					products, //por dios no la cagues aca
 				},
 			});
 		} catch (error) {
@@ -25,7 +42,7 @@ const productsApiController = {
 				meta: {
 					status: 'error',
 				},
-				error: 'No products found',
+				error: 'Server Error',
 			});
 		}
 	},
@@ -88,46 +105,6 @@ const productsApiController = {
 					status: 'error',
 				},
 				error: 'No products found',
-			});
-		}
-	},
-
-	store: async (req, res) => {
-		try {
-			const productCreated = await Product.create({
-				category_id: req.body.category,
-				name: req.body.name,
-				price: req.body.price,
-				discount: req.body.discount,
-				stock: req.body.stock,
-				best_seller: req.body.bestSeller ? 1 : 0,
-				description: req.body.description,
-			});
-			console.log('the product', productCreated);
-			/* 			const images = req.files;
-			const imagesArray = images.map((image) => {
-				const newImage = {
-					file_name: image.filename,
-					product_id: productCreated.id,
-				};
-				return newImage;
-			});
-			await db.Image.bulkCreate(imagesArray); */
-			res.json({
-				meta: {
-					status: 200,
-				},
-				data: {
-					productCreated,
-				},
-			});
-		} catch (error) {
-			console.log(error);
-			res.status(404).json({
-				meta: {
-					status: 'error',
-				},
-				error: 'Product could not be created',
 			});
 		}
 	},
