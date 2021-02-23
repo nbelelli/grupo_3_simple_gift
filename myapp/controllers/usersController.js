@@ -119,6 +119,13 @@ const usersController = {
 		const users = await db.User.findAll();
 		res.render('Users/usersAdmin', { users: users });
 	},
+
+	adminProfile: async (req, res) => {
+		res.locals.title = 'Admin Details';
+		const user = await db.User.findByPk(req.params.id);
+		console.log('the user is', user);
+		res.render('Users/adminProfile', { user: user });
+	},
 };
 
 module.exports = usersController;

@@ -1,0 +1,51 @@
+<%- include('../partials/head') %> <%- include('../partials/header') %>
+<script src="/javascripts/history.js"></script>
+
+<!-- *******PROFILE MAIN***-->
+
+<body>
+	<main class="mainform">
+		<div class="login_container">
+			<div>
+				<span>
+					<a class="icono_go_back" href="#" id="back_button"
+						><i class="fas fa-long-arrow-alt-left fa-lg"></i
+					></a>
+				</span>
+			</div>
+
+			<section class="profileSeccion">
+				<h2 class="profileTitle">Detalles de Administrador</h2>
+				<p class="profileSubTitle">Datos:</p>
+				<br />
+				<div class="profileUserData">
+					Nombre completo: <%= user.name %> <%= user.lastname %>
+				</div>
+				<br />
+				<div class="profileUserData">Email: <%= user.email %></div>
+				<br />
+				<div class="profileUserData">Telefono: <%= user.phone %></div>
+				<br />
+
+				<% if (user.rol == 10){ %>
+				<div class="profileUserData">Rol: Cliente</div>
+				<% } %> <% if (user.rol == 20){ %>
+				<div class="profileUserData">
+					Rol: Admin (Puede crear y editar productos)
+				</div>
+				<% } %> <% if (user.rol == 30){ %>
+				<div class="profileUserData">
+					Rol: Superadmin (Puede crear y editar productos y administradores)
+				</div>
+				<% } %>
+
+				<br />
+				<a href="/users/<%= user.id %>/edit"
+					><button class="btn btn-primary">Cambiar Rol</button></a
+				>
+			</section>
+		</div>
+	</main>
+
+	<%- include('../partials/footer') %>
+</body>
