@@ -43,7 +43,15 @@
 						<th scope="row"><%= user.id %></th>
 						<td><%= user.name+' '+user.lastname %></td>
 						<td><%= user.email %></td>
-						<td><%= user.rol %></td>
+
+						<% if(user.rol==10){ %>
+						<td>Cliente</td>
+						<% } %> <% if(user.rol==20){ %>
+						<td>Admin</td>
+						<% } %> <% if(user.rol==30){ %>
+						<td>Superadmin</td>
+						<% } %>
+
 						<td>
 							<a
 								href="/Admin/users/<%= user.id %> "
