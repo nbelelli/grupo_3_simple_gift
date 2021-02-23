@@ -23,6 +23,7 @@ const usersController = {
 	storeUser: async (req, res) => {
 		// Verifica que no existan errores en el form
 		const errors = validationResult(req);
+		console.log('el request', req.body);
 		if (!errors.isEmpty()) {
 			res.locals.title = 'Register';
 			return res.render('Users/register', { errors: errors.errors });
@@ -37,6 +38,7 @@ const usersController = {
 			phone: req.body.phone,
 			password: bcrypt.hashSync(req.body.password, 5),
 			avatar: req.files[0] ? req.files[0].filename : '',
+			rol: req.body.rol,
 		});
 		res.redirect('/Users/login');
 	},
@@ -121,10 +123,14 @@ const usersController = {
 	},
 
 	adminProfile: async (req, res) => {
-		res.locals.title = 'Admin Details';
+		res.locals.title = 'Detalles de Administrador';
 		const user = await db.User.findByPk(req.params.id);
 		console.log('the user is', user);
 		res.render('Users/adminProfile', { user: user });
+	},
+	createAdmin: (req, res) => {
+		res.locals.title = 'Crear Admin';
+		return res.render('Users/createAdmin');
 	},
 };
 
