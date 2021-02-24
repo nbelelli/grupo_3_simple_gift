@@ -50,9 +50,10 @@ router.get('/:id/edit', auth, usersController.edit);
 
 //Editar un usuario
 router.put(
-	'/:id/edit', 
-	upload.any(), 
+	'/:id/edit',
+	upload.any(),
 	userValidations.UserEdit,
-	usersController.update);
+	usersController.update
+);
 
 module.exports = router;
