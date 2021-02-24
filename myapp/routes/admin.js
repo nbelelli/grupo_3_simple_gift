@@ -4,6 +4,7 @@ const controller = require('../controllers/adminController');
 const prodController = require('../controllers/productsController');
 const usersController = require('../controllers/usersController');
 const authAdmin = require('../middlewares/authAdmin');
+const authSuperAdmin = require('../middlewares/authSuperAdmin');
 
 const multer = require('multer');
 const path = require('path');
@@ -25,10 +26,10 @@ var upload = multer({ storage: storage });
 
 router.get('/', authAdmin, controller.adminPortal);
 /* Admin Profile */
-router.get('/users/create', usersController.createAdmin);
+router.get('/users/create', authSuperAdmin, usersController.createAdmin);
 router.get('/users/:id', authAdmin, usersController.adminProfile);
 
-router.get('/users', authAdmin, usersController.usersAdmin);
+router.get('/users', authSuperAdmin, usersController.usersAdmin);
 
 router.get('/products', authAdmin, prodController.productsAdmin);
 
