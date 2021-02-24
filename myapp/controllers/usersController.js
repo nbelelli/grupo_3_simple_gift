@@ -107,6 +107,7 @@ const usersController = {
 				lastname: req.body.lastname,
 				phone: req.body.phone,
 				avatar: req.files[0] ? req.files[0].filename : currentImage,
+				rol: req.body.rol,
 			},
 			{
 				where: {
@@ -114,7 +115,10 @@ const usersController = {
 				},
 			}
 		);
-		res.redirect('/Users/login');
+		if (req.session.user.rol == 30) {
+			return res.redirect('/Admin/users');
+		}
+		return res.redirect('/Users/login');
 	},
 	usersAdmin: async (req, res) => {
 		res.locals.title = 'Users Admin';
@@ -131,6 +135,12 @@ const usersController = {
 	createAdmin: (req, res) => {
 		res.locals.title = 'Crear Admin';
 		return res.render('Users/createAdmin');
+	},
+	editAdmin: async (req, res) => {
+		res.locals.title = 'Editar Administrador';
+		console.log('entramos', req.params.id);
+		const userToEdit = await db.User.findByPk(req.params.id);
+		return res.render('Users/editAdmin', { userToEdit });
 	},
 };
 

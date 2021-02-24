@@ -1,0 +1,131 @@
+<html>
+	<%- include('../partials/head') %> <%- include('../partials/header') %>
+
+	<script src="/javascripts/history.js"></script>
+
+	<body>
+		<main>
+			<div>
+				<div>
+					<span>
+						<a class="icono_go_back" href="#" id="back_button"
+							><i class="fas fa-long-arrow-alt-left fa-lg"></i
+						></a>
+					</span>
+				</div>
+				<section class="createEditFormSection">
+					<h1 class="formTitle">
+						Edit Admin <%=userToEdit.name %> <%=userToEdit.lastname%>
+					</h1>
+
+					<div class="errores">
+						<ul class="errors front JS">
+							<!-- Errores configurados en ValidationForm-->
+						</ul>
+					</div>
+
+					<form
+						method="POST"
+						action="/admin/users/<%= userToEdit.id %>/edit?_method=PUT"
+						class="createEditForm"
+						enctype="multipart/form-data"
+					>
+						<div class="formRegisterPadding">
+							<label for="name">Nombre:</label>
+							<input
+								type="text"
+								name="name"
+								id="name"
+								required
+								class="regAndLogInputs name"
+								value="<%= userToEdit.name %> "
+							/>
+						</div>
+
+						<div class="formRegisterPadding">
+							<label for="lastname">Apellido:</label>
+							<input
+								type="text"
+								name="lastname"
+								id="apellido"
+								required
+								class="regAndLogInputs lastname"
+								value="<%= userToEdit.lastname %> "
+							/>
+						</div>
+
+						<div class="formRegisterPadding">
+							<label for="tel">Telefono:</label>
+							<input
+								type="tel"
+								name="phone"
+								id="phone"
+								class="regAndLogInputs phone"
+								required
+								class="regAndLogInputs phone"
+								value="<%= userToEdit.phone %> "
+							/>
+						</div>
+						<div class="formRegisterPadding">
+							<label for="password">Password:</label>
+							<input
+								type="password"
+								name="password"
+								id="password"
+								placeholder="contraseña"
+								class="regAndLogInputs password"
+							/>
+						</div>
+						<div class="formRegisterPadding">
+							<label for="password">Retype</label>
+							<input
+								type="password"
+								name="retype"
+								id="retype"
+								placeholder="contraseña"
+								class="regAndLogInputs retype"
+							/>
+						</div>
+
+						<div class="formRegisterPadding">
+							<label for="image">Avatar:</label>
+							<input type="file" name="image" id="image" />
+						</div>
+						<img
+							src="/images/avatar/<%= userToEdit.avatar %> "
+							style="max-width: 20%"
+						/>
+
+						<div class="formRegisterPadding">
+							<label for="rol">Rol:</label>
+							<select name="rol" id="rol">
+								<!-- 						<option value="20">Admin</option>
+									<option value="30">SuperAdmin</option> -->
+
+								<% if (userToEdit.rol == 20){ %>
+								<option value="20" selected>Admin</option>
+								<option value="30">SuperAdmin</option>
+								<% } %> <% if(userToEdit.rol==30) { %>
+								<option value="20">Admin</option>
+								<option value="30" selected>SuperAdmin</option>
+								<% } %> <% if(userToEdit.rol==10) { %>
+								<option value="10" selected>Cliente</option>
+
+								<% } %>
+							</select>
+						</div>
+
+						<button class="formButton" type="“submit”">Guardar</button>
+					</form>
+					<% if(typeof errors!='undefined'){ for (error of errors){ %>
+					<li style="color: red"><%= error.msg %></li>
+					<% } %> <% } %>
+				</section>
+			</div>
+		</main>
+
+		<script src="/javascripts/EditValidations.js"></script>
+
+		<%- include('../partials/footer') %>
+	</body>
+</html>

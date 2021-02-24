@@ -33,12 +33,23 @@ router.get('/users', authSuperAdmin, usersController.usersAdmin);
 
 router.get('/products', authAdmin, prodController.productsAdmin);
 
+router.get('/users/:id/edit', authSuperAdmin, usersController.editAdmin);
+
 router.post(
 	'/users/create',
+	authAdmin,
 	upload.any(),
 	userValidations.register,
 
 	usersController.storeUser
+);
+
+router.put(
+	'/users/:id/edit',
+	authSuperAdmin,
+	upload.any(),
+	userValidations.UserEdit,
+	usersController.update
 );
 
 module.exports = router;
