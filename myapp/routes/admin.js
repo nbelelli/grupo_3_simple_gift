@@ -52,4 +52,6 @@ router.put(
 	usersController.update
 );
 
+router.delete('/users/:id/delete', usersController.delete);
+
 module.exports = router;

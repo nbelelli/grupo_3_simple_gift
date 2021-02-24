@@ -120,6 +120,15 @@ const usersController = {
 		}
 		return res.redirect('/Users/login');
 	},
+	delete: async (req, res) => {
+		await db.User.destroy({
+			where: {
+				id: req.params.id,
+			},
+		});
+		return res.redirect('/Admin/users');
+	},
+
 	usersAdmin: async (req, res) => {
 		res.locals.title = 'Users Admin';
 		const users = await db.User.findAll();

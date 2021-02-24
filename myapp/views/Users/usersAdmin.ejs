@@ -67,9 +67,20 @@
 							>
 								<i class="fas fa-edit"></i>
 							</a>
-							<a href="#" class="btn btn-danger btn-sm">
+
+							<form
+								style="display: inline"
+								method="POST"
+								action="/admin/users/<%=user.id%> /delete/?_method=DELETE"
+							>
+								<button class="btn btn-danger btn-sm" type="submit">
+									<i class="fas fa-trash-alt"></i>
+								</button>
+							</form>
+
+							<!-- 							<a href="#" class="btn btn-danger btn-sm">
 								<i class="fas fa-trash-alt"></i>
-							</a>
+							</a> -->
 						</td>
 					</tr>
 					<% } %>
