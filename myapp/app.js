@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors');
 
 const methodOverride = require('method-override');
 
@@ -21,6 +22,7 @@ var app = express();
 
 //express-session
 const session = require('express-session');
+app.use(cors());
 app.use(
 	session({
 		secret: 'SecretMessage',
