@@ -132,12 +132,6 @@
 }
 
 .elegidosSlider {
-	display: flex;
-	justify-content: space-between;
-
-	/* 	background-color: #6c7ae0; */
-	height: 100%;
-	align-items: stretch;
 }
 
 .elegidoTile {
