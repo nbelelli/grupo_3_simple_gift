@@ -1,59 +1,57 @@
-<%- include('./partials/head') %> <%- include('./partials/header') %>
+<%- include('./partials/head') %>
 <html>
-	<main>
-		<!--******  C A T E G O R I A S  *******-->
-		<section class="categorias" id="homeCategorias">
-			<div class="sectionHeader">
-				<div class="sectionTitle">Categorías.</div>
-				<div class="sectionVerMas"><a href="/products">Ver más</a></div>
-			</div>
-
-			<div class="tilesSlider">
-				<a href="/products/cat/1" class="categoryTile catGaming">
-					<div class="categoryTileTitle">Gaming</div>
-				</a>
-
-				<a href="/products/cat/2" class="categoryTile catMate">
-					<div class="categoryTileTitle">Mate</div>
-				</a>
-
-				<a href="/products/cat/3" class="categoryTile catBeer">
-					<div class="categoryTileTitle">Birra</div>
-				</a>
-
-				<a href="/products/cat/4" class="categoryTile catMusic">
-					<div class="categoryTileTitle">Musica</div>
-				</a>
-
-				<a href="products/cat/5" class="categoryTile catBajon">
-					<div class="categoryTileTitle">Bajon</div>
-				</a>
-
-				<a href="/products/cat/6" class="categoryTile catSports">
-					<div class="categoryTileTitle">Deportes</div>
-				</a>
-			</div>
-		</section>
-
-		<!-- ********************ELEGIDOS********************** -->
-
-		<section class="homeElegidos" id="homeElegidos">
-			<div class="sectionHeader">
-				<div class="sectionTitle">Los más elegidos.</div>
-				<div class="sectionVerMas">
-					<a href="/products">Ver todos los boxes</a>
+	<%- include('./partials/header') %>
+	<body>
+		<main>
+			<!--******  C A T E G O R I A S  *******-->
+			<section id="homeCategorias">
+				<div class="sectionHeader">
+					<div class="sectionTitle">Categorías.</div>
+					<div class="sectionVerMas"><a href="/products">Ver más</a></div>
 				</div>
-			</div>
 
-			<div class="elegidosSlider">
+				<div class="tilesSlider">
+					<a href="/products/cat/1" class="categoryTile catGaming">
+						<div class="categoryTileTitle">Gaming</div>
+					</a>
+
+					<a href="/products/cat/2" class="categoryTile catMate">
+						<div class="categoryTileTitle">Mate</div>
+					</a>
+
+					<a href="/products/cat/3" class="categoryTile catBeer">
+						<div class="categoryTileTitle">Birra</div>
+					</a>
+
+					<a href="/products/cat/4" class="categoryTile catMusic">
+						<div class="categoryTileTitle">Musica</div>
+					</a>
+
+					<a href="products/cat/5" class="categoryTile catBajon">
+						<div class="categoryTileTitle">Bajon</div>
+					</a>
+
+					<a href="/products/cat/6" class="categoryTile catSports">
+						<div class="categoryTileTitle">Deportes</div>
+					</a>
+				</div>
+			</section>
+
+			<!-- ********************ELEGIDOS********************** -->
+
+			<section id="homeElegidos">
+				<div class="sectionHeader">
+					<div class="sectionTitle">Los más elegidos.</div>
+					<div class="sectionVerMas">
+						<a href="/products">Ver todos los boxes</a>
+					</div>
+				</div>
+
 				<div class="container">
 					<div class="row">
 						<% for(product of elegidos){ %>
 						<div class="col">
-							<div
-								class="card"
-								style="width: 12 /*  */ rem; margin-bottom: 20px"
-							>
+							<div class="card" style="width: 16rem; margin-bottom: 20px">
 								<img
 									src="/images/Products/<%= product.Images[0].file_name%>"
 									class="card-img-top prodImage"
@@ -61,20 +59,19 @@
 								/>
 								<div class="card-body">
 									<h5 class="card-title"><%= product.name %></h5>
-									<p class="card-text"><%= product.description %></p>
 									<p class="card-text">$<%= product.price %></p>
 									<a href="/products/<%= product.id %>" class="btn btn-primary"
 										>Ver</a
 									>
-									<a href="#" class="btn btn-primary">Agregar al carrito</a>
+									<a href="#" class="btn btn-primary">Comprar</a>
 								</div>
 							</div>
 						</div>
 						<% } %>
 					</div>
 				</div>
-			</div>
-		</section>
-	</main>
-	<footer><%- include('./partials/footer') %></footer>
+			</section>
+		</main>
+		<%- include('./partials/footer') %>
+	</body>
 </html>
