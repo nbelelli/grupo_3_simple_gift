@@ -1,0 +1,76 @@
+<!-- 	D E S K T O P   H E A D E R -->
+<header id="desktopHeader">
+	<div class="left_header">
+		<!-- LOGO -->
+		<div class="logo">
+			<a href="/"><img src="/images/logo.png" alt="" /></a>
+		</div>
+
+		<!-- REGALOS CON OPCIONES, COMO REGALAR, NAV -->
+
+		<div>
+			<a href="#">Regalos con opciones</a>
+		</div>
+		<div><a href="#">Como regalar</a></div>
+
+		<!-- SEARCH -->
+		<div class="search_bar">
+			<form action="/products" method="GET">
+				<input name="search" type="text" placeholder="Buscar..." required />
+				<button class="search_btn" type="submit">
+					<i class="fas fa-search"></i>
+				</button>
+			</form>
+		</div>
+	</div>
+
+	<div class="right_header">
+		<% if(!userLogged){ %>
+
+		<div><a href="/users/login">Ingresá</a></div>
+		<div><a href="/users/register">Registrate</a></div>
+		<div class="carrito">
+			<a href="/cart">
+				<i class="fas fa-shopping-cart">
+					<div class="carritoCantidad">2</div>
+				</i>
+			</a>
+		</div>
+		<% } %> <% if(userLogged){ %>
+
+		<!-- ADMIN START -->
+
+		<% if(userLogged.rol!=10){ %>
+		<div><a href="/admin/">Admin</a></div>
+		<% } %>
+		<!-- ADMIN FINISH -->
+		<div><a href="/users/profile"> <%= userName %> </a></div>
+		<div><a href="/users/logout">Log Out</a></div>
+		<div class="carrito">
+			<a href="/cart">
+				<i class="fas fa-shopping-cart">
+					<div class="carritoCantidad">2</div>
+				</i>
+			</a>
+		</div>
+		<% } %>
+	</div>
+</header>
+<!-- *******M O B I L E      H E A D E R ***-->
+<header id="mobileHeader">
+	<div class="logo">
+		<a href="#"><img src="images/logo.png" alt="" /></a>
+	</div>
+
+	<div class="hamburguerButton">
+		<a href="#"> <i class="fas fa-bars"></i></a>
+	</div>
+
+	<div class="carrito">
+		<a href="#">
+			<i class="fas fa-shopping-cart">
+				<div class="carritoCantidad">2</div>
+			</i>
+		</a>
+	</div>
+</header>

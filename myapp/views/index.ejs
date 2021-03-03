@@ -1,19 +1,16 @@
 <%- include('./partials/head') %>
-		<%- include('./partials/header') %>
-
+<html>
+	<%- include('./partials/header') %>
+	<body>
 		<main>
 			<!--******  C A T E G O R I A S  *******-->
-			<section class="categorias" id="homeCategorias">
+			<section id="homeCategorias">
 				<div class="sectionHeader">
 					<div class="sectionTitle">Categorías.</div>
 					<div class="sectionVerMas"><a href="/products">Ver más</a></div>
 				</div>
 
 				<div class="tilesSlider">
-					<div class="tilesSliderArrow">
-						<a href="#"><i class="fas fa-chevron-left"></i></a>
-					</div>
-
 					<a href="/products/cat/1" class="categoryTile catGaming">
 						<div class="categoryTileTitle">Gaming</div>
 					</a>
@@ -37,15 +34,10 @@
 					<a href="/products/cat/6" class="categoryTile catSports">
 						<div class="categoryTileTitle">Deportes</div>
 					</a>
-
-					<div class="tilesSliderArrow">
-						<a href="#"><i class="fas fa-chevron-right"></i></a>
-					</div>
 				</div>
 			</section>
-
 			<!-- ********************ELEGIDOS********************** -->
-			<section class="homeElegidos" id="homeElegidos">
+			<section id="homeElegidos">
 				<div class="sectionHeader">
 					<div class="sectionTitle">Los más elegidos.</div>
 					<div class="sectionVerMas">
@@ -53,65 +45,36 @@
 					</div>
 				</div>
 
-				<div class="elegidosSlider">
-					<div class="tilesSliderArrow">
-						<a href="#"><i class="fas fa-chevron-left"></i></a>
-					</div>
-
-					<% for(product of elegidos){ %> 
-						<a href="/products/<%= product.id %> " class="elegidoTile">
-							<div class="elegidoTileImage">
+				<div class="container">
+					<div class="row">
+						<% for(product of elegidos){ %>
+						<div class="col">
+							<div class="card" style="width: 16rem; margin-bottom: 20px">
 								<img
-									src="/images/Products/<%=product.Images[0].file_name%> "
-									alt=""
-									class="prodImage"
+									src="/images/Products/<%= product.Images[0].file_name%>"
+									class="card-img-top prodImage"
+									alt="..."
 								/>
-								<div class="elegidoTileTitle"><%= product.name %> </div>
-							</div>
-							<div class="elegidoInfoCard">
-								<div class="elegidoTileDescription">
-									<%= product.description %> 
+								<div class="card-body">
+									<h5 class="card-title"><%= product.name %></h5>
+									<p class="card-text">$<%= product.price %></p>
+									<a href="/products/<%= product.id %>" class="btn btn-primary"
+										>Ver</a
+									>
+									<a href="#" class="btn btn-primary">Comprar</a>
 								</div>
-								<div class="elegidoTilePrice">$ <%= product.price %> </div>
 							</div>
-						</a>
-	
-					<% } %> 
-
-					
-
-					<div class="tilesSliderArrow">
-						<a href="#"><i class="fas fa-chevron-right"></i></a>
+						</div>
+						<% } %>
 					</div>
 				</div>
 			</section>
-
-			<section class="bottomTilesSection" id="bottomTilesSection">
-				<a href="#" class="bottomTile" id="mediosPago">
-					<div>
-						<i class="far fa-credit-card"></i>
-					</div>
-					<div>Ver medios de pago</div>
-					<div>
-						<i class="fas fa-chevron-right"></i>
-					</div>
-				</a>
-
-				<a href="#" class="bottomTile" id="ayuda">
-					<div><i class="fas fa-question-circle"></i></div>
-					<div>Necesitás ayuda? Escribinos</div>
-					<div>
-						<i class="fas fa-chevron-right"></i>
-					</div>
-				</a>
-
-				
-				
-
-
-			</section>
 		</main>
-
-		<footer><%- include('./partials/footer') %></footer>
 	</body>
+	<%- include('./partials/footer') %>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+		crossorigin="anonymous"
+	></script>
 </html>
