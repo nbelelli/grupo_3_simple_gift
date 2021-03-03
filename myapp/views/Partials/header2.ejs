@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="/"
+			><img class="logo" src="/images/logo.png" alt=""
+		/></a>
+		<button
+			class="navbar-toggler"
+			type="button"
+			data-bs-toggle="collapse"
+			data-bs-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
+		>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<form class="d-flex" action="/products" method="GET">
+				<input
+					class="form-control me-2"
+					type="search"
+					placeholder="Buscar..."
+					aria-label="Search"
+				/>
+				<button class="btn btn-outline-success" type="submit">
+					<i class="fas fa-search"></i>
+				</button>
+			</form>
+
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+
+			<!-- START USER LOGGED -->
+			<span class="navbar-text">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<% if(!userLogged){ %>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="/users/login"
+							>Ingresá</a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="users/register">Registrate</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active carrito" href="/cart">
+							<i class="fas fa-shopping-cart"> </i
+						></a>
+					</li>
+					<% } %> <% if(userLogged){ %> <% if(userLogged.rol!=10){ %>
+					<li class="nav-item">
+						<a class="nav-link active" href="/admin/">Admin</a>
+					</li>
+					<% } %>
+					<li class="nav-item">
+						<a class="nav-link active" href="/users/profile"><%= userName %></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="/users/logout">Log Out</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active carrito" href="/cart">
+							<i class="fas fa-shopping-cart"> </i
+						></a>
+					</li>
+					<% } %>
+				</ul>
+			</span>
+			<!-- END USER NOT LOGGED -->
+		</div>
+	</div>
+</nav>
