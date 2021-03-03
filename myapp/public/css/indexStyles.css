@@ -52,7 +52,8 @@
 }
 
 .categoryTile {
-	flex-basis: 14%;
+	/* flex-basis: 14%; */
+	width: 14%;
 	background-size: cover;
 	background-position-x: center;
 	position: relative;
@@ -125,4 +126,27 @@
 }
 
 @media (max-width: 425px) {
+	.tilesSlider {
+		flex-direction: column;
+	}
+	.categoryTile {
+		/* flex-basis: 14%; */
+		width: 80%;
+		background-size: cover;
+		background-position-x: center;
+		position: relative;
+		height: 330px;
+		margin-bottom: 20px;
+	}
+	.sectionHeader {
+		display: flex;
+		flex-direction: column;
+		width: 8 /*  */ 0%%;
+		height: 50px;
+		justify-content: center;
+		/* border: #333 solid 1px; */
+		align-self: center;
+		align-items: center;
+		margin-bottom: 10px;
+	}
 }
