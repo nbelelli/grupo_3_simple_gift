@@ -16,7 +16,7 @@ const productsApiController = {
 			});
 
 			const countArray = await Product.sequelize.query(
-				'SELECT products.category_id, categories.name, COUNT(*) AS count FROM products JOIN categories ON category_id= categories.id	GROUP BY categories.name;',
+				'SELECT categories.id, categories.name, COUNT(products.category_id) AS count FROM products  RIGHT JOIN categories ON category_id = categories.id GROUP BY categories.name ORDER BY categories.id',
 				{ type: sequelize.QueryTypes.SELECT }
 			);
 
