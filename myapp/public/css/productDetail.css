@@ -81,3 +81,9 @@
 .carouselImg {
 	max-height: 300px;
 }
+
+@media (max-width: 425px) {
+	.prodDetailMain {
+		flex-direction: column;
+	}
+}
