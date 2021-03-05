@@ -154,15 +154,15 @@ footer{
 	  flex-wrap: wrap;
 	  flex-direction: column;
 	}
-	.main-content .box{
-	  margin: 5px 0;
-	}
+	
  }
 
   @media (max-width: 460px){
 	.main-content{
     font-size: 0.8em;
 	} 
+	footer {   
+		width: 100vw;}
 } 
 
  

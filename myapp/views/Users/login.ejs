@@ -1,83 +1,75 @@
-<%- include('../partials/head') %> <%- include('../partials/header') %>
-<script src="/javascripts/history.js"></script>
-<!-- *******LOGIN MAIN***-->
-<body>
-	<main class="mainform">
-		<div class="login_container">
-			<div>
-				<span>
-					<a class="icono_go_back" href="#" id="back_button">
-						<i class="fas fa-long-arrow-alt-left fa-lg"></i>
-					</a>
-				</span>
-			</div>
+<%- include('../partials/head') %>
+	<%- include('../partials/header') %>
+		<script src="/javascripts/history.js"></script>
+		<!-- *******LOGIN MAIN***-->
 
-			<seccion class="formSeccion">
-				<h1 class="formTitle">¡Iniciá sesión acá!</h1>
-				<span class="formsArticle">
+		<body>
+			<main class="mainform">
+				<div class="container">
+					<div class="row align-items-center">
+
+						<div class="login_container col">
+							<div>
+								<span>
+									<a class="icono_go_back" href="#" id="back_button">
+										<i class="fas fa-long-arrow-alt-left fa-lg"></i>
+									</a>
+								</span>
+							</div>
+
+							<seccion class="formSeccion">
+								<h1 class="formTitle">¡Iniciá sesión acá!</h1>
+								<span class="formsArticle">
 
 
-					<form action="login" method="POST" class="formLogin" id="formLogin">
-						<div class="loginFormMail">
-							<label for="“email”">Email: </label>
-							<input
-								type="text"
-								name="email"
-								id="email"
-								placeholder="ejemplo@correo.com"
-								class="regAndLogInputs email"
-							/>
+									<form action="login" method="POST" class="formLogin" id="formLogin">
+										<div class="loginFormMail">
+											<label for="“email”">Email: </label>
+											<input type="text" name="email" id="email" placeholder="ejemplo@correo.com"
+												class="regAndLogInputs email" />
+										</div>
+
+										<div class="formLoginPadding">
+											<label for="password">Password:</label>
+											<input type="password" name="password" id="password"
+												placeholder="contraseña" class="regAndLogInputs password" />
+										</div>
+
+										<div class="formLoginPadding">
+											<label for="rememberMe">Recuerdame: </label>
+											<input type="checkbox" id="rememberMe" name="rememberMe"
+												style="margin-left: 30px" />
+										</div>
+										<% if(typeof errors!='undefined' ){ for (error of errors){ %>
+											<li class="errores">
+												<%= error.msg %>
+											</li>
+											<% } %>
+												<% } %>
+													<div class="errores">
+														<ul>
+															<!-- Errores configurados en ValidationForm-->
+														</ul>
+													</div>
+
+													<button class="formButton" type="“submit”">Enviar</button>
+									</form>
+									</article>
+
+									<a class="forgotPassword" href="#" id="resetPassword">¿Olvidaste tu contraseña?
+									</a>
+							</seccion>
 						</div>
-
-						<div class="formLoginPadding">
-							<label for="password">Password:</label>
-							<input
-								type="password"
-								name="password"
-								id="password"
-								placeholder="contraseña"
-								class="regAndLogInputs password"
-							/>
+						<div class="fotoLoginContainer col 6">
+							<img width="400px" class="fotoLogin" src="/images/register_amigos.jpg"
+								alt="Foto_Pagina_Registro" />
 						</div>
+					</div>
+				</div>
 
-						<div class="formLoginPadding">
-							<label for="rememberMe">Recuerdame: </label>
-							<input
-								type="checkbox"
-								id="rememberMe"
-								name="rememberMe"
-								style="margin-left: 30px"
-							/>
-						</div>
-						<% if(typeof errors!='undefined'){ for (error of errors){ %>
-						<li class="errores"><%= error.msg %></li>
-						<% } %> <% } %>
-						<div class="errores">
-							<ul>
-								<!-- Errores configurados en ValidationForm-->
-							</ul>
-						</div>
+			</main>
 
-						<button class="formButton" type="“submit”">Enviar</button>
-					</form>
-				</article>
+			<script src="/javascripts/loginValidations.js"></script>
 
-				<a class="forgotPassword" href="#" id="resetPassword"
-					>¿Olvidaste tu contraseña?
-				</a>
-			</seccion>
-		</div>
-		<div>
-			<img
-				width="70%"
-				class="fotoLoginRegister"
-				src="/images/register_amigos.jpg"
-				alt="Foto_Pagina_Registro"
-			/>
-		</div>
-	</main>
-
-	<script src="/javascripts/loginValidations.js"></script>
-
-	<%- include('../partials/footer') %>
-</body>
+			<%- include('../partials/footer') %>
+		</body>

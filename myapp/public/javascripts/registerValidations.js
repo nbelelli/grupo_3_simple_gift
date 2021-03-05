@@ -12,10 +12,30 @@ window.addEventListener('load', function () {
 	let email = document.querySelector('input.email');
 	let retype = document.querySelector('input.retype');
 	let avatar = document.querySelector('input.avatar');
+	
+	const API_BASE_URL = 'http://localhost:3000/api/users';
+
+	const axiosAPI = axios.create({
+		baseURL: API_BASE_URL,
+	});
+
+	 
+
+	async function findEmail() {
+		let response = 	await axiosAPI.get('userEmail/nicolasbrunfman@gmail.com') 
+		
+		return  response.data.data.meta.status==200
+
+	}
+
+
+
 
 	function getFileExtn(filename) {
 		return filename.split('.').pop();
 	}
+
+
 
 	formRegister.addEventListener('submit', function (e) {
 		console.log(formRegister, 'registro capturado');
@@ -82,6 +102,7 @@ window.addEventListener('load', function () {
 		//Validaciones Extensiones
 		console.log(avatar.files, 'avatar atrapado');
 		console.log(avatar.files[0]);
+
 		if (avatar.value == '') {
 			errores.push('El avatar es obligatorio');
 		}
@@ -92,13 +113,23 @@ window.addEventListener('load', function () {
 			}
 		}
 
-		if (errores.length > 0) {
-			e.preventDefault();
-		}
-		console.log(errores, 'contador de errores');
+		findEmail().then(function (emailResponse){
+			if (emailResponse== true) {
+				errores.push('Ya existe un usuario con ese mail');
+
+			}
+
+			if (errores.length > 0) {
+				e.preventDefault();
+			}
+			console.log(errores, 'contador de errores');
 		console.log(ulErrores, 'div Errores');
 		for (let i = 0; i < errores.length; i++) {
 			ulErrores.innerHTML += '<li>' + errores[i] + '</li>';
 		}
+		})
+
+		 
+		
 	});
 });

@@ -37,12 +37,50 @@ const usersApiController = {
       // meta
       res.json({
         meta: {
+          status: 200,
           status: "success",
         },
         data: {
           user,
         }
       })
+    } catch (error) {
+      console.log(error, "error encontrado")
+      res.status(500).json({
+        meta: {
+          status: "error",
+        },
+        error: "User not found",
+      })
+    }
+  },
+  async findEmail (req, res){
+    const { email } = req.params
+    console.log(email, "email")
+    try {
+      const user = await User.findOne({ 
+        where: {email}})
+        if (user){
+ 
+          // meta
+          res.json({
+            meta: {
+              status: "success",
+              status: 200,
+            },
+            data: {
+              user,
+            }
+          }) 
+        } else {
+          res.json({
+            meta: {
+              status: 400,
+            },
+            error: "Email user not found",
+          })
+        }
+       
     } catch (error) {
       console.log(error, "error encontrado")
       res.status(500).json({
