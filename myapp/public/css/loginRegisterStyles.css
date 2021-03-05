@@ -2,9 +2,16 @@
 
 .icono_go_back {
 	color: #e8623f;
-	margin: 60px;
+	margin: 10px;
 }
 
+.registerContainer col{
+	background:red;
+}
+
+.fotoRegisterContainer col{
+	background:blue;
+}
 .errores {
 	color: red;
 	font-size: 13px;
@@ -17,27 +24,7 @@
 	position: relative;
 }
 
-.mainform {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	position: relative;
-}
 
-.formSeccion {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	display: inline-block;
-	width: 350px;
-	height: 400px;
-	margin-left: 60px;
-	margin-bottom: 200px;
-}
-
-.fotoLoginRegister {
-	padding-left: 20px;
-}
 
 .formTitle {
 	font-family: 'Poppins', sans-serif;
@@ -49,14 +36,13 @@
 }
 
 .formsArticle {
-	padding-top: 15px;
+	padding-top: 10px;
 	border-radius: 4px;
 	box-sizing: border-box;
 	margin-top: 6px;
 	margin-bottom: 10px;
 	font-family: 'Poppins', sans-serif;
 	display: inline-block;
-	justify-content: space-between;
 }
 
 .formLoginPadding {
@@ -99,11 +85,15 @@ label {
 	display: inline-block;
 }
 
-/* ESTILO REGISTER*/
+/* ESTILO REGISTER
 
-.fotoRegisterContainer {
-	padding-left: 20px;
-}
+.fotoRegisterContainer{
+	position: relative;
+	margin-top: 20 px;
+	margin-left: 100px;
+	justify-content: flex-end;
+}*/
+
 
 .registerYaTenesCuenta {
 	font-family: 'Poppins', sans-serif;
@@ -163,10 +153,18 @@ textarea.regAndLogInputs {
 }
 
 /* **********  M O B I L E  *********** */
+@media (max-width: 1000px) {
+	.fotoRegisterContainer: {
+		visibility: hidden;
+		}
+}
+
+
 
 @media (max-width: 460px) {
-	.fotologinregister: {
-		display: none;
+
+	body{
+		width: 100%;
 	}
 	.formSeccion {
 		margin-left: 2%;
@@ -195,10 +193,13 @@ textarea.regAndLogInputs {
 		font-size: 1em;
 		padding-top: 2%;
 	}
+
 	main {
 		position: relative;
-		margin-top: 40px;
 		margin-left: 5%;
 		margin-right: 5%;
+	}
+	.fotoRegisterContainer{
+		display: none;
 	}
 }
