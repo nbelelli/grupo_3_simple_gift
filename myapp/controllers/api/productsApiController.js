@@ -34,7 +34,7 @@ const productsApiController = {
 					countByCategory: countByCategory,
 				},
 				data: {
-					products, //por dios no la cagues aca
+					products, 
 				},
 			});
 		} catch (error) {
@@ -108,6 +108,36 @@ const productsApiController = {
 			});
 		}
 	},
+	lastProduct: async (req, res) => {
+		try {
+			const product = await Product.findAll({
+				limit: 1,
+				order: [ [ 'id', 'DESC' ]],
+				include: [
+					{
+						association: 'Images',
+					},
+				],
+			});
+
+			res.json({
+				meta: {
+					status: 200,
+					url: '/api/products/lastProduct',
+				},
+				data: {
+					product,
+				},
+			});
+		} catch (error) {
+			res.status(500).json({
+				meta: {
+					status: 'error',
+				},
+				error: 'No products found AAAAA',
+			});
+		}
+	}
 };
 
 module.exports = productsApiController;
