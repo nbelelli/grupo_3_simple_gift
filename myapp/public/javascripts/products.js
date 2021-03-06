@@ -1,12 +1,5 @@
 window.onload = function () {
-	const queryString = window.location.search;
-	console.log('query: ', queryString);
-	const params = new URLSearchParams(queryString);
-	console.log('los params', params);
-	const cat = params.get('cat');
-	console.log('la category es:', cat);
-
-	const API_BASE_URL = 'http://localhost:3000/api/';
+	const API_BASE_URL = 'http://localhost:3000/api/products';
 
 	const axiosAPI = axios.create({
 		baseURL: API_BASE_URL,
@@ -39,13 +32,25 @@ window.onload = function () {
             `;
 		}
 	}
+	const queryString = window.location.search;
+	console.log('query: ', queryString);
+	const params = new URLSearchParams(queryString);
+	console.log('los params', params);
+	const category = params.get('category');
+	console.log('la category es:', category);
+	let request = '';
+	if (category) {
+		request += '/category/' + category;
+	}
 
-	function loadProducts() {
-		axiosAPI.get('products').then((res) => {
+	console.log(request, 'req');
+
+	function loadProducts(request) {
+		axiosAPI.get(request).then((res) => {
 			console.log(res.data.data.products);
 			renderProducts(res.data.data.products);
 		});
 	}
 
-	loadProducts();
+	loadProducts(request);
 };
