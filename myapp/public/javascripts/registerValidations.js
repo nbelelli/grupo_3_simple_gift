@@ -19,11 +19,10 @@ window.addEventListener('load', function () {
 		baseURL: API_BASE_URL,
 	});
 
-	 
+	
 
-	async function findEmail() {
+	async function findEmail(errores) {
 		let response = 	await axiosAPI.get('userEmail/nicolasbrunfman@gmail.com') 
-		
 		return  response.data.data.meta.status==200
 
 	}
@@ -113,18 +112,17 @@ window.addEventListener('load', function () {
 			}
 		}
 
-		findEmail().then(function (emailResponse){
-			if (emailResponse== true) {
+		findEmail(errores).then(function (emailResponse){
+			if (emailResponse == true) {
 				errores.push('Ya existe un usuario con ese mail');
-
 			}
 
 			if (errores.length > 0) {
 				e.preventDefault();
 			}
 			console.log(errores, 'contador de errores');
-		console.log(ulErrores, 'div Errores');
-		for (let i = 0; i < errores.length; i++) {
+			console.log(ulErrores, 'div Errores');
+			for (let i = 0; i < errores.length; i++) {
 			ulErrores.innerHTML += '<li>' + errores[i] + '</li>';
 		}
 		})
