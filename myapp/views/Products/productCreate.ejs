@@ -41,7 +41,7 @@
 						</div>
 
 						<div class="formRegisterPadding">
-							<label for="discount">Descuento%:</label>
+							<label for="discount">Desc. %:</label>
 							<input
 								type="number"
 								name="discount"
@@ -57,7 +57,7 @@
 						</div>
 
 						<div class="formRegisterPadding">
-							<label for="category">Categoría:</label>
+							<label for="category">Cat:</label>
 
 							<select name="category" id="category" class="regAndLogInputs">
 
@@ -106,11 +106,11 @@
 							<li class="errores"><%= error.msg %></li>
 							<% } %> <% } %>
 						
-						<div class="errores" >
-							<ul>
-
-							</ul>
-						</div>
+							<div class="errores">
+								<ul class="errores">
+									<!-- Errores configurados en ValidationForm-->
+								</ul>
+							</div>
 
 						<button class="formButton" type="“submit”">Guardar</button>
 					</form>
@@ -119,6 +119,6 @@
 		</main>
 
 		<%- include('../partials/footer') %>
-		<script src="/javascripts/productCreateValidations.js"></script>
+		<script src="/javascripts/productCreateValidations2.js"></script>
 	</body>
 </html>
