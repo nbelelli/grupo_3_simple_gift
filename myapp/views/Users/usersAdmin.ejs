@@ -1,5 +1,4 @@
 <%- include('../partials/head') %> <%- include('../partials/header') %>
-<script src="/javascripts/history.js"></script>
 <html>
 	<body>
 		<div style="margin-top: 30; margin-left: 100px">
@@ -35,6 +34,47 @@
 			</div>
 		</div>
 
+		<!-- Button trigger modal -->
+
+		<!-- Modal -->
+		<div
+			class="modal fade"
+			id="confirmationModal"
+			tabindex="-1"
+			aria-labelledby="confirmationModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="confirmationModalLabel">
+							Eliminar el usuario:
+						</h5>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div id="modalUserName" class="modal-body">juan Perez</div>
+					<div class="modal-footer">
+						<button
+							type="button"
+							class="btn btn-secondary"
+							data-bs-dismiss="modal"
+						>
+							Cancelar
+						</button>
+						<form id="deleteForm" style="display: inline" method="POST">
+							<button class="btn btn-danger" type="submit">Borrar</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- TABLA -->
 		<div style="margin-top: 100px; width: 80%" class="container">
 			<table class="table">
 				<thead class="thead-dark">
@@ -75,24 +115,24 @@
 								<i class="fas fa-edit"></i>
 							</a>
 
-							<form
-								style="display: inline"
-								method="POST"
-								action="/admin/users/<%=user.id%> /delete/?_method=DELETE"
-							>
-								<button class="btn btn-danger btn-sm" type="submit">
-									<i class="fas fa-trash-alt"></i>
-								</button>
-							</form>
-
-							<!-- 							<a href="#" class="btn btn-danger btn-sm">
+							<button <%="id=" + user.id %>
+								<%= "userName=" +user.name%> <%= "userLastName= " +user.lastname
+								%> type="button" class="btn btn-danger btn-sm deleteButton"
+								data-bs-toggle="modal" data-bs-target="#confirmationModal" >
 								<i class="fas fa-trash-alt"></i>
-							</a> -->
+							</button>
 						</td>
 					</tr>
 					<% } %>
 				</tbody>
 			</table>
 		</div>
+		<script src="/javascripts/history.js"></script>
+		<script src="/javascripts/deleteModal.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+			crossorigin="anonymous"
+		></script>
 	</body>
 </html>
