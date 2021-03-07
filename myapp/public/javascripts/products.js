@@ -34,9 +34,13 @@ window.onload = function () {
 	const queryString = window.location.search;
 	const params = new URLSearchParams(queryString);
 	const category = params.get('category');
+	const keyword = params.get('keyword');
 	let request = '';
 	if (category) {
 		request += '/category/' + category;
+	}
+	if (keyword) {
+		request += '/keyword/' + keyword;
 	}
 
 	function loadProducts(request) {

@@ -1,5 +1,6 @@
 const { Product } = require('../../database/models');
 const sequelize = require('sequelize');
+const Op = sequelize.Op;
 
 const productsApiController = {
 	list: async (req, res) => {
@@ -101,6 +102,34 @@ const productsApiController = {
 			});
 		} catch (error) {
 			res.status(500).json({
+				meta: {
+					status: 'error',
+				},
+				error: 'No products found',
+			});
+		}
+	},
+	search: async (req, res) => {
+		try {
+			const products = await Product.findAll({
+				where: { name: { [Op.like]: '%' + req.params.keyword + '%' } },
+				include: [
+					{
+						association: 'Images',
+					},
+				],
+			});
+			res.json({
+				meta: {
+					status: 200,
+					count: products.length,
+				},
+				data: {
+					products,
+				},
+			});
+		} catch (error) {
+			cres.status(500).json({
 				meta: {
 					status: 'error',
 				},
