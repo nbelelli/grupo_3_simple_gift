@@ -6,7 +6,6 @@ window.onload = function () {
 	});
 
 	const productsContainer = document.querySelector('#prueba');
-	console.log(productsContainer);
 
 	function renderProducts(products) {
 		for (product of products) {
@@ -33,17 +32,12 @@ window.onload = function () {
 		}
 	}
 	const queryString = window.location.search;
-	console.log('query: ', queryString);
 	const params = new URLSearchParams(queryString);
-	console.log('los params', params);
 	const category = params.get('category');
-	console.log('la category es:', category);
 	let request = '';
 	if (category) {
 		request += '/category/' + category;
 	}
-
-	console.log(request, 'req');
 
 	function loadProducts(request) {
 		axiosAPI.get(request).then((res) => {

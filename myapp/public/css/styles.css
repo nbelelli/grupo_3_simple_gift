@@ -14,7 +14,7 @@ body {
 
 main {
 	position: relative;
-	margin-top: 100px;
+	margin-top: 50px;
 	margin-left: 5%;
 	margin-right: 5%;
 }
@@ -24,27 +24,6 @@ main {
 /* ******STYLES HOMEPAGE were moved to public/css/loginStyles.css***** */
 
 /* ******STYLES HOMEPAGE were moved to public/css/registerStyles.css***** */
-
-/* ------- ESTILO PRODUCTDETAIL  -------*/
-
-.imagen_del_producto {
-	margin-left: 300px;
-	width: 600px;
-}
-
-.texto_descripcion {
-	font-family: 'Poppins', sans-serif;
-	box-sizing: content-box;
-	padding: 40px;
-	width: 500px;
-	height: 100px;
-	border: 1px solid black;
-	margin-left: 740px;
-}
-
-.botones_productDetail {
-	margin-bottom: 100px;
-}
 
 /* ------- ESTILO PROFILE  -------*/
 

@@ -1,6 +1,5 @@
 window.addEventListener('load', function () {
 	const form = document.querySelector('.createEditForm');
-	console.log(form);
 	const name = document.querySelector('#name');
 	const price = document.querySelector('#price');
 	const discount = document.querySelector('#discount');
