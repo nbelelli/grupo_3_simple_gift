@@ -154,7 +154,7 @@ textarea.regAndLogInputs {
 
 /* **********  M O B I L E  *********** */
 @media (max-width: 1000px) {
-	.fotoRegisterContainer: {
+	.fotoRegisterContainer {
 		visibility: hidden;
 		}
 }
