@@ -1,5 +1,6 @@
 #homeCategorias {
 	margin-bottom: 35px;
+	/* margin-top: 50px; */
 }
 
 .sectionHeader {
@@ -7,7 +8,6 @@
 	width: 8 /*  */ 0%%;
 	height: 50px;
 	justify-content: center;
-	/* border: #333 solid 1px; */
 	align-self: center;
 	align-items: center;
 	margin-bottom: 10px;

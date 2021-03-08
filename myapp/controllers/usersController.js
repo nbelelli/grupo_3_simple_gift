@@ -30,7 +30,7 @@ const usersController = {
 		}
 
 		// Crea un nuevo registro en la DB
-		/* 		console.log('avatar: ', req.files[0].filename); */
+
 		await db.User.create({
 			name: req.body.name,
 			lastname: req.body.lastname,
@@ -138,7 +138,6 @@ const usersController = {
 	adminProfile: async (req, res) => {
 		res.locals.title = 'Detalles de Administrador';
 		const user = await db.User.findByPk(req.params.id);
-		console.log('the user is', user);
 		res.render('Users/adminProfile', { user: user });
 	},
 	createAdmin: (req, res) => {
@@ -147,7 +146,6 @@ const usersController = {
 	},
 	editAdmin: async (req, res) => {
 		res.locals.title = 'Editar Administrador';
-		console.log('entramos', req.params.id);
 		const userToEdit = await db.User.findByPk(req.params.id);
 		return res.render('Users/editAdmin', { userToEdit });
 	},

@@ -1,5 +1,6 @@
 const { Product } = require('../../database/models');
 const sequelize = require('sequelize');
+const Op = sequelize.Op;
 
 const productsApiController = {
 	list: async (req, res) => {
@@ -108,11 +109,18 @@ const productsApiController = {
 			});
 		}
 	},
+
+	search: async (req, res) => {
+		try {
+			const products = await Product.findAll({
+				where: { name: { [Op.like]: '%' + req.params.keyword + '%' } },
+
 	lastProduct: async (req, res) => {
 		try {
 			const product = await Product.findAll({
 				limit: 1,
 				order: [ [ 'id', 'DESC' ]],
+
 				include: [
 					{
 						association: 'Images',
@@ -138,6 +146,7 @@ const productsApiController = {
 			});
 		}
 	}
+
 };
 
 module.exports = productsApiController;

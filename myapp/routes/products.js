@@ -22,8 +22,7 @@ var upload = multer({ storage: storage });
 
 //Ir al listado de productos
 router.get('/', productsController.products);
-//products filtrado por categoria
-router.get('/cat/:cat?', productsController.products);
+
 //ir a la pagina de carga de producto
 router.get('/create', authAdmin, productsController.create);
 //ir a la pagina de Edicion de producto
