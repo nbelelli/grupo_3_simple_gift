@@ -35,12 +35,14 @@ window.onload = function () {
 	const params = new URLSearchParams(queryString);
 	const category = params.get('category');
 	const keyword = params.get('keyword');
+	console.log('la keyw', keyword);
 	let request = '';
 	if (category) {
 		request += '/category/' + category;
 	}
 	if (keyword) {
 		request += '/keyword/' + keyword;
+		console.log(API_BASE_URL + request, 'request');
 	}
 
 	function loadProducts(request) {
