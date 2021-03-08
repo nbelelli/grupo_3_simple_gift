@@ -47,7 +47,6 @@ window.onload = function () {
 
 	function loadProducts(request) {
 		axiosAPI.get(request).then((res) => {
-			console.log(res);
 			console.log(res.data.data.products);
 			renderProducts(res.data.data.products);
 		});
