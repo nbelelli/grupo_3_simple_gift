@@ -20,13 +20,13 @@ window.onload = function () {
                 <h5 class="card-title">${product.name}</h5>
                 <p class="card-text">${product.description}</p>
                 <p class="card-text">$${product.price}</p>
-                <a href="/products/${product.id}" class="btn btn-primary"
-                    >Ver</a
-                >
-                <a href="#" class="btn btn-primary"
-                    >Agregar al carrito</a
-                >
+
             </div>
+			<div class="card-footer" style="background: none; border-top: none">
+				<a href="/products/${product.id}" class="btn btn-primary">Ver</a>
+				<a href="#" class="btn btn-primary">Comprar</a>
+			</div>
+			
         </div>
             `;
 		}
