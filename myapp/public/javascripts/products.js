@@ -5,7 +5,7 @@ window.onload = function () {
 		baseURL: API_BASE_URL,
 	});
 
-	const productsContainer = document.querySelector('#prueba');
+	const productsContainer = document.querySelector('#productsCardContainer');
 
 	function renderProducts(products) {
 		for (product of products) {
