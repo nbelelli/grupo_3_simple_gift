@@ -125,9 +125,13 @@
 	font-size: medium;
 }
 
-.card-footer-styles {
-	background: none;
+.card-footer a {
+	background-color: #6c7ae0;
 }
+.card-footer a:hover {
+	background-color: #6574d3;
+}
+
 /* **********  M O B I L E  *********** */
 
 @media (min-width: 426px) {
