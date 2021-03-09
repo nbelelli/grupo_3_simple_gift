@@ -1,52 +1,52 @@
-footer{
+footer {
 	position: relative;
 	bottom: 0px;
 	width: 100%;
 	background: rgb(170, 169, 169);
 	font-family: 'Poppins', sans-serif;
-  }
-  .main-content{
+}
+.main-content {
 	display: flex;
-  }
-  .main-content .box{
+}
+.main-content .box {
 	flex-basis: 50%;
 	padding: 10px 20px;
-  }
-  .box h3{
+}
+.box h3 {
 	font-size: 1.125rem;
 	font-weight: 600;
 	text-transform: uppercase;
-  }
-  .box .content{
+}
+.box .content {
 	margin: 20px 0 0 0;
 	position: relative;
-  }
-  .box .content:before{
+}
+.box .content:before {
 	position: absolute;
 	content: '';
 	top: -10px;
 	height: 2px;
 	width: 100%;
 	background: #f7f7f7;
-  }
-  .box .content:after{
+}
+.box .content:after {
 	position: absolute;
 	content: '';
 	height: 2px;
 	width: 15%;
 	background: #e8623f;
 	top: -10px;
-  }
-  .left .content p{
+}
+.left .content p {
 	text-align: justify;
-  }
-  .left .content .social{
+}
+.left .content .social {
 	margin: 20px 0 0 0;
-  }
-  .left .content .social a{
+}
+.left .content .social a {
 	padding: 0 2px;
-  }
-  .left .content .social a span{
+}
+.left .content .social a span {
 	height: 40px;
 	width: 40px;
 	background: #f7f7f7;
@@ -55,11 +55,11 @@ footer{
 	font-size: 18px;
 	border-radius: 5px;
 	transition: 0.3s;
-  }
-  .left .content .social a span:hover{
+}
+.left .content .social a span:hover {
 	background: #6c7ae0;
-  }
-  .center .content .fas{
+}
+.center .content .fas {
 	font-size: 1.4375rem;
 	background: #f7f7f7;
 	height: 45px;
@@ -69,50 +69,51 @@ footer{
 	border-radius: 50%;
 	transition: 0.3s;
 	cursor: pointer;
-  }
-  .center .content .fas:hover{
+}
+.center .content .fas:hover {
 	background: #6c7ae0;
-  }
-  .center .content .text{
+}
+.center .content .text {
 	font-size: 1.0625rem;
 	font-weight: 500;
 	padding-left: 10px;
-  }
-  .center .content .phone{
+}
+.center .content .phone {
 	margin: 15px 0;
-  }
-  .right form .text{
+}
+.right form .text {
 	font-size: 1.0625rem;
 	margin-bottom: 2px;
 	color: #1d1c1c;
-  }
-  .right form .msg{
+}
+.right form .msg {
 	margin-top: 10px;
-  }
+}
 
-  .msgForm:focus{
-	border: 1px solid #6c7ae0; 
+.msgForm:focus {
+	border: 1px solid #6c7ae0;
 	outline-color: #6c7ae0;
-  }
+}
 
-  .right form input, .right form .msgForm{
+.right form input,
+.right form .msgForm {
 	width: 100%;
 	font-size: 1.0625rem;
 	background: #f7f4f4;
 	padding-left: 10px;
 	border: 1px solid #6c7ae0;
-  }
-  .right form input:focus,
-  .right form .msgForm:focus{
+}
+.right form input:focus,
+.right form .msgForm:focus {
 	outline-color: #6c7ae0;
-  }
-  .right form input{
+}
+.right form input {
 	height: 35px;
-  }
-  .right form .btn{
+}
+.right form .btn {
 	margin-top: 10px;
-  }
-  .right form .btn button{
+}
+.right form .btn button {
 	height: 40px;
 	width: 100%;
 	border: none;
@@ -121,48 +122,50 @@ footer{
 	font-size: 1.0625rem;
 	font-weight: 500;
 	cursor: pointer;
-	transition: .3s;
+	transition: 0.3s;
 	border-radius: 2px;
-  }
-  .right form .btn button:hover{
-	background: #6c7ae0;
-  }
-  .bottom center{
+	padding: 5px;
+	color: white;
+	font-size: medium;
+	border-radius: 10%;
+}
+.right form .btn button:hover {
+	background: #6574d3;
+}
+.bottom center {
 	padding: 5px;
 	font-size: 0.9375rem;
 	background: #656565;
-  }
-  .bottom center span{
+}
+.bottom center span {
 	color: #656565;
-  }
-  .bottom center a{
+}
+.bottom center a {
 	color: #6c7ae0;
 	text-decoration: none;
-  }
-  .bottom center a:hover{
+}
+.bottom center a:hover {
 	text-decoration: underline;
-  }
+}
 
 /* **********  M O B I L E  *********** */
 
-  @media screen and (max-width: 900px) {
-	footer{
-	  position: relative;
-	  bottom: 0px;
+@media screen and (max-width: 900px) {
+	footer {
+		position: relative;
+		bottom: 0px;
 	}
-	.main-content{
-	  flex-wrap: wrap;
-	  flex-direction: column;
+	.main-content {
+		flex-wrap: wrap;
+		flex-direction: column;
 	}
-	
- }
+}
 
-  @media (max-width: 460px){
-	.main-content{
-    font-size: 0.8em;
-	} 
-	footer {   
-		width: 100vw;}
-} 
-
- 
+@media (max-width: 460px) {
+	.main-content {
+		font-size: 0.8em;
+	}
+	footer {
+		width: 100vw;
+	}
+}
