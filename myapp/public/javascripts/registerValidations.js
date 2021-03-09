@@ -19,15 +19,11 @@ window.addEventListener('load', function () {
 		baseURL: API_BASE_URL,
 	});
 
-	
-
-	async function findEmail(errores) {
+	/*async function findEmail(errores) {
 		let response = 	await axiosAPI.get('userEmail/nicolasbrunfman@gmail.com') 
 		return  response.data.data.meta.status==200
 
-	}
-
-
+	}*/
 
 
 	function getFileExtn(filename) {
@@ -38,6 +34,7 @@ window.addEventListener('load', function () {
 
 	formRegister.addEventListener('submit', function (e) {
 		console.log(formRegister, 'registro capturado');
+		e.preventDefault();
 
 		let errores = [];
 
@@ -46,7 +43,6 @@ window.addEventListener('load', function () {
 		if (ulErrores.innerHTML != '') {
 			ulErrores.innerHTML = '';
 		}
-
 		//Validaciones Nombre
 
 		if (name.value == '') {
@@ -95,7 +91,8 @@ window.addEventListener('load', function () {
 		let mailOK = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 		if (email.value == '') {
 			errores.push('El email es obligatorio');
-		} else if (!mailOK.test(email.value)) {
+		} 
+		if (!mailOK.test(email.value)) {
 			errores.push('Ingrese un email valido');
 		}
 		//Validaciones Extensiones
@@ -104,28 +101,30 @@ window.addEventListener('load', function () {
 
 		if (avatar.value == '') {
 			errores.push('El avatar es obligatorio');
-		}
-		for (avatar of avatar.files) {
+		} for (avatar of avatar.files) {
 			let extn = getFileExtn(avatar.name);
 			if (!(extn == 'jpg' || extn == 'png' || extn == 'jpeg')) {
 				errores.push('Los formatos correctos son JPG, PGN y JPEG');
 			}
 		}
-
-		findEmail(errores).then(function (emailResponse){
-			if (emailResponse == true) {
+		
+		/*axiosAPI.get('userEmail/'+ email.value)
+		.then(function(response){
+			console.log(response, "respuesta")
+			if (response.data.data.user) {
 				errores.push('Ya existe un usuario con ese mail');
-			}
+			}*/
 
-			if (errores.length > 0) {
-				e.preventDefault();
+			if (errores.length == 0) {
+				formRegister.submit()
 			}
 			console.log(errores, 'contador de errores');
 			console.log(ulErrores, 'div Errores');
 			for (let i = 0; i < errores.length; i++) {
 			ulErrores.innerHTML += '<li>' + errores[i] + '</li>';
-		}
-		})
+			}
+		/*}) */ 
+		
 
 		 
 		
