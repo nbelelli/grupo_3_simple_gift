@@ -45,11 +45,14 @@
 					</div>
 				</div>
 
-				<div class="container">
-					<div class="row d-flex justify-content-around">
+				<div class="container cardsCointainer" id="homeElegidos">
+					<div
+						class="row d-flex justify-content-around"
+						style="margin-bottom: 20px"
+					>
 						<% for(product of elegidos){ %>
-						<div class="col">
-							<div class="card" style="width: 16rem; margin-bottom: 20px">
+						<div class="col cardColumn">
+							<div class="card" style="width: 16rem; height: 100%">
 								<img
 									src="/images/Products/<%= product.Images[0].file_name%>"
 									class="card-img-top prodImage"
@@ -57,7 +60,16 @@
 								/>
 								<div class="card-body">
 									<h5 class="card-title"><%= product.name %></h5>
-									<p class="card-text">$<%= product.price %></p>
+									<p class="card-title"><%= product.description %></p>
+
+									<p class="card-text" style="font-weight: bold">
+										$<%= product.price %>
+									</p>
+								</div>
+								<div
+									class="card-footer"
+									style="background: none; border-top: none"
+								>
 									<a href="/products/<%= product.id %>" class="btn btn-primary"
 										>Ver</a
 									>

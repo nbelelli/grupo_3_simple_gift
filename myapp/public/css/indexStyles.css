@@ -51,10 +51,6 @@
 	transition: opacity 0.15s ease-in-out;
 }
 
-.tilesSliderArrow {
-	align-self: center;
-}
-
 .categoryTile {
 	/* flex-basis: 14%; */
 	width: 14%;
@@ -112,12 +108,28 @@
 	object-fit: cover;
 }
 
-.elegidoTileVino {
-	background-image: url('/images/categoriesTiles/cajavino2.jpg');
+/* CARDS STYLES */
+.cardColumn {
+	padding-bottom: 15px;
 }
 
-.elegidoTileBeer {
-	background-image: url('/images/categoriesTiles/beer1.webp');
+.cardColumn .card div a {
+	font-size: small;
+}
+
+.cardColumn .card div p {
+	font-size: small;
+}
+
+.cardColumn .card div h5 {
+	font-size: medium;
+}
+
+.card-footer a {
+	background-color: #6c7ae0;
+}
+.card-footer a:hover {
+	background-color: #6574d3;
 }
 
 /* **********  M O B I L E  *********** */
