@@ -122,6 +122,14 @@ const productsApiController = {
 		try {
 			const products = await Product.findAll({
 				where: { name: { [Op.like]: '%' + req.params.keyword + '%' } },
+				include: [
+					{
+						association: 'Images',
+					},
+					{
+						association: 'Category',
+					},
+				],
 			});
 			res.json({
 				meta: {
